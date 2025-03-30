@@ -13,7 +13,7 @@ This portfolio is designed to showcase:
 ## 🔧 Tech Stack
 
 - **Frontend**: JavaScript, HTML, CSS
-- **Libraries & Frameworks**: React, Tailwind CSS
+- **Libraries & Frameworks**: React, Tailwind
 - **Hosting**: Vercel
 
 
