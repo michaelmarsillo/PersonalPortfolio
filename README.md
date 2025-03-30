@@ -2,6 +2,10 @@
 
 This portfolio highlights my skills, projects, and more about me in a clean, easy to use format.
 
+## 🌍 Live Preview
+
+Check it out here: [my website](https://michaelamrsillo.ca)
+
 ## 📌 About
 
 This portfolio is designed to showcase:
@@ -16,9 +20,6 @@ This portfolio is designed to showcase:
 - **Libraries & Frameworks**: React, Tailwind CSS
 - **Hosting**: Vercel
 
-## 🌍 Live Preview
-
-Check it out here: [my website](https://michaelamrsillo.ca)
 
 ## 📜 License
 
