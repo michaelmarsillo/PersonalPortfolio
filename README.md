@@ -19,7 +19,7 @@ This portfolio is designed to showcase:
 
 ## 📜 License
 
-This project is open source and available under the [MIT License](LICENSE).
+MIT License © 2025 [MIT License](LICENSE).
 
 ## 📬 Get in Touch
 
