@@ -24,5 +24,5 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📬 Get in Touch
 
 Reach out to me:
-- Email: mars7769@mylaurier.ca
 - LinkedIn: [michaelmarsillo](https://www.linkedin.com/in/michaelmarsillo/)
+- Email: mars7769@mylaurier.ca
