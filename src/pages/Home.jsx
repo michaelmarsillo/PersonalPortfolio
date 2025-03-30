@@ -114,7 +114,6 @@ function Home() {
                     </svg>
                   </span>
                 </a>
-
                 </p>
               </div>
             </div>
