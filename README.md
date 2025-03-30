@@ -19,7 +19,7 @@ This portfolio is designed to showcase:
 
 ## 📜 License
 
-MIT License © 2025 [MIT License](LICENSE).
+MIT License © 2025 [License](LICENSE).
 
 ## 📬 Get in Touch
 
