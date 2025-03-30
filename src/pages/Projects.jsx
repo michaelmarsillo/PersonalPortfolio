@@ -24,7 +24,7 @@ const Projects = () => {
             description: "My personal wesbite showcasing my work, skills, and a little bit more about me. A good place to highlight my web dev abilities and what i've built.",
             imageUrl: "/images/portfoliowebsite.png",
             techStack: ["React.js", "Tailwind", "Java Script", "HTML", "Git",],
-            githubUrl: "",
+            githubUrl: "https://github.com/michaelmarsillo/PersonalPortfolio",
             demoUrl: ""
         }
     ];

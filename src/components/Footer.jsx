@@ -29,7 +29,7 @@ export default function Footer({ className }) {
     },
     {
       name: "repo",
-      href: "",
+      href: "https://github.com/michaelmarsillo/PersonalPortfolio",
       icon: CodeXml,
     },
   ]
