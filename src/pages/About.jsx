@@ -17,7 +17,7 @@ function About() {
                         <div className="w-full md:w-1/3">
                             <div className="relative w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
                                 <img
-                                    src="/images/portfolioimage3.png"
+                                    src="/images/portfolioimage3.PNG"
                                     alt="About Profile Pic"
                                     className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                                 />
@@ -44,7 +44,7 @@ function About() {
                         </div>
                     </div>
 
-                    {/* Tab navigation */}
+                    {/* tab navigation */}
                     <div className="flex border-b border-gray-800 mb-8">
                         <button
                             onClick={() => setActiveTab("technical")}
@@ -235,7 +235,7 @@ function About() {
                                 <div className="space-y-2">
                                     <div className="relative aspect-[3/4] rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
                                         <img
-                                            src="/images/fireaftermath.jpg"
+                                            src="/images/fireaftermath.JPG"
                                             alt="Fire aftermath"
                                             className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                                         />
@@ -249,7 +249,7 @@ function About() {
                                 <div className="space-y-2">
                                     <div className="relative aspect-[3/4] rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
                                         <img
-                                            src="/images/2020setup.jpg"
+                                            src="/images/2020setup.JPG"
                                             alt="Coding setup"
                                             className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                                         />
@@ -280,7 +280,7 @@ function About() {
                                         </div>
                                         <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
                                             <img
-                                                src="/images/snowboarding.jpg"
+                                                src="/images/snowboarding.JPG"
                                                 alt="snowboarding"
                                                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                                             />
@@ -316,7 +316,7 @@ function About() {
                                         </div>
                                         <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
                                             <img
-                                                src="/images/brazilianfunk.jpg"
+                                                src="/images/brazilianfunk.JPG"
                                                 alt="music"
                                                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                                             />

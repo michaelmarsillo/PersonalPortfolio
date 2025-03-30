@@ -25,7 +25,7 @@ const Projects = () => {
             imageUrl: "/images/portfoliowebsite.png",
             techStack: ["React.js", "Tailwind", "Java Script", "HTML", "Git",],
             githubUrl: "https://github.com/michaelmarsillo/PersonalPortfolio",
-            demoUrl: ""
+            demoUrl: "https://www.michaelmarsillo.ca/"
         }
     ];
 
