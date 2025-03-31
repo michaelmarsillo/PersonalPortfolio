@@ -12,7 +12,7 @@ function About() {
                     <h1 className="text-3xl font-bold text-white mb-8">The Story So Far
                     </h1>
 
-                    {/* Profile section */}
+                    {/* profile section */}
                     <div className="flex flex-col md:flex-row gap-8 mb-12">
                         <div className="w-full md:w-1/3">
                             <div className="relative w-full aspect-square rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
@@ -75,7 +75,7 @@ function About() {
                         </button>
                     </div>
 
-                    {/* Technical tab content */}
+                    {/* technical tab */}
                     {activeTab === "technical" && (
                         <div className="space-y-8 animate-fadeIn">
                             <div className="space-y-4">
@@ -201,7 +201,7 @@ function About() {
                         </div>
                     )}
 
-                    {/* Personal tab content */}
+                    {/* personal tab */}
                     {activeTab === "personal" && (
                         <div className="space-y-8 animate-fadeIn">
                             <div className="space-y-4">
@@ -263,7 +263,7 @@ function About() {
                         </div>
                     )}
 
-                    {/* Interests tab content */}
+                    {/* interests tab */}
                     {activeTab === "interests" && (
                         <div className="space-y-8 animate-fadeIn">
                             <div className="space-y-4">

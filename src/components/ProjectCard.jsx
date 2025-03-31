@@ -12,13 +12,13 @@ export default function ProjectCard({
 
   return (
     <div className="group w-full bg-gray-900 rounded-lg overflow-hidden mb-8 border-2 border-transparent transition-all duration-300 ease-in-out hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20">
-      {/* Image Section with smooth hover animation */}
+      {/* image section */}
       {imageUrl && (
         <div className="w-full bg-gray-800 p-4">
           <div className="relative overflow-hidden rounded-md transition-all duration-300 ease-in-out mx-auto">
-            {/* Image container with hover effect */}
+            {/* image container  */}
             <div className="w-full h-44 group-hover:h-96 transition-all duration-500 ease-in-out overflow-hidden">
-              {/* Shimmer placeholder with fade-out effect */}
+              {/* shimmer placeholder with fade-out effect */}
               {!imageLoaded && (
                 <div className="absolute inset-0 w-full h-full rounded-md bg-gray-700">
                   <div className="w-full h-full overflow-hidden">
@@ -40,9 +40,8 @@ export default function ProjectCard({
         </div>
       )}
 
-      {/* Content Section */}
       <div className="p-6">
-        {/* Title and Actions */}
+        {/* title */}
         <div className="flex justify-between items-center mb-2">
           <h2 className="text-2xl font-bold text-white">{title}</h2>
           <div className="flex space-x-3">
@@ -65,10 +64,10 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {/* Description */}
+        {/* description */}
         <p className="text-gray-400 mb-4">{description}</p>
 
-        {/* Tech Stack / Tags */}
+        {/* tech stack */}
         {techStack.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {techStack.map((tech, index) => (
@@ -83,7 +82,7 @@ export default function ProjectCard({
         )}
       </div>
 
-      {/* Add the shimmer CSS animation */}
+      {/* shimmer animation for project card */}
       <style jsx>{`
         .shimmer-effect {
           background: linear-gradient(
