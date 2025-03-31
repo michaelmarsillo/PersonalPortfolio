@@ -61,7 +61,7 @@ function Home() {
               <div className="flex items-baseline space-x-2 sm:space-x-2">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
                 <p className="text-sm sm:text-base">
-                  <strong>Who am i?</strong> <span className="text-purple-500">→</span> learn more{" "}
+                  <strong>Who am I?</strong> <span className="text-purple-500">→</span> learn more{" "}
                   <span className="bg-amber-900/30 px-1 text-amber-400 inline-flex items-baseline gap-1 rounded">
                     <a
                       href="/about"
