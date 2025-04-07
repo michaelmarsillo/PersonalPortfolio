@@ -17,7 +17,7 @@ export default function ProjectCard({
         <div className="w-full bg-gray-800 p-4">
           <div className="relative overflow-hidden rounded-md transition-all duration-300 ease-in-out mx-auto">
             {/* image container  */}
-            <div className="w-full h-44 group-hover:h-96 transition-all duration-500 ease-in-out overflow-hidden">
+            <div className="w-full h-52 group-hover:h-96 transition-all duration-500 ease-in-out overflow-hidden">
               {/* shimmer placeholder with fade-out effect */}
               {!imageLoaded && (
                 <div className="absolute inset-0 w-full h-full rounded-md bg-gray-700">

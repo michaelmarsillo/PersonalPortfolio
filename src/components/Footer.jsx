@@ -49,7 +49,7 @@ export default function Footer({ className }) {
             >
               {link.icon && (
                 <>
-                  <link.icon className="w-5 h-5 text-blue-700" />
+                  <link.icon className="w-5 h-5 text-blue-600" />
                   <span className="font-medium text-gray-700 ">{link.name}</span>
                 </>
               )}
