@@ -114,11 +114,11 @@ function About() {
                                         <div className="pl-6 space-y-2">
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-                                                <p>C / Java / Python / FastAPI </p>
+                                                <p>C / Java / Python / Express </p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-                                                <p>Docker / AWS</p>
+                                                <p>Docker / AWS / Postman</p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
@@ -184,7 +184,7 @@ function About() {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    SpaCy
+                                                    spaCy
                                                 </a>
                                             </span>
                                         </p>
