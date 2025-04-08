@@ -59,25 +59,27 @@ export default function Footer({ className }) {
         </div>
 
 
-        <div className="flex justify-between items-center gap-5 mt-4 ">
+        <div className="flex justify-between items-center gap-5 mt-3">
           <div className="flex justify-between items-center mt-4 px-2">
-              <div className="text-[16px] font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+              <div className="text-[17px] font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                 {new Date().getFullYear()} © Michael Marsillo
               </div>
           </div>
           <div className="flex items-center justify-between">
-            <a href="https://wluring.xyz/api/michaelmarsillo/prev" className="text-2xl text-blue-500 hover:text-purple-500">←</a>
+            
+            <a href="https://wluring.xyz/api/michaelmarsillo/prev" className="text-2xl text-blue-500 hover:text-purple-500 duration-500">←</a>
+
             <div className="w-full max-w-xs h-full overflow-hidden group ">
               <a href="https://wluring.xyz" target="_blank" rel="noopener noreferrer">
               <img
                 src="/images/wluring_white.png"
                 alt="wluring"
-                className="object-cover w-16 transition-transform duration-500 group-hover:scale-110"
+                className="object-cover w-14 transition-transform duration-700 group-hover:scale-110"
               ></img>
-  
               </a>
             </div>
-            <a href="https://wluring.xyz/api/michaelmarsillo/next" className="text-2xl text-blue-500 hover:text-purple-500">→</a>
+
+            <a href="https://wluring.xyz/api/michaelmarsillo/next" className="text-2xl text-blue-500 hover:text-purple-500 duration-500">→</a>
           </div>
 
         </div>
