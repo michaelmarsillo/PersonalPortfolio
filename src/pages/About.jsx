@@ -109,7 +109,7 @@ function About() {
                                     <div className="space-y-4">
                                         <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                             <span className="text-gray-500">↳</span>
-                                            <p className="font-medium">Backend & Tools</p>
+                                            <p className="font-medium">Languages & Tools</p>
                                         </div>
                                         <div className="pl-6 space-y-2">
                                             <div className="flex items-center gap-2">
