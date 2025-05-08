@@ -97,7 +97,7 @@ function About() {
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                                <p>JavaScript</p>
+                                                <p>JavaScript / TypeScript</p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
@@ -109,12 +109,12 @@ function About() {
                                     <div className="space-y-4">
                                         <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                             <span className="text-gray-500">↳</span>
-                                            <p className="font-medium">Languages & Tools</p>
+                                            <p className="font-medium">Backend + Languages & Tools</p>
                                         </div>
                                         <div className="pl-6 space-y-2">
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-                                                <p>C / Java / Python / Express </p>
+                                                <p>C / Java / Python / Express / MongoDB</p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>

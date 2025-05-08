@@ -12,10 +12,18 @@ const Projects = () => {
             demoUrl: "https://cvlens.vercel.app/"
         },
         {
-            title: "Marx PDF",
+            title: "Roomify",
+            description: "MERN-stack web application that allows Canadian users to create an account, calculate their total TFSA contribution room, and manage their deposits and withdrawals. Shipped in 24hrs 🚀",
+            imageUrl: "/images/Roomify.png",
+            techStack: ["JavaScript", "Next.js", "Tailwind", "Express.js", "Node.js", "MongoDB", "Postman", "jsonwebtoken", "bcryptjs", "Git",],
+            githubUrl: "https://github.com/michaelmarsillo/Roomify",
+            demoUrl: "https://roomify-m.vercel.app/"
+        },
+        {
+            title: "MarxPDF",
             description: "A website designed to automate the process of filling out the ULT, PG.1 and JHA PDF forms for 40+ employees at the utility locating company I previously worked at.",
             imageUrl: "/images/marxpdf.png",
-            techStack: ["React.js", "Java Script", "HTML", "CSS", "pdf-lib", "Git",],
+            techStack: ["React.js", "JavaScript", "HTML", "CSS", "pdf-lib", "Git",],
             githubUrl: "https://github.com/michaelmarsillo/RPAforPDF",
             demoUrl: "https://marxpdf.vercel.app/"
         },
@@ -23,7 +31,7 @@ const Projects = () => {
             title: "Portfolio Website",
             description: "My personal wesbite showcasing my work, skills, and a little bit more about me. A good place to highlight my web dev abilities and what i've built.",
             imageUrl: "/images/portfoliowebsite.png",
-            techStack: ["React.js", "Tailwind", "Java Script", "HTML", "Git",],
+            techStack: ["React.js", "Tailwind", "JavaScript", "HTML", "Git",],
             githubUrl: "https://github.com/michaelmarsillo/PersonalPortfolio",
             demoUrl: "https://www.michaelmarsillo.ca/"
         }
