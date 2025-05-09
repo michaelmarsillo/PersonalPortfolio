@@ -7,7 +7,7 @@ const Projects = () => {
             title: "CVLens",
             description: "Fullstack app that extracts data from resumes in PDF/DOCX formats. Built NLP model using spaCy to pull details like education, skills, and work experience. Super clean and minimalist frontend made with Next.js and Tailwind.",
             imageUrl: "/images/cvlens.png",
-            techStack: ["Python", "Next.js", "Tailwind", "spaCy", "FastAPI", "Docker", "AWS", "Git",],
+            techStack: ["Python", "Next.js", "Tailwind", "spaCy", "FastAPI", "Docker", "Git",],
             githubUrl: "https://github.com/CVLens/CVLens",
             demoUrl: "https://cvlens.vercel.app/"
         },
