@@ -12,6 +12,14 @@ const Projects = () => {
             demoUrl: "https://cvlens.vercel.app/"
         },
         {
+            title: "Lucky Lease",
+            description: "A full-stack MVP for a peer-to-peer sublet marketplace, think Facebook Marketplace but designed for short-term housing like student sublets and intern rentals.🍀",
+            imageUrl: "/images/luckylease1.png",
+            techStack: ["TypeScript", "Next.js", "Tailwind", "Express.js", "Supabase", "Socket.io", "Gemini API", "Git",],
+            githubUrl: "https://github.com/TaseskiCS/LuckyLease",
+            demoUrl: "https://luckylease.co/"
+        },
+        {
             title: "Roomify",
             description: "MERN-stack web application that allows Canadian users to create an account, calculate their total TFSA contribution room, and manage their deposits and withdrawals. Shipped in 24hrs 🚀",
             imageUrl: "/images/Roomify.png",
