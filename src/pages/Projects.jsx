@@ -13,7 +13,7 @@ const Projects = () => {
         },
         {
             title: "Lucky Lease",
-            description: "A full-stack MVP for a peer-to-peer sublet marketplace, think Facebook Marketplace but designed for short-term housing like student sublets and intern rentals.🍀",
+            description: "A web-based platform for short-term subletting, focused on student and intern housing, like Facebook Marketplace, but purpose-built for rentals.🍀",
             imageUrl: "/images/luckylease1.png",
             techStack: ["TypeScript", "Next.js", "Tailwind", "Express.js", "Supabase", "Socket.io", "Gemini API", "Git",],
             githubUrl: "https://github.com/TaseskiCS/LuckyLease",
