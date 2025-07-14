@@ -32,7 +32,7 @@ function About() {
 
                             <p className="pl-6 text-gray-300 leading-relaxed">
                                 I'm a Computer Science student at Wilfrid Laurier University with a passion for web development and
-                                machine learning. Currently seeking Web Development co-op roles for Fall 2025.
+                                machine learning. Currently seeking Web Development co-op roles for Summer 2026.
                             </p>
 
                             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300 mt-6">

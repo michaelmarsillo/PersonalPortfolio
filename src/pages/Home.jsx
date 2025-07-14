@@ -10,7 +10,7 @@ function Home() {
               <span className="text-amber-500 flex-shrink-0">💻</span>
               <p className="text-sm sm:text-base">
                 seeking Web Development{" "}
-                <span className="bg-amber-900/30 px-1 py-0.5 text-amber-400 rounded">co-op</span> roles (Fall 2025)
+                <span className="bg-amber-900/30 px-1 py-0.5 text-amber-400 rounded">co-op</span> roles (Summer 2026)
               </p>
             </div>
 
