@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import About from "./pages/About"
 import Blog from "./blog/Blog"
+import BlogPost from "./blog/BlogPost"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import "./App.css"
@@ -18,6 +19,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </div>
         <Footer />
