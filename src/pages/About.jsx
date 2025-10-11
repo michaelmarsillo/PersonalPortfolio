@@ -90,16 +90,16 @@ function About() {
                                             <p className="font-medium">Languages</p>
                                         </div>
                                         <div className="pl-6 space-y-2">
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>JavaScript / TypeScript / CSS / HTML</p>
                                             </div>
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>C / Python / Java </p>
                                             </div>
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>Assembly / R / SQL</p>
                                             </div>
                                         </div>
@@ -111,16 +111,16 @@ function About() {
                                             <p className="font-medium">Tools</p>
                                         </div>
                                         <div className="pl-6 space-y-2">
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>Git / GitHub / Azure DevOps</p>
                                             </div>
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>Docker / Postman</p>
                                             </div>
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>MongoDB / SQL SMS</p>
                                             </div>
                                         </div>
@@ -133,16 +133,16 @@ function About() {
                                             <p className="font-medium">Frameworks</p>
                                         </div>
                                         <div className="pl-6 space-y-2">
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>React.js / Next.js / Tailwind</p>
                                             </div>
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>Node.js / Express.js</p>
                                             </div>
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                            <div className="flex items-start gap-2">
+                                                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                                                 <p>FastAPI / Spring Boot</p>
                                             </div>
                                         </div>
