@@ -31,8 +31,7 @@ function About() {
                             </div>
 
                             <p className="pl-6 text-gray-300 leading-relaxed">
-                                I'm a Computer Science student at Wilfrid Laurier University with a passion for web development and
-                                machine learning. Currently seeking Web Development co-op roles for Summer 2026.
+                                I'm a Computer Science student at Wilfrid Laurier University with a passion for software development and how tech shapes the modern business landscape. Currently seeking co-op roles for Summer 2026.
                             </p>
 
                             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300 mt-6">
@@ -84,24 +83,24 @@ function About() {
                                     <p className="font-medium text-gray-200 italic">skills & technologies:</p>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pl-8">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pl-8">
                                     <div className="space-y-4">
                                         <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                             <span className="text-gray-500">↳</span>
-                                            <p className="font-medium">Frontend Development</p>
+                                            <p className="font-medium">Languages</p>
                                         </div>
                                         <div className="pl-6 space-y-2">
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                                <p>React.js / Next.js</p>
+                                                <p>JavaScript / TypeScript / CSS / HTML</p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                                <p>JavaScript / TypeScript</p>
+                                                <p>C / Python / Java </p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                                <p>HTML / CSS / Tailwind</p>
+                                                <p>Assembly / R / SQL</p>
                                             </div>
                                         </div>
                                     </div>
@@ -109,20 +108,42 @@ function About() {
                                     <div className="space-y-4">
                                         <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                             <span className="text-gray-500">↳</span>
-                                            <p className="font-medium">Backend + Languages & Tools</p>
+                                            <p className="font-medium">Tools</p>
                                         </div>
                                         <div className="pl-6 space-y-2">
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-                                                <p>C / Java / Python / Express</p>
+                                                <p>Git / GitHub / Azure DevOps</p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-                                                <p>Docker / Postman / MongoDB</p>
+                                                <p>Docker / Postman</p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-                                                <p>Linux / Git / GitHub</p>
+                                                <p>MongoDB / SQL SMS</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="space-y-4">
+                                        <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
+                                            <span className="text-gray-500">↳</span>
+                                            <p className="font-medium">Frameworks</p>
+                                        </div>
+                                        <div className="pl-6 space-y-2">
+                                            <div className="flex items-center gap-2">
+                                                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                                <p>React.js / Next.js / Tailwind</p>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                                <p>Node.js / Express.js</p>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                                <p>FastAPI / Spring Boot</p>
                                             </div>
                                         </div>
                                     </div>
