@@ -14,9 +14,9 @@ Also the food was actually quite good too (shoutout to the organizers for keepin
 ## The Team
 ![SPURHACKS 2025 crop-square](/images/spurhacksteam.jpg)
 I teamed up with these three weirdos:
-- **[Tony Taseski](https://www.linkedin.com/in/a-taseski)** - Full-stack wizard
-- **[Gurshan Sidhar](https://www.linkedin.com/in/gurshan-sidhar)** - Backend mastermind  
-- **[Spencer Kelly](https://www.linkedin.com/in/spencergk)** - Frontend architect
+- **[Tony Taseski](https://www.linkedin.com/in/a-taseski)** - Full-stack
+- **[Gurshan Sidhar](https://www.linkedin.com/in/gurshan-sidhar)** - Backend
+- **[Spencer Kelly](https://www.linkedin.com/in/spencergk)** - Frontend
 
 We knew we wanted to build something that would solve a real problem for students like us.
 ## The Idea: LuckyLease 🍀
