@@ -65,6 +65,40 @@ function BlogPost() {
                     const altText = match[1];
                     const imageSrc = match[2];
                     
+                    // Check if this is a side-by-side image
+                    if (altText.includes('crop-half')) {
+                        // Look ahead to see if the next line is also a crop-half image
+                        const nextLine = lines[i + 1];
+                        const isNextImageHalf = nextLine && nextLine.trim().startsWith('![') && nextLine.includes('crop-half');
+                        
+                        if (isNextImageHalf) {
+                            // Process both images together
+                            const nextMatch = nextLine.match(/!\[(.*?)\]\((.*?)\)/);
+                            if (nextMatch) {
+                                elements.push(
+                                    <div key={key++} className="my-8 flex flex-row gap-4 justify-center items-center">
+                                        <div className="flex-1 max-w-[48%] aspect-[3/4] overflow-hidden">
+                                            <img 
+                                                src={imageSrc} 
+                                                alt={altText.replace(/crop-half\s*/, '')} 
+                                                className="rounded-lg border border-gray-700 w-full h-full object-cover object-center"
+                                            />
+                                        </div>
+                                        <div className="flex-1 max-w-[48%] aspect-[3/4] overflow-hidden">
+                                            <img 
+                                                src={nextMatch[2]} 
+                                                alt={nextMatch[1].replace(/crop-half\s*/, '')} 
+                                                className="rounded-lg border border-gray-700 w-full h-full object-cover object-center"
+                                            />
+                                        </div>
+                                    </div>
+                                );
+                                i++; // Skip the next line since we already processed it
+                                continue;
+                            }
+                        }
+                    }
+                    
                     let imageClass = "rounded-lg border border-gray-700 max-w-full h-auto";
                     let containerClass = "my-8";
                     
@@ -81,15 +115,32 @@ function BlogPost() {
                     } else if (altText.includes('crop-banner')) {
                         containerClass = "my-8 w-full aspect-[18/9] overflow-hidden";
                         imageClass = "rounded-lg border border-gray-700 w-full h-full object-cover object-center";
+                    } else if (altText.includes('crop-picture')) {
+                        containerClass = "my-8 flex justify-center";
+                        imageClass = "rounded-lg border border-gray-700 max-w-md w-full h-auto object-cover object-center";
+                    }
+                    
+                    // Check if next line is a caption (italic text)
+                    const nextLine = lines[i + 1];
+                    let caption = null;
+                    if (nextLine && nextLine.trim().startsWith('*') && nextLine.trim().endsWith('*') && !nextLine.trim().startsWith('**')) {
+                        // This is a caption
+                        caption = nextLine.trim().slice(1, -1); // Remove the * markers
+                        i++; // Skip the caption line in the main loop
                     }
                     
                     elements.push(
-                        <div key={key++} className={containerClass}>
-                            <img 
-                                src={imageSrc} 
-                                alt={altText.replace(/crop-(square|wide|portrait|banner)\s*/, '')} 
-                                className={imageClass}
-                            />
+                        <div key={key++} className={containerClass.includes('flex justify-center') ? containerClass : `${containerClass}`}>
+                            <div className={containerClass.includes('flex justify-center') ? 'w-full max-w-md' : 'w-full'}>
+                                <img 
+                                    src={imageSrc} 
+                                    alt={altText.replace(/crop-(square|wide|portrait|banner|picture|half)\s*/, '')} 
+                                    className={imageClass}
+                                />
+                                {caption && (
+                                    <p className="text-sm text-gray-400 italic mt-2 text-center">{caption}</p>
+                                )}
+                            </div>
                         </div>
                     );
                 }
