@@ -1,16 +1,16 @@
 function Home() {
   return (
-    <div className="bg-[#121212] text-gray-300 font-mono">
-      <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+    <div className="bg-[#121212] text-gray-300 font-mono overflow-x-hidden w-full">
+      <div className="container mx-auto px-4 sm:px-6 max-w-3xl w-full">
         {/* main div */}
-        <main className="pt-12 sm:pt-20 pb-8">
+        <main className="pt-12 sm:pt-20 pb-8 w-full overflow-hidden">
           <div className="space-y-4 sm:space-y-5">
             {/* work */}
             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
               <span className="text-amber-500 flex-shrink-0">💻</span>
               <p className="text-sm sm:text-base">
                 seeking software development{" "}
-                <span className="bg-amber-900/30 px-1 py-0.5 text-amber-400 rounded">co-op</span> roles (Summer 2026)
+                <span className="bg-amber-900/30 px-1 py-0.5 text-amber-400 rounded">co-op</span> roles (Winter 2027)
               </p>
             </div>
 
