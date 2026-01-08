@@ -1,5 +1,118 @@
 export const blogPosts = [
   {
+    id: 3,
+    title: "My First Co-op at Ricoh: 4 Months of Growth and Java",
+    date: "Dec 20, 2025",
+    excerpt: "Reflecting on my first co-op term as a software developer at Ricoh. Four months of learning Java, fixing bugs, and writing documentation.",
+    content: `
+**September - December 2025 | Waterloo, Ontario**
+
+Christmas break just hit, and I'm sitting here reflecting on something pretty significant, I just wrapped up my first ever co-op term working as a software developer. The last 4 months have been filled with learning, growth, and honestly, a lot of moments where I realized how much I didn't know (but quickly learned).
+
+The work term started back in the fall, and while everyone was returning from their summer and getting ready to go back to class, I was getting ready to start my first work term. This was an odd experience for me, especially since I was still living in Waterloo for the duration of my work term and got to see my roommates and friends come back from their summer, head to lectures, and complain about assignments while I was commuting to work.
+![Me At The Ricoh Office crop-picture](/images/halloweeneventricoh.jpg)
+
+## 1. The Commute & Finding Balance 🚌
+The commute to work was not bad at all, about a ~20 minute bus ride down King St and back in the evening. I actually really enjoyed this time to switch modes. Work mode in the morning, gym mode in the evening. I was also able to listen to music or study some pharmacology flashcards (shoutout Anki) to and from work.
+
+This experience made me realize something important about my priorities. I've been having second thoughts about working in Toronto for a future work term, especially since it would be over an hour commute each way. I have other things in my life that are super important to me (training, personal projects, content creation), and I wouldn't want my entire day to just be consumed by work and transit. I'm grateful that I got to stay in Waterloo for my first work term.
+![King Street Bus 7 crop-half](/images/bus7.png)
+![Tapping My WLU OneCard crop-half](/images/tappingonecard.png)
+> If you want to see a sneak peek of what my typical day looked like: work, commute, gym, and everything in between, I made a [day in the life](https://www.tiktok.com/@michaelmarsillo/video/7586443814638783765) TikTok that captures it pretty well.
+
+## 2. The Work: CloudStream ☁️
+The actual work I was doing was quite interesting. I'm not really sure how much I'm able to say, but I was working on the **CloudStream team at [Ricoh Canada](https://www.ricoh.ca/)**, which is their cloud-based print management software.
+
+Think of it this way: imagine a school or large office building with a bunch of printers that need to handle print requests from hundreds of clients. Traditionally, you'd need an on-premise server to handle all those requests. CloudStream uses... well, the cloud. It's a SaaS solution that manages everything remotely.
+### My Responsibilities:
+- **UI Development** - Worked mostly on the CloudStream web app UI
+- **Feature Implementation** - Making UI tweaks and implementing my own new features that I believed gave it a more modern feel
+- **Database Work** - Fixing an ample amount of string translations in the database for support across multiple locales (English, French, Spanish, Italian, etc.)
+- **Bug Fixes** - Squashing bugs and improving existing functionality
+
+I got assigned my tickets via **Jira** and used **Git** to make feature branches and push changes. The typical workflow was: pick up a ticket, create a feature branch, implement the fix/feature, test it thoroughly, push the changes, and create a pull request for code review.
+![Desktop Picture crop-half](/images/desktopshot.jpg)
+![Me Working crop-half](/images/working.png)
+
+## 3. The Tech Stack: Java, SmartGWT, and SQL 💻
+### What I Worked With:
+- **Backend:** Java (Spring Boot framework)
+- **Frontend:** SmartGWT - a frontend framework that converts Java code into JavaScript to be run in the browser (Don't get me started on SmartGWT...)
+- **Database:** SQL with SQL Server Management Studio (SSMS)
+- **Project Management:** Jira for ticket assignment and tracking
+- **Version Control:** Git for feature branches and version control
+### The SmartGWT Experience
+Working with SmartGWT was... an experience. It's not a modern framework by any means, and the learning curve was steep. But it forced me to really understand what's happening under the hood when you're building UIs.
+
+Why does this matter? Most modern web development uses frameworks like React, Vue, or Angular. SmartGWT is from a different era of web development. Learning it taught me:
+- **Debugging across layers** - Understanding how Java compiles to JavaScript
+- **Working with legacy code** - Not everything is built with the latest tech
+- **Patience and persistence** - When Stack Overflow doesn't have your answers
+- **Appreciation for modern frameworks** - You don't know what you have until it's gone
+
+## 4. Going Beyond Code: Writing Documentation 📝
+One thing I noticed early on was that there was **lacking documentation** for connecting your computer to a printer in-office for testing using the **DM Agent Deployment Tool**. This tool is needed to connect to a specific printer from your computer, but without proper documentation, it was a nightmare to set up.
+
+Trust me, the process was harder than it sounds.
+### The Solution I Created:
+I took the initiative to write a full, detailed guide with pictures explaining how to go about connecting to a printer. I documented:
+- Step-by-step setup process
+- Common errors and how to fix them  
+- Screenshots for every major step
+- Troubleshooting tips based on my own struggles
+
+This wasn't assigned work, it was just something I saw needed to be done. Future employees (and even future co-ops) would benefit from this, and that felt good to contribute.
+> **Key Takeaway:** Documentation is underrated. Writing good documentation is a skill that separates good developers from great ones. Future you (and future employees) will thank you.
+
+## 5. What I Learned: Scale, Speed, and Confidence 🚀
+### Scale Perspective
+This internship really helped me see software development from a **scale perspective**. I wasn't just building a personal project that 10 people might use, I was working on software that large organizations rely on daily.
+
+That changes how you think about:
+- **Error handling** - Because errors affect real businesses
+- **Performance** - Because slow software costs money
+- **Testing** - Because you can't just "push and hope"
+- **Backwards compatibility** - Because clients don't always update immediately
+### Java Skills Leveled Up
+Working with Java brought my skills up quite a bit. I'd used Java in school (shoutout CP213 and CP317), but this was different. Enterprise Java, Spring Boot, working with established patterns and conventions, it all clicked.
+
+Now I feel much more confident using Java and actually enjoy writing Java code. Understanding enterprise patterns, RESTful APIs, database connections, all of this became second nature.
+### Adapting Quickly
+I also feel like I was able to quickly adapt to the tickets I was assigned and start shipping code fast. I attribute this to my **prior personal project experience**.
+
+When you've built [CVLens](https://cvlens.vercel.app/), [Audiofy](https://audiofy-m.vercel.app/), [LuckyLease](https://luckylease.co/), and other projects from scratch, you develop problem-solving patterns that translate to any codebase:
+- Reading unfamiliar code quickly
+- Debugging systematically (not randomly)
+- Understanding architecture and design patterns
+- Knowing when to ask for help vs. figure it out yourself
+
+## 6. Wins I'm Proud Of 🏆
+- **Shipped features** that made it to production and are being used by real clients
+- **Improved UI responsiveness** on several key pages
+- **Fixed translation bugs** that had been open for months
+- **Wrote documentation** that the team actually uses
+- **Built relationships** with senior developers who gave great mentorship
+
+## Closing Thoughts
+Four months ago, I was nervous about starting my first co-op. Now, I'm wrapping it up with more confidence, better technical skills, and a clearer picture of what I want from my career.
+### Key Takeaways:
+- **Work-life balance matters** - Don't underestimate the impact of commute time
+- **Legacy tech teaches patience** - Not everything is React and TypeScript
+- **Documentation is valuable** - Write the docs you wish existed
+- **Personal projects transfer** - Side projects prepare you for real work
+- **Ask questions early** - Everyone expects you not to know everything
+![Walking To The Office crop-half](/images/walking1.png)
+![Walking To The Office 2 crop-half](/images/walking2.png)
+I learned what I value in a work environment: good mentorship, meaningful projects, work-life balance, and the opportunity to contribute beyond just my assigned tickets.
+> On to the next chapter. 🚀
+
+**Thanks to the CloudStream team at Ricoh for an incredible first co-op experience.**
+    `,
+    slug: "ricoh-co-op-2025",
+    readTime: "7 min read"
+  },
+
+  {
     id: 2,
     title: "Summer 2025: First Summer in Waterloo, and a lot of Change",
     date: "Sep 8, 2025",
