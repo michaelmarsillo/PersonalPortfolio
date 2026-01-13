@@ -1,5 +1,95 @@
 export const blogPosts = [
   {
+    id: 4,
+    title: "Building Audiofy: Bringing Back a Family Tradition with Code",
+    date: "Jan 5, 2026",
+    excerpt: "My family had this song quiz game we loved playing at the cottage. Then it got discontinued. So I built my own version with real-time multiplayer, websockets, and way too many technical challenges.",
+    content: `
+**October 2025 - January 2026 | Waterloo, Ontario**
+
+My family and I have this tradition. Whenever we get together at the cottage or during family gatherings, we'd play this song quiz game. It was simple - listen to a short clip, guess the artist, compete for bragging rights. It brought everyone together in a way that few things do.
+Then one day, the app got discontinued. Just... gone. And with it, our family tradition.
+I couldn't let that happen. So I decided to build it myself, not just recreate it, but make it better. Real-time multiplayer, multiple game modes, better song selection. That's how **[Audiofy](https://audiofy-m.vercel.app/)** was born.
+![Me And My Sisters At The Cottage crop-](/images/meandsistersatcottage.jpg)
+
+## The Concept 🎵
+The idea is simple: listen to a 7-second song clip, identify the artist from 4 options, score points based on speed and accuracy. But underneath that simplicity, there's a lot of complexity, especially when you want multiple people playing the same game in real-time.
+![Audiofy Homepage](/images/audiofyhome.png)
+### Game Modes
+- **Solo Play:** Classic 7-round quiz, perfect for practicing
+- **Multiplayer:** Real-time competitive mode with friends (up to 8 players)
+- **Heardle:** Wordle-style guessing with limited attempts
+- **Arcade:** Continuous gameplay with streak bonuses
+![Audiofy Gamemodes](/images/audiofygamemodes.png)
+
+## Challenge #1: The Spotify Problem 🎧
+When I started building this, I naturally went with Spotify. It's the biggest music platform, has a solid API, and seemed like the obvious choice.
+**The problem?** Spotify's preview URLs are incredibly unreliable.
+I'd fetch a playlist, and maybe 40% of the songs had working 30-second previews. Some genres were worse, older music or less popular songs often had no previews at all. This created a terrible user experience where games would break mid-round because a song had no audio.
+**The solution:** I switched to the **Apple Music API**.
+The difference was night and day. Apple Music has way better preview coverage, nearly every song has a working 30-second clip. Plus, no complex OAuth flow required for just fetching preview URLs. The integration was simpler, and the experience became consistent.
+> **Key Takeaway:** Sometimes the "obvious" choice isn't the best one. Real-world testing revealed the gap between what an API promises and what it delivers.
+
+## Challenge #2: Real-Time Multiplayer with WebSockets 🔌
+This was the hardest part of the project, and where I learned the most.
+The challenge: multiple players need to see the exact same game state at the exact same time. When the host starts a round, everyone needs to hear the same song clip simultaneously, see the same timer countdown, and have their scores update in real-time.
+### Why WebSockets?
+Traditional HTTP requests are one-way, client asks, server responds, connection closes. That doesn't work for real-time games where the server needs to push updates to all clients simultaneously.
+**WebSockets provide bidirectional, persistent connections.** The server can push updates to all connected clients instantly without them having to constantly poll for changes.
+I used **Socket.IO** to handle this.
+![Socket.IO Code crop-half](/images/websocketinit.png)
+### The Architecture
+**Key Socket Events:**
+- \`create-room\`: Host creates a game, server generates unique room code
+- \`join-room\`: Players join using the code
+- \`start-game\`: Host starts, server fetches songs and broadcasts to all
+- \`request-round\`: Triggers next round for everyone
+- \`submit-answer\`: Player answers, server calculates score and broadcasts updates
+- \`round-data\`: Server sends round info (song clip, options) to all clients
+
+### The Synchronization Problem
+Here's where it got tricky. Initially, I had each client run their own timer for the 7-second listening phase. 
+**This didn't work.** Client-side timers drift out of sync, one player's timer might be slightly faster or slower than another's. After a few rounds, players were seeing different phases at different times.
+**The solution:** Make the server the source of truth.
+When the server broadcasts the \`round-data\` event, all clients simultaneously:
+1. Transition to the listening phase
+2. Reset their local timer to 7 seconds  
+3. Start playing the audio clip
+4. React to the same server-controlled phase transitions
+This ensures everyone sees the same game state at the same time. The server controls when phases change, and clients just react to those events.
+![Synchronization Between Players (scores updating each round)](/images/audiofybetweenrounds.png)
+### Room Management
+- Maximum 8 players per room (keeps it manageable)
+- Host controls when the game starts
+- Automatic host reassignment if the host leaves
+- Guest user support - you don't need an account to play
+- Rooms persist until the last player leaves
+![Audiofy Waiting Room](/images/audiofywaitingroom.png)
+> **Key Takeaway:** Real-time multiplayer is hard. The server must be authoritative. Clients should never trust their own timers or state, stick to what the server says.
+
+## What I Learned 🚀
+Building Audiofy taught me more about real-time systems than any tutorial could. Key lessons:
+1. **API reliability matters more than features** - Apple Music's reliability made it the better choice for me
+2. **Synchronization is harder than it looks** - What seems simple ("just start a timer") becomes complex at scale
+3. **Server authority is crucial** - In multiplayer games, clients can't be trusted to maintain their own state
+4. **WebSockets aren't magic** - They solve specific problems really well, but you need to handle reconnections, state recovery, and edge cases
+5. **User experience trumps technical complexity** - The best tech stack is the one that makes the user experience seamless
+
+## The Joy of Building This ❤️
+The best part? Bringing back that family tradition. We've already played Audiofy at a few gatherings, and seeing my family compete, laugh at wrong answers, and enjoy the game makes all the technical challenges worth it.
+![Game Over Screen](/images/gameoverscreen.png)
+
+But for now, I'm happy with what it is - a functional, fun game that brought back a family tradition and taught me a ton about real-time systems.
+> **Try it out:** [audiofy](https://audiofy-m.vercel.app/)  
+> **Source code:** [github.com/michaelmarsillo/Audiofy](https://github.com/michaelmarsillo/Audiofy)
+
+If you're thinking about building something similar, do it. The technical challenges are worth it, and there's nothing quite like seeing people actually use something you built.
+    `,
+    slug: "building-audiofy",
+    readTime: "6 min read"
+  },
+
+  {
     id: 3,
     title: "My First Co-op at Ricoh: 4 Months of Growth and Java",
     date: "Dec 20, 2025",
