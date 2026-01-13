@@ -10,7 +10,7 @@ export const blogPosts = [
 My family and I have this tradition. Whenever we get together at the cottage or during family gatherings, we'd play this song quiz game. It was simple - listen to a short clip, guess the artist, compete for bragging rights. It brought everyone together in a way that few things do.
 Then one day, the app got discontinued. Just... gone. And with it, our family tradition.
 I couldn't let that happen. So I decided to build it myself, not just recreate it, but make it better. Real-time multiplayer, multiple game modes, better song selection. That's how **[Audiofy](https://audiofy-m.vercel.app/)** was born.
-![Me And My Sisters At The Cottage crop-](/images/meandsistersatcottage.jpg)
+![Me And My Sisters At The Cottage](/images/meandsistersatcottage.jpg)
 
 ## The Concept 🎵
 The idea is simple: listen to a 7-second song clip, identify the artist from 4 options, score points based on speed and accuracy. But underneath that simplicity, there's a lot of complexity, especially when you want multiple people playing the same game in real-time.
