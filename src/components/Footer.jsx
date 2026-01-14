@@ -45,12 +45,12 @@ export default function Footer({ className }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-gray-100 rounded-lg transition-all duration-300 hover:bg-gray-200 hover:scale-105 hover:shadow-md"
+              className="group flex items-center px-2.5 sm:px-3 py-1.5 sm:py-2 bg-gray-100 rounded-lg transition-all duration-500 ease-in-out hover:bg-gray-200 hover:scale-105 hover:shadow-md overflow-hidden"
             >
               {link.icon && (
                 <>
-                  <link.icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
-                  <span className="text-xs sm:text-base font-medium text-gray-700">{link.name}</span>
+                  <link.icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-xs sm:text-base font-medium text-gray-700 w-0 opacity-0 whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out group-hover:w-auto group-hover:opacity-100 group-hover:ml-1.5 sm:group-hover:ml-2">{link.name}</span>
                 </>
               )}
               {!link.icon && <span className="text-xs sm:text-base font-medium text-gray-700 hover:text-black">{link.name}</span>}
