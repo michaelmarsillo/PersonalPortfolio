@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 function About() {
-    const [activeTab, setActiveTab] = useState("technical")
+    const [activeTab, setActiveTab] = useState("personal")
 
     return (
         <div className="min-h-screen bg-[#121212] text-gray-300 font-mono flex flex-col overflow-x-hidden w-full">
@@ -46,15 +46,6 @@ function About() {
                     {/* tab navigation */}
                     <div className="flex border-b border-gray-800 mb-6 sm:mb-8 overflow-x-auto">
                         <button
-                            onClick={() => setActiveTab("technical")}
-                            className={`px-3 sm:px-4 py-2 text-sm sm:text-base font-medium transition-colors whitespace-nowrap ${activeTab === "technical"
-                                ? "text-purple-400 border-b-2 border-purple-400"
-                                : "text-gray-400 hover:text-gray-300"
-                                }`}
-                        >
-                            Technical
-                        </button>
-                        <button
                             onClick={() => setActiveTab("personal")}
                             className={`px-3 sm:px-4 py-2 text-sm sm:text-base font-medium transition-colors whitespace-nowrap ${activeTab === "personal"
                                 ? "text-purple-400 border-b-2 border-purple-400"
@@ -73,154 +64,6 @@ function About() {
                             Interests
                         </button>
                     </div>
-
-                    {/* technical tab */}
-                    {activeTab === "technical" && (
-                        <div className="space-y-6 sm:space-y-8 animate-fadeIn">
-                            <div className="space-y-3 sm:space-y-4">
-                                <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                    <span className="text-amber-500 flex-shrink-0">⚙️</span>
-                                    <p className="text-sm sm:text-base font-medium text-gray-200 italic">skills & technologies:</p>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pl-4 sm:pl-8">
-                                    <div className="space-y-3 sm:space-y-4">
-                                        <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                            <span className="text-gray-500 flex-shrink-0">↳</span>
-                                            <p className="text-sm sm:text-base font-medium">Languages</p>
-                                        </div>
-                                        <div className="pl-4 sm:pl-6 space-y-2 text-sm sm:text-base">
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>JavaScript / TypeScript / CSS / HTML</p>
-                                            </div>
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>C / Python / Java </p>
-                                            </div>
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>Assembly / R / SQL</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-3 sm:space-y-4">
-                                        <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                            <span className="text-gray-500 flex-shrink-0">↳</span>
-                                            <p className="text-sm sm:text-base font-medium">Tools</p>
-                                        </div>
-                                        <div className="pl-4 sm:pl-6 space-y-2 text-sm sm:text-base">
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>Git / GitHub / Azure DevOps</p>
-                                            </div>
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>Docker / Postman</p>
-                                            </div>
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>MongoDB / SQL SMS</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div className="space-y-3 sm:space-y-4">
-                                        <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                            <span className="text-gray-500 flex-shrink-0">↳</span>
-                                            <p className="text-sm sm:text-base font-medium">Frameworks</p>
-                                        </div>
-                                        <div className="pl-4 sm:pl-6 space-y-2 text-sm sm:text-base">
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>React.js / Next.js / Tailwind</p>
-                                            </div>
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>Node.js / Express.js</p>
-                                            </div>
-                                            <div className="flex items-start gap-2">
-                                                <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                                                <p>FastAPI / Spring Boot</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="space-y-3 sm:space-y-4">
-                                <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                    <span className="text-amber-500 flex-shrink-0">🎯</span>
-                                    <p className="text-sm sm:text-base font-medium text-gray-200 italic">current focus:</p>
-                                </div>
-
-                                <div className="pl-4 sm:pl-8 space-y-3 sm:space-y-4 text-sm sm:text-base">
-                                    <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                        <span className="text-gray-500">↳</span>
-                                        <p>
-                                            Deepening my knowledge of{" "}
-                                            <span className="px-1 py-0.5 text-purple-400 inline-flex items-baseline gap-1 bg-purple-900/30 rounded">
-                                                <a
-                                                    href="https://react.dev/"
-                                                    className="font-medium hover:text-amber-300 transition-colors"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    React.js
-                                                </a>
-                                            </span> and{" "}
-                                            <span className="bg-purple-900/30 px-1 py-0.5 text-purple-400 rounded">
-                                                <a
-                                                    href="https://nextjs.org/"
-                                                    className="font-medium hover:text-amber-300 transition-colors"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    Next.js
-                                                </a>
-                                            </span>
-                                        </p>
-                                    </div>
-
-                                    <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                        <span className="text-gray-500">↳</span>
-                                        <p>
-                                            Exploring machine learning with{" "}
-                                            <span className="bg-amber-900/30 px-1 py-0.5 text-amber-400 rounded">
-                                                <a
-                                                    href="https://www.python.org/"
-                                                    className="font-medium hover:text-purple-300 transition-colors"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    Python
-                                                </a>
-                                            </span> and{" "}
-                                            <span className="bg-amber-900/30 px-1 py-0.5 text-amber-400 rounded">
-                                                <a
-                                                    href="https://spacy.io/"
-                                                    className="font-medium hover:text-purple-300 transition-colors"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    spaCy
-                                                </a>
-                                            </span>
-                                        </p>
-                                    </div>
-
-                                    <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                        <span className="text-gray-500">↳</span>
-                                        <p>Building cool fullstack applications with purpose</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-                        </div>
-                    )}
 
                     {/* personal tab */}
                     {activeTab === "personal" && (
