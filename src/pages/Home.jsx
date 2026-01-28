@@ -61,7 +61,7 @@ function Home() {
               <div className="flex items-baseline space-x-2 sm:space-x-2">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
                 <p className="text-sm sm:text-base">
-                  <strong>who am i?</strong> <span className="text-purple-500">→</span> learn more{" "}
+                  <strong>who am i?</strong> <span className="text-purple-500">→</span>{" "}
                   <span className="bg-amber-900/30 px-1 text-amber-400 inline-flex items-baseline gap-1 rounded">
                     <a
                       href="/about"
@@ -71,7 +71,7 @@ function Home() {
                       about
                     </a>
                   </span>{" "}
-                  my journey and interests
+                  me, my journey & interests
                 </p>
               </div>
             </div>
@@ -80,8 +80,7 @@ function Home() {
               <div className="flex items-baseline space-x-2">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
                 <p className="text-sm sm:text-base">
-                  <strong>my thoughts & writings</strong> <span className="text-purple-500">→</span> explore my insights
-                  on my{" "}
+                  <strong>my thoughts & writings</strong> <span className="text-purple-500">→</span>{" "}
                   <span className="bg-amber-900/30 px-1 text-amber-400 inline-flex items-baseline gap-1 rounded">
                     <a
                       href="/blog"
@@ -124,7 +123,7 @@ function Home() {
             {/* roadmap */}
             <div className="flex items-baseline pb-2 space-x-2 hover:translate-x-1 transition-transform duration-300">
               <span className="text-amber-500 flex-shrink-0">💡</span>
-              <p className="font-medium text-gray-200 italic text-sm sm:text-base">some things i've been working on:</p>
+              <p className="font-medium text-gray-200 italic text-sm sm:text-base">lately:</p>
             </div>
 
             {/* recent projects */}

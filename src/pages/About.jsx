@@ -31,13 +31,22 @@ function About() {
                             </div>
 
                             <p className="pl-4 sm:pl-6 text-sm sm:text-base text-gray-300 leading-relaxed">
-                                I'm a Computer Science student at Wilfrid Laurier University with a passion for software development and how tech shapes the modern business landscape. Currently seeking co-op roles for Winter 2027.
+                                I'm a Computer Science student at Wilfrid Laurier University with a passion for software development and fitness.
                             </p>
 
                             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300 mt-4 sm:mt-6">
                                 <span className="text-amber-500 flex-shrink-0">♦</span>
                                 <p className="text-sm sm:text-base font-medium text-gray-200">
-                                    From <span className="bg-purple-900/30 px-1 py-0.5 text-purple-400 rounded">Ancaster Ontario, Canada</span>
+                                    From <span className="bg-purple-900/30 px-1 py-0.5 text-purple-400 rounded">
+                                        <a
+                                            href="https://en.wikipedia.org/wiki/Ancaster,_Ontario"
+                                            className="hover:text-amber-300 transition-colors"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Ancaster Ontario, Canada
+                                        </a>
+                                    </span>
                                 </p>
                             </div>
                         </div>
@@ -77,7 +86,7 @@ function About() {
                                 <div className="pl-4 sm:pl-8 space-y-3 sm:space-y-4">
                                     <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                         <span className="text-gray-500 flex-shrink-0">↳</span>
-                                        <p>Friday, March 13th, 2020, the start of the covid lockdown for all, except my house had a fire that forced me and my family to move out of our home.</p>
+                                        <p>Friday, March 13th, 2020, while the world went into lockdown, my house had a fire that forced my family and I to move out of our home.</p>
                                     </div>
 
                                     <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
@@ -95,9 +104,9 @@ function About() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
                                 <div className="space-y-2">
-                                    <div className="relative aspect-[3/4] rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
+                                    <div className="relative aspect-[5/6] rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
                                         <img
                                             src="/images/fireaftermath.JPG"
                                             alt="Fire aftermath"
@@ -111,7 +120,7 @@ function About() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <div className="relative aspect-[3/4] rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
+                                    <div className="relative aspect-[5/6] rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
                                         <img
                                             src="/images/2020setup.JPG"
                                             alt="Coding setup"
@@ -136,7 +145,7 @@ function About() {
                                     <p className="text-sm sm:text-base font-medium text-gray-200 italic">when I'm not coding:</p>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pl-4 sm:pl-8">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pl-4 sm:pl-8">
                                     <div className="space-y-3 sm:space-y-4">
                                         <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                             <span className="text-gray-500 flex-shrink-0">↳</span>
@@ -150,7 +159,7 @@ function About() {
                                             />
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-400">
-                                            Love the rush i get from carving through some fresh powder. Super relaxing and satisfying sport, but can also be great for challenging yourself.
+                                            Nothing beats carving through some fresh powder. It's my go to for clearing my head and pushing myself.
                                         </p>
                                     </div>
 
@@ -167,36 +176,7 @@ function About() {
                                             />
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-400">
-                                            Speaking of getting a rush, theres nothing quite like the rush you get from the wind blowing agaisnt you while you're cruising. Each ride is a new adventure.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pl-4 sm:pl-8 mt-6 sm:mt-8">
-                                    <div className="space-y-3 sm:space-y-4">
-                                        <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                            <span className="text-gray-500 flex-shrink-0">↳</span>
-                                            <p className="text-sm sm:text-base font-medium">Making Music </p>
-                                        </div>
-                                        <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-gray-700 group transition-all duration-300 hover:border-purple-500">
-                                            <img
-                                                src="/images/brazilianfunk.JPG"
-                                                alt="music"
-                                                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-                                            />
-                                        </div>
-                                        <p className="text-xs sm:text-sm text-gray-400">
-                                            I make {""}
-                                            <span className="px-1 py-0.5 text-purple-400 inline-flex items-baseline gap-1 bg-purple-900/30 rounded">
-                                                <a
-                                                    href="https://open.spotify.com/playlist/06O2X42ZCfKb6MRTu6agTR?si=709e86ab61c64306"
-                                                    className="font-medium hover:text-amber-300 transition-colors"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    brazilian funk,
-                                                </a>
-                                            </span> lowkey weird i know... but i fell in love with the genre back in 2023 and i cant stop listening.
+                                            There's nothing quite like the rush you get from the wind blowing against you while you're cruising.
                                         </p>
                                     </div>
 
@@ -213,17 +193,16 @@ function About() {
                                             />
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-400">
-                                            Been weight {""}
                                             <span className="px-1 py-0.5 text-purple-400 inline-flex items-baseline gap-1 bg-purple-900/30 rounded">
                                                 <a
-                                                    href="https://www.tiktok.com/@michaelmarsillo"
+                                                    href="https://linktr.ee/michaelmarsillo"
                                                     className="font-medium hover:text-amber-300 transition-colors"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    training
+                                                    Training
                                                 </a>
-                                            </span> 5 times a week since i was 16 years old. One of the best choices i've ever made.
+                                            </span> 5x a week since I was 16. One of the best decisions I've ever made. Truly changed my life.
                                         </p>
                                     </div>
                                 </div>
