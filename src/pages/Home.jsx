@@ -132,37 +132,37 @@ function Home() {
               <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
                 <p className="text-sm sm:text-base">
-                  launched a{" "}
+                  building cloudstream @{" "}
                   <span className="px-1 py-0.5 text-purple-400 inline-flex items-baseline gap-1 bg-purple-900/30 rounded">
                     <a
-                      href="https://marxpdf.vercel.app/"
+                      href="https://www.ricoh-usa.com/en/products/pd/software/mobile-printing-and-sharing/ricoh-cloudstream"
                       className="font-medium hover:text-amber-300 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      tool
+                      ricoh
                     </a>
                   </span>{" "}
-                  for a utility locating company to automate the process of paperwork for 40+ employees 👷🏼‍♂️
+                  ☁️
                 </p>
               </div>
 
               {/* lately 2 */}
-              <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
+                <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
                 <p className="text-sm sm:text-base">
-                  developed a{" "}
+                  working on my{" "}
                   <span className="px-1 py-0.5 text-purple-400 inline-flex items-baseline gap-1 bg-purple-900/30 rounded">
                     <a
-                      href="https://cvlens.vercel.app"
+                      href="https://www.youtube.com/@michaelmarsillofit"
                       className="font-medium hover:text-amber-300 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      model
+                      content
                     </a>
                   </span>{" "}
-                  for swift resume parsing to streamline the application process for jobs 🔍
+                  game 📷 (go sub ❤️)
                 </p>
               </div>
 
@@ -170,18 +170,18 @@ function Home() {
               <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
                 <p className="text-sm sm:text-base">
-                  built and shipped a{" "}
+                  built a real-time multiplayer music{" "}
                   <span className="px-1 py-0.5 text-purple-400 inline-flex items-baseline gap-1 bg-purple-900/30 rounded">
                     <a
-                      href="https://roomify-m.vercel.app/"
+                      href="https://audiofy-m.vercel.app"
                       className="font-medium hover:text-amber-300 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      tfsa calculator
+                      game
                     </a>
                   </span>{" "}
-                  app in 24hrs to help users calculate their TFSA contributions and balances 💰
+                  with 4 game modes, websockets, and a global leaderboard 🥇
                 </p>
               </div>
 
