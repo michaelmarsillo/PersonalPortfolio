@@ -52,9 +52,9 @@ export default function Footer({ className }) {
   ]
 
   return (
-    <footer className={`bg-[#121212] p-4 sm:p-6 flex flex-col items-center justify-center space-y-4 ${className}`}>
+    <footer className={`theme-bg p-4 sm:p-6 flex flex-col items-center justify-center space-y-4 ${className}`}>
       <div className="container mx-auto max-w-3xl px-2 sm:px-4">
-        <div className="border-t border-blue-800 pt-3 sm:pt-4 mb-2 sm:mb-3"></div>
+        <div className="border-t border-blue-700/40 dark:border-blue-800 pt-3 sm:pt-4 mb-2 sm:mb-3"></div>
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           {links.map((link, index) => (
             <a

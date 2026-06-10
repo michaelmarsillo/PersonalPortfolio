@@ -34,9 +34,9 @@ function BlogPost() {
     // Helper function to process bold text and links in any string
     const processFormatting = (text) => {
         // catch the links first: [text](url)
-        let formatted = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-blue-400 transition-colors underline">$1</a>');
+        let formatted = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-purple-700 hover:text-blue-700 dark:text-purple-400 dark:hover:text-blue-400 transition-colors underline">$1</a>');
         // then process bold text: **text**
-        formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>');
+        formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong class="theme-heading font-semibold">$1</strong>');
         return formatted;
     };
 
@@ -58,23 +58,23 @@ function BlogPost() {
             // Horizontal rules
             if (line.trim() === '---') {
                 elements.push(
-                    <hr key={key++} className="my-8 border-gray-800" />
+                    <hr key={key++} className="my-6 theme-border" />
                 );
             }
             // Headers
             else if (line.startsWith('# ')) {
                 elements.push(
-                    <h1 key={key++} className="text-3xl font-bold text-white mb-6 mt-8" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(2)) }}>
+                    <h1 key={key++} className="text-xl font-bold theme-heading mb-4 mt-6" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(2)) }}>
                     </h1>
                 );
             } else if (line.startsWith('## ')) {
                 elements.push(
-                    <h2 key={key++} className="text-2xl font-semibold text-white mb-4 mt-8" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(3)) }}>
+                    <h2 key={key++} className="text-lg font-semibold theme-heading mb-3 mt-6" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(3)) }}>
                     </h2>
                 );
             } else if (line.startsWith('### ')) {
                 elements.push(
-                    <h3 key={key++} className="text-xl font-semibold text-white mb-3 mt-6" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(4)) }}>
+                    <h3 key={key++} className="text-base font-semibold theme-heading mb-2 mt-5" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(4)) }}>
                     </h3>
                 );
             }
@@ -97,12 +97,12 @@ function BlogPost() {
                             const nextMatch = nextLine.match(/!\[(.*?)\]\((.*?)\)/);
                             if (nextMatch) {
                                 elements.push(
-                                    <div key={key++} className="my-8 flex flex-row gap-4 justify-center items-center">
+                                    <div key={key++} className="my-6 flex flex-row gap-3 justify-center items-center">
                                         <div className="flex-1 max-w-[48%] aspect-[3/4] overflow-hidden">
                                             <img 
                                                 src={imageSrc} 
                                                 alt={altText.replace(/crop-half\s*/, '')} 
-                                                className="rounded-lg border border-gray-700 w-full h-full object-cover object-center cursor-pointer hover:opacity-90 transition-opacity"
+                                                className="rounded-lg border theme-border-strong w-full h-full object-cover object-center cursor-pointer hover:opacity-90 transition-opacity"
                                                 onClick={() => setLightboxImage({ src: imageSrc, alt: altText.replace(/crop-half\s*/, '') })}
                                             />
                                         </div>
@@ -110,7 +110,7 @@ function BlogPost() {
                                             <img 
                                                 src={nextMatch[2]} 
                                                 alt={nextMatch[1].replace(/crop-half\s*/, '')} 
-                                                className="rounded-lg border border-gray-700 w-full h-full object-cover object-center cursor-pointer hover:opacity-90 transition-opacity"
+                                                className="rounded-lg border theme-border-strong w-full h-full object-cover object-center cursor-pointer hover:opacity-90 transition-opacity"
                                                 onClick={() => setLightboxImage({ src: nextMatch[2], alt: nextMatch[1].replace(/crop-half\s*/, '') })}
                                             />
                                         </div>
@@ -122,25 +122,25 @@ function BlogPost() {
                         }
                     }
                     
-                    let imageClass = "rounded-lg border border-gray-700 max-w-full h-auto";
-                    let containerClass = "my-8";
+                    let imageClass = "rounded-lg border theme-border-strong max-w-full h-auto";
+                    let containerClass = "my-6";
                     
                     // Different crop styles based on alt text keywords
                     if (altText.includes('crop-square')) {
-                        containerClass = "my-8 w-full aspect-square overflow-hidden";
-                        imageClass = "rounded-lg border border-gray-700 w-full h-full object-cover object-center";
+                        containerClass = "my-6 w-full aspect-square overflow-hidden";
+                        imageClass = "rounded-lg border theme-border-strong w-full h-full object-cover object-center";
                     } else if (altText.includes('crop-wide')) {
-                        containerClass = "my-8 w-full aspect-[16/9] overflow-hidden";
-                        imageClass = "rounded-lg border border-gray-700 w-full h-full object-cover object-center";
+                        containerClass = "my-6 w-full aspect-[16/9] overflow-hidden";
+                        imageClass = "rounded-lg border theme-border-strong w-full h-full object-cover object-center";
                     } else if (altText.includes('crop-portrait')) {
-                        containerClass = "my-8 w-full aspect-[3/4] overflow-hidden";
-                        imageClass = "rounded-lg border border-gray-700 w-full h-full object-cover object-center";
+                        containerClass = "my-6 w-full aspect-[3/4] overflow-hidden";
+                        imageClass = "rounded-lg border theme-border-strong w-full h-full object-cover object-center";
                     } else if (altText.includes('crop-banner')) {
-                        containerClass = "my-8 w-full aspect-[18/9] overflow-hidden";
-                        imageClass = "rounded-lg border border-gray-700 w-full h-full object-cover object-center";
+                        containerClass = "my-6 w-full aspect-[18/9] overflow-hidden";
+                        imageClass = "rounded-lg border theme-border-strong w-full h-full object-cover object-center";
                     } else if (altText.includes('crop-picture')) {
-                        containerClass = "my-8 flex justify-center";
-                        imageClass = "rounded-lg border border-gray-700 max-w-md w-full h-auto object-cover object-center";
+                        containerClass = "my-6 flex justify-center";
+                        imageClass = "rounded-lg border theme-border-strong max-w-md w-full h-auto object-cover object-center";
                     }
                     
                     // Check if next line is a caption (italic text)
@@ -162,7 +162,7 @@ function BlogPost() {
                                     onClick={() => setLightboxImage({ src: imageSrc, alt: altText.replace(/crop-(square|wide|portrait|banner|picture|half)\s*/, '') })}
                                 />
                                 {caption && (
-                                    <p className="text-sm text-gray-400 italic mt-2 text-center">{caption}</p>
+                                    <p className="text-xs theme-muted italic mt-2 text-center">{caption}</p>
                                 )}
                             </div>
                         </div>
@@ -172,14 +172,14 @@ function BlogPost() {
             // Blockquotes
             else if (line.startsWith('> ')) {
                 elements.push(
-                    <blockquote key={key++} className="border-l-4 border-purple-500 pl-4 py-2 my-4 bg-gray-900/50 text-gray-300 italic" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(2)) }}>
+                    <blockquote key={key++} className="border-l-4 border-[#829C80] pl-4 py-2 my-4 bg-[#ebe7e2] text-sm text-stone-800 dark:bg-[#2c3034] dark:text-gray-300 italic" dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(2)) }}>
                     </blockquote>
                 );
             }
             // Lists
             else if (line.startsWith('- ')) {
                 elements.push(
-                    <ul key={key++} className="list-disc list-inside text-gray-300 my-2 ml-2">
+                    <ul key={key++} className="list-disc list-inside theme-body text-sm my-1.5 ml-2">
                         <li dangerouslySetInnerHTML={{ __html: processFormatting(line.slice(2)) }}></li>
                     </ul>
                 );
@@ -187,7 +187,7 @@ function BlogPost() {
             // Bold text, links, and regular paragraphs
             else if (line.trim() !== '') {
                 elements.push(
-                    <p key={key++} className="text-gray-300 mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: processFormatting(line) }} />
+                    <p key={key++} className="theme-body text-sm mb-3 leading-6" dangerouslySetInnerHTML={{ __html: processFormatting(line) }} />
                 );
             }
         }
@@ -196,13 +196,13 @@ function BlogPost() {
     };
 
     return (
-        <div className="min-h-screen bg-[#121212] text-gray-300 font-mono">
-            <div className="container mx-auto px-4 py-14">
-                <div className="max-w-3xl mx-auto">
+        <div className="theme-bg min-h-screen">
+            <div className="container mx-auto px-4 py-8 sm:py-12">
+                <div className="max-w-2xl mx-auto">
                     {/* Back button */}
                     <Link 
                         to="/blog" 
-                        className="inline-flex items-center space-x-2 text-purple-400 hover:text-blue-400 transition-colors mb-8 group"
+                        className="inline-flex items-center space-x-2 text-sm text-purple-700 hover:text-blue-700 dark:text-purple-400 dark:hover:text-blue-400 transition-colors mb-6 group"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform duration-300 group-hover:-translate-x-1">
                             <path d="M19 12H5" />
@@ -212,34 +212,34 @@ function BlogPost() {
                     </Link>
 
                     {/* Post header */}
-                    <div className="mb-8">
-                        <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+                    <div className="mb-6">
+                        <div className="flex items-center space-x-4 text-xs theme-subtle mb-3">
                             <span>{post.date}</span>
                             <span>•</span>
                             <span>{post.readTime}</span>
                         </div>
-                        <h1 className="text-4xl font-bold text-white mb-4 leading-tight">
+                        <h1 className="text-2xl sm:text-3xl font-bold theme-heading mb-3 leading-tight">
                             {post.title}
                         </h1>
                     </div>
 
                     {/* Post content */}
-                    <article className="prose prose-invert max-w-none">
+                    <article className="prose max-w-none">
                         <div className="blog-content">
                             {renderContent(post.content)}
                         </div>
                     </article>
 
                     {/* Post footer */}
-                    <div className="mt-12 pt-8 border-t border-gray-800">
+                    <div className="mt-10 pt-6 border-t theme-border">
                         <div className="flex items-center justify-between">
                             <Link 
                                 to="/blog" 
-                                className="inline-flex items-center space-x-2 text-purple-400 hover:text-blue-400 transition-colors"
+                                className="inline-flex items-center space-x-2 text-sm text-purple-700 hover:text-blue-700 dark:text-purple-400 dark:hover:text-blue-400 transition-colors"
                             >
                                 <span>← Back to all posts</span>
                             </Link>
-                            <div className="flex items-center space-x-4 text-sm text-gray-500">
+                            <div className="flex items-center space-x-4 text-xs theme-subtle">
                                 <span>Published on {post.date}</span>
                             </div>
                         </div>
