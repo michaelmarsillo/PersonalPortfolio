@@ -110,11 +110,11 @@ code {
   }
 
   .theme-pill {
-    @apply bg-[#d8cabd] text-[#52684f] dark:bg-[#393631] dark:text-[#A8B5A2];
+    @apply bg-[#d8cabd] text-[#52684f] transition-colors duration-200 hover:bg-[#c9b8a8] dark:bg-[#393631] dark:text-[#A8B5A2] dark:hover:bg-[#453f38];
   }
 
   .theme-pill-hover {
-    @apply hover:text-[#3f523d] dark:hover:text-[#d7dfd1];
+    @apply hover:text-[#263b25] dark:hover:text-[#d7dfd1];
   }
 
   .theme-card-hover {
