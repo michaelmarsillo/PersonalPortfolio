@@ -121,3 +121,71 @@ code {
     @apply hover:bg-[#e1dad3] dark:hover:bg-[#34383d];
   }
 }
+
+.pixel-flag {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(82, 104, 79, 0.35);
+  border-radius: 2px;
+  image-rendering: pixelated;
+  box-shadow: 0 1px 0 rgba(41, 37, 36, 0.1);
+  transform-origin: left center;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.pixel-flag:hover {
+  border-color: rgba(130, 156, 128, 0.75);
+  box-shadow: 0 2px 8px rgba(130, 156, 128, 0.18);
+  animation: pixel-flag-wave 650ms steps(2, end) infinite alternate;
+}
+
+.pixel-flag-greece {
+  background: repeating-linear-gradient(
+    to bottom,
+    #4f85c7 0 11.111%,
+    #f7f4ed 11.111% 22.222%
+  );
+}
+
+.pixel-flag-greece::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 9px;
+  height: 8px;
+  background:
+    linear-gradient(to right, transparent 0 3px, #f7f4ed 3px 5px, transparent 5px),
+    linear-gradient(to bottom, transparent 0 3px, #f7f4ed 3px 5px, transparent 5px),
+    #4f85c7;
+}
+
+.pixel-flag-italy {
+  background: linear-gradient(
+    to right,
+    #4f7f59 0 33.333%,
+    #f7f4ed 33.333% 66.666%,
+    #b75a50 66.666% 100%
+  );
+}
+
+.dark .pixel-flag {
+  border-color: rgba(168, 181, 162, 0.3);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .pixel-flag:hover {
+  border-color: rgba(168, 181, 162, 0.8);
+}
+
+@keyframes pixel-flag-wave {
+  from {
+    transform: translateY(0) skewY(0deg);
+  }
+
+  to {
+    transform: translateY(-1px) skewY(-3deg);
+  }
+}

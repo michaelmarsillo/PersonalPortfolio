@@ -18,15 +18,35 @@ function About() {
                             </div>
                         </div>
 
-                        <div className="w-full md:w-2/3 space-y-3 self-center">
+                        <div className="w-full md:w-2/3 space-y-2 self-center">
                             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                 <span className="theme-accent flex-shrink-0">&diams;</span>
                                 <h2 className="text-base sm:text-lg font-medium theme-heading">aka Mike</h2>
+                                <span className="flex items-center gap-1.5" aria-label="Greek and Italian heritage">
+                                    <a
+                                        href="https://www.google.com/search?q=greece"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex"
+                                        aria-label="Search Greece"
+                                    >
+                                        <span className="pixel-flag pixel-flag-greece" title="Greek heritage" />
+                                    </a>
+                                    <a
+                                        href="https://www.google.com/search?q=italy"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex"
+                                        aria-label="Search Italy"
+                                    >
+                                        <span className="pixel-flag pixel-flag-italy" title="Italian heritage" />
+                                    </a>
+                                </span>
                             </div>
 
                             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                                 <span className="theme-accent flex-shrink-0">&diams;</span>
-                                <p className="text-sm font-medium theme-heading">
+                                <p className="text-xs sm:text-sm font-medium theme-heading">
                                     From{" "}
                                     <span className="theme-pill px-1 py-0.5 rounded">
                                         <a
