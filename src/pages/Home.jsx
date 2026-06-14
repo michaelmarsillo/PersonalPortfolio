@@ -53,7 +53,7 @@ function Home() {
                     className="group relative block overflow-hidden rounded-lg bg-gradient-to-br from-blue-600/10 to-purple-600/10 p-0.5 transition-all duration-300 hover:from-blue-500/20 hover:to-purple-500/20 hover:shadow-lg hover:shadow-purple-500/10"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="w-full sm:w-max relative flex items-center justify-center rounded-md bg-[#F2E6D5] px-3 sm:px-6 py-2 font-medium theme-heading transition-all duration-300 group-hover:bg-[#ebe7e2] group-hover:text-purple-700 dark:bg-[#242325] dark:group-hover:bg-[#2c3034] dark:group-hover:text-white">
+                    <div className="w-full sm:w-max relative flex items-center justify-center rounded-md bg-[#F1ebe1] px-3 sm:px-6 py-2 font-medium theme-heading transition-all duration-300 group-hover:bg-[#ebe7e2] group-hover:text-purple-700 dark:bg-[#242325] dark:group-hover:bg-[#2c3034] dark:group-hover:text-white">
                       <span className="mr-2 text-sm">view my projects</span>
                       <span className="transform transition-transform duration-300 group-hover:translate-x-1">⛏️</span>
                     </div>

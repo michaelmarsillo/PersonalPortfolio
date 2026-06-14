@@ -26,7 +26,7 @@ html, body {
   width: 100%;
   min-height: 100%;
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  background: #F2E6D5;
+  background: #F1ebe1;
   color: #292524;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,7 +50,7 @@ code {
 
 @layer components {
   .theme-bg {
-    @apply bg-[#F2E6D5] text-stone-800 dark:bg-[#242325] dark:text-stone-200 font-sans transition-colors duration-300;
+    @apply bg-[#F1ebe1] text-stone-800 dark:bg-[#242325] dark:text-stone-200 font-sans transition-colors duration-300;
   }
 
   .theme-heading {
