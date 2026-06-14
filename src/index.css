@@ -88,4 +88,36 @@ code {
   .theme-panel-soft {
     @apply bg-[#ebe7e2]/75 dark:bg-[#2c3034]/80;
   }
+
+  .theme-accent {
+    @apply text-[#6f846d] dark:text-[#A8B5A2];
+  }
+
+  .theme-accent-strong {
+    @apply text-[#52684f] dark:text-[#C0CBB9];
+  }
+
+  .theme-accent-hover {
+    @apply hover:text-[#52684f] dark:hover:text-[#C0CBB9];
+  }
+
+  .theme-accent-border-hover {
+    @apply hover:border-[#829C80]/60;
+  }
+
+  .theme-accent-shadow-hover {
+    @apply hover:shadow-[#829C80]/10;
+  }
+
+  .theme-pill {
+    @apply bg-[#d8cabd] text-[#52684f] dark:bg-[#393631] dark:text-[#A8B5A2];
+  }
+
+  .theme-pill-hover {
+    @apply hover:text-[#3f523d] dark:hover:text-[#d7dfd1];
+  }
+
+  .theme-card-hover {
+    @apply hover:bg-[#e1dad3] dark:hover:bg-[#34383d];
+  }
 }

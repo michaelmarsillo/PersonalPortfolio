@@ -11,7 +11,7 @@ export default function ProjectCard({
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div className="group w-full max-w-full theme-panel-solid rounded-lg overflow-hidden mb-5 sm:mb-6 border border-transparent transition-all duration-300 ease-in-out hover:border-purple-500/50 hover:shadow-md hover:shadow-purple-500/10">
+    <div className="group w-full max-w-full theme-panel-solid rounded-lg overflow-hidden mb-5 sm:mb-6 border border-transparent transition-all duration-300 ease-in-out theme-accent-border-hover hover:shadow-md theme-accent-shadow-hover">
       {/* image section */}
       {imageUrl && (
         <div className="w-full bg-[#e1dad3] dark:bg-[#282b2f] p-2.5 sm:p-3 overflow-hidden">

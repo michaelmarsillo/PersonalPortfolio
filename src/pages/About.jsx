@@ -9,7 +9,7 @@ function About() {
 
                     <div className="flex flex-col md:flex-row gap-5 sm:gap-6 mb-8 sm:mb-10">
                         <div className="w-full max-w-xs md:w-1/3 md:max-w-none">
-                            <div className="relative w-full aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 hover:border-purple-500">
+                            <div className="relative w-full aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 theme-accent-border-hover">
                                 <img
                                     src="/images/portfolioimage3.PNG"
                                     alt="About Profile Pic"
@@ -20,18 +20,18 @@ function About() {
 
                         <div className="w-full md:w-2/3 space-y-3 self-center">
                             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                <span className="text-amber-500 flex-shrink-0">&diams;</span>
+                                <span className="theme-accent flex-shrink-0">&diams;</span>
                                 <h2 className="text-base sm:text-lg font-medium theme-heading">aka Mike</h2>
                             </div>
 
                             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                                <span className="text-amber-500 flex-shrink-0">&diams;</span>
+                                <span className="theme-accent flex-shrink-0">&diams;</span>
                                 <p className="text-sm font-medium theme-heading">
                                     From{" "}
-                                    <span className="bg-purple-900/30 px-1 py-0.5 text-purple-400 rounded">
+                                    <span className="theme-pill px-1 py-0.5 rounded">
                                         <a
                                             href="https://en.wikipedia.org/wiki/Ancaster,_Ontario"
-                                            className="hover:text-amber-300 transition-colors"
+                                            className="theme-pill-hover transition-colors"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
@@ -45,7 +45,7 @@ function About() {
 
                     <section className="space-y-4 sm:space-y-5">
                         <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-                            <span className="text-amber-500 flex-shrink-0">&#10022;</span>
+                            <span className="theme-accent flex-shrink-0">&#10022;</span>
                             <p className="text-sm font-medium theme-heading italic">when I'm not coding:</p>
                         </div>
 
@@ -55,7 +55,7 @@ function About() {
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">Snowboarding</p>
                                 </div>
-                                <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 hover:border-purple-500">
+                                <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 theme-accent-border-hover">
                                     <img
                                         src="/images/snowboarding.JPG"
                                         alt="snowboarding"
@@ -72,7 +72,7 @@ function About() {
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">Riding a motorcycle</p>
                                 </div>
-                                <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 hover:border-purple-500">
+                                <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 theme-accent-border-hover">
                                     <img
                                         src="/images/motorcycle.jpg"
                                         alt="motorcycle"
@@ -89,7 +89,7 @@ function About() {
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">At the gym</p>
                                 </div>
-                                <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 hover:border-purple-500">
+                                <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 theme-accent-border-hover">
                                     <img
                                         src="/images/atthegym.png"
                                         alt="gym"
@@ -97,10 +97,10 @@ function About() {
                                     />
                                 </div>
                                 <p className="text-xs sm:text-sm theme-muted">
-                                    <span className="px-1 py-0.5 text-purple-400 inline-flex items-baseline gap-1 bg-purple-900/30 rounded">
+                                    <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">
                                         <a
                                             href="https://linktr.ee/michaelmarsillo"
-                                            className="font-medium hover:text-amber-300 transition-colors"
+                                            className="font-medium theme-pill-hover transition-colors"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >

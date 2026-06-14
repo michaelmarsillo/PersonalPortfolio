@@ -34,7 +34,7 @@ function BlogPost() {
     // Helper function to process bold text and links in any string
     const processFormatting = (text) => {
         // catch the links first: [text](url)
-        let formatted = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-purple-700 hover:text-blue-700 dark:text-purple-400 dark:hover:text-blue-400 transition-colors underline">$1</a>');
+        let formatted = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[#52684f] hover:text-[#3f523d] dark:text-[#A8B5A2] dark:hover:text-[#d7dfd1] transition-colors underline">$1</a>');
         // then process bold text: **text**
         formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong class="theme-heading font-semibold">$1</strong>');
         return formatted;
@@ -202,7 +202,7 @@ function BlogPost() {
                     {/* Back button */}
                     <Link 
                         to="/blog" 
-                        className="inline-flex items-center space-x-2 text-sm text-purple-700 hover:text-blue-700 dark:text-purple-400 dark:hover:text-blue-400 transition-colors mb-6 group"
+                        className="inline-flex items-center space-x-2 text-sm theme-accent theme-accent-hover transition-colors mb-6 group"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform duration-300 group-hover:-translate-x-1">
                             <path d="M19 12H5" />
@@ -235,7 +235,7 @@ function BlogPost() {
                         <div className="flex items-center justify-between">
                             <Link 
                                 to="/blog" 
-                                className="inline-flex items-center space-x-2 text-sm text-purple-700 hover:text-blue-700 dark:text-purple-400 dark:hover:text-blue-400 transition-colors"
+                                className="inline-flex items-center space-x-2 text-sm theme-accent theme-accent-hover transition-colors"
                             >
                                 <span>← Back to all posts</span>
                             </Link>

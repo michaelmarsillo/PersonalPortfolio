@@ -56,13 +56,13 @@ const Projects = () => {
                 ))}
 
                 <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300 pb-2">
-                    <span className="text-purple-500 flex-shrink-0">↳</span>
+                    <span className="theme-accent flex-shrink-0">↳</span>
                     <p className="text-sm">
                         feel free to check out the rest of my work {""}
-                        <span className="bg-blue-900/30 px-1 py-0.5 text-purple-500 rounded">
+                        <span className="theme-pill px-1 py-0.5 rounded">
                             <a
                                 href="https://github.com/michaelmarsillo?tab=repositories"
-                                className="font-medium hover:text-amber-300 transition-colors"
+                                className="font-medium theme-pill-hover transition-colors"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

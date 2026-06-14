@@ -259,9 +259,7 @@ Those simple moments that remind you what really matters, in a season filled wit
 
 ## Closing Thoughts
 So yeah, that's Summer 2025 in the 'loo. Not the loudest or flashiest summer, but probably one of the most meaningful ones I've had so far. A season of **change, reflection, and new beginnings**.
-
 Looking back, I think what made this summer special wasn't any single big moment, it was the collection of small ones. The quiet mornings, the first workout back, the softball games, the late-night conversations, the moments of solitude, and the time with family.
-
 > Turns out the quiet summers often shape us the most.
     `,
     slug: "summer-2025",

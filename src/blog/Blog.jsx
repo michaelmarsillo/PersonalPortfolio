@@ -19,9 +19,9 @@ function Blog() {
                                 to={`/blog/${post.slug}`}
                                 className="block group w-full"
                             >
-                                <div className="theme-panel border rounded-lg p-3 transition-all duration-300 hover:bg-[#e1dad3] dark:hover:bg-[#34383d] hover:border-purple-500/50 hover:translate-x-1 w-full overflow-hidden">
+                                <div className="theme-panel border rounded-lg p-3 transition-all duration-300 theme-card-hover theme-accent-border-hover hover:translate-x-1 w-full overflow-hidden">
                                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3 w-full">
-                                        <h2 className="text-base font-semibold theme-heading group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-tight break-words pr-2">
+                                        <h2 className="text-base font-semibold theme-heading group-hover:text-[#52684f] dark:group-hover:text-[#C0CBB9] transition-colors leading-tight break-words pr-2">
                                             {post.title}
                                         </h2>
                                         <span className="text-xs theme-subtle sm:flex-shrink-0 whitespace-nowrap">
@@ -39,7 +39,7 @@ function Blog() {
                                         <span className="theme-subtle">
                                             {post.readTime}
                                         </span>
-                                        <div className="flex items-center theme-subtle group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
+                                        <div className="flex items-center theme-subtle group-hover:text-[#52684f] dark:group-hover:text-[#C0CBB9] transition-colors">
                                             <span className="mr-1.5">Read more</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform duration-300 group-hover:translate-x-1">
                                                 <path d="M7 17L17 7" />
