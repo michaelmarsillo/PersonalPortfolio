@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Satisfy&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -46,6 +46,54 @@ html, body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.signature-name,
+.signature-name-canvas {
+  display: inline-flex;
+  width: 112px;
+  max-width: 30vw;
+  height: 26px;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: visible;
+  align-items: center;
+}
+
+.signature-name-canvas svg {
+  display: block;
+  overflow: visible;
+  transform: translateY(4px);
+}
+
+.signature-name-canvas svg path {
+  stroke: currentColor !important;
+  transition: stroke 300ms ease;
+}
+
+.signature-name-canvas svg path[stroke="transparent"] {
+  stroke: transparent !important;
+}
+
+.signature-name-static {
+  display: inline-block;
+  font-family: 'Satisfy', cursive;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+@media (min-width: 640px) {
+  .signature-name,
+  .signature-name-canvas {
+    width: 168px;
+    height: 32px;
+  }
+
+  .signature-name-static {
+    font-size: 1.25rem;
+  }
 }
 
 @layer components {
