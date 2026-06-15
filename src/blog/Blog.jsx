@@ -30,24 +30,25 @@ function Blog() {
                                             </span>
                                         </div>
 
-                                        <div className="mt-1 flex items-center justify-between gap-3 text-xs">
-                                            <span className="theme-subtle whitespace-nowrap">
-                                                {post.readTime}
-                                            </span>
-                                            <div className="flex items-center theme-subtle group-hover:text-[#52684f] dark:group-hover:text-[#C0CBB9] transition-colors">
-                                                <span className="mr-1.5">Read more</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform duration-300 group-hover:translate-x-1">
-                                                    <path d="M7 17L17 7" />
-                                                    <path d="M7 7h10v10" />
-                                                </svg>
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out sm:group-hover:max-h-12 sm:group-hover:opacity-100 sm:group-focus-within:max-h-12 sm:group-focus-within:opacity-100">
                                         <p className="pt-2 text-[11px] sm:text-xs theme-muted line-clamp-2 leading-snug">
                                             {post.excerpt}
                                         </p>
+                                    </div>
+
+                                    <div className="mt-1 flex items-center justify-between gap-3 text-xs">
+                                        <span className="theme-subtle whitespace-nowrap">
+                                            {post.readTime}
+                                        </span>
+                                        <div className="flex items-center theme-subtle group-hover:text-[#52684f] dark:group-hover:text-[#C0CBB9] transition-colors">
+                                            <span className="mr-1.5">Read more</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform duration-300 group-hover:translate-x-1">
+                                                <path d="M7 17L17 7" />
+                                                <path d="M7 7h10v10" />
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </Link>
