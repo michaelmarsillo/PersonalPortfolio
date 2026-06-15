@@ -180,6 +180,54 @@ code {
   border-color: rgba(168, 181, 162, 0.8);
 }
 
+.pixel-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 22px;
+  height: 20px;
+  flex: 0 0 auto;
+  color: #292524;
+  transform-origin: center;
+}
+
+.dark .pixel-icon-link {
+  color: #f5f5f4;
+}
+
+.interest-svg {
+  display: block;
+  width: auto;
+  height: 17px;
+  filter: none;
+  transform-origin: center;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.interest-svg-snowboard {
+  height: 21px;
+}
+
+.interest-svg-motorcycle {
+  height: 20px;
+}
+
+.interest-svg-dumbbell {
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 10;
+}
+
+.pixel-icon-link:hover .interest-svg {
+  filter: drop-shadow(0 2px 4px rgba(41, 37, 36, 0.16));
+  animation: pixel-charm-bounce 650ms steps(2, end) infinite alternate;
+}
+
+.dark .pixel-icon-link:hover .interest-svg {
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.12));
+}
+
 @keyframes pixel-flag-wave {
   from {
     transform: translateY(0) skewY(0deg);
@@ -187,5 +235,15 @@ code {
 
   to {
     transform: translateY(-1px) skewY(-3deg);
+  }
+}
+
+@keyframes pixel-charm-bounce {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-1px) rotate(-2deg);
   }
 }
