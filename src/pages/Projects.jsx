@@ -5,42 +5,42 @@ const Projects = () => {
     const projects = [
         {
             title: "CVLens",
-            description: "Fullstack app that extracts data from resumes in PDF/DOCX formats. Built NLP model using spaCy to pull details like education, skills, and work experience. Super clean and minimalist frontend made with Next.js and Tailwind. 🔍",
+            description: "Fullstack resume parser that extracts structured data from PDF/DOCX files using NLP. Clean Next.js frontend with a spaCy-powered backend.",
             imageUrl: "/images/cvlens.png",
             githubUrl: "https://github.com/CVLens/CVLens",
             demoUrl: "https://cvlens.vercel.app/"
         },
         {
             title: "Lucky Lease",
-            description: "A web-based platform for short-term subletting, focused on student and intern housing, like Facebook Marketplace, but purpose-built for rentals. 🍀",
+            description: "Short-term subletting platform for students and interns. Built like a cleaner marketplace, but purpose-built for rentals.",
             imageUrl: "/images/luckylease1.png",
             githubUrl: "https://github.com/TaseskiCS/LuckyLease",
             demoUrl: "https://luckylease.co/"
         },
         {
             title: "Audiofy",
-            description: "Music trivia game. Guess artists from 7-second song previews. Built with multiple game modes (Solo, Multiplayer, Heardle, Arcade), and a global leaderboard. Inspired by the family game I used to play at the cottage. 🎵",
+            description: "Music trivia game built around 7-second song previews. Includes solo, multiplayer, arcade modes, and a global leaderboard.",
             imageUrl: "/images/audiofyhome.png",
             githubUrl: "https://github.com/michaelmarsillo/Audiofy",
             demoUrl: "https://audiofy-m.vercel.app/"
         },
         {
             title: "Roomify",
-            description: "MERN-stack web application that allows Canadian users to create an account, calculate their total TFSA contribution room, and manage their deposits and withdrawals. Shipped in 24hrs. 🚀",
+            description: "MERN app for Canadians to calculate TFSA contribution room and track deposits/withdrawals. Designed and shipped in 24 hours.",
             imageUrl: "/images/Roomify.png",
             githubUrl: "https://github.com/michaelmarsillo/Roomify",
             demoUrl: "https://roomify-m.vercel.app/"
         },
         {
             title: "MarxPDF",
-            description: "A web app designed to automate the process of filling out the ULT, PG.1 and JHA PDF forms for 40+ employees at the utility locating company I previously worked at. 📄",
+            description: "PDF automation tool for utility locating forms. Streamlined ULT, PG.1, and JHA paperwork for 40+ employees.",
             imageUrl: "/images/marxpdf.png",
             githubUrl: "https://github.com/michaelmarsillo/RPAforPDF",
             demoUrl: "https://marxpdf.vercel.app/"
         },
         {
             title: "Portfolio Website",
-            description: "My personal wesbite showcasing my work, skills, and a little bit more about me. A good place to highlight my web dev abilities and what i've built. 🌐",
+            description: "Personal portfolio for my projects, writing, and a snapshot of who I am. Built to feel minimal, fast, and personal.",
             imageUrl: "/images/portfoliowebsite.png",
             githubUrl: "https://github.com/michaelmarsillo/PersonalPortfolio",
             demoUrl: "https://www.michaelmarsillo.ca/"
@@ -49,14 +49,14 @@ const Projects = () => {
 
     return (
         <div className="theme-bg min-h-screen flex flex-col overflow-x-hidden w-full">
-            <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-10 w-full">
+            <div className="max-w-xl mx-auto px-4 sm:px-6 py-8 sm:py-10 w-full">
                 <h1 className="text-xl sm:text-2xl font-bold italic theme-heading mb-5 sm:mb-6 break-words">My Projects</h1>
                 {projects.map((project, index) => (
                     <ProjectCard key={index} {...project} />
                 ))}
 
                 <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300 pb-2">
-                    <span className="theme-accent flex-shrink-0">↳</span>
+                    <span className="theme-accent flex-shrink-0">&#8627;</span>
                     <p className="text-sm">
                         feel free to check out the rest of my work {""}
                         <span className="theme-pill px-1 py-0.5 rounded">
@@ -71,7 +71,6 @@ const Projects = () => {
                         </span>
                     </p>
                 </div>
-                  
             </div>
         </div>
     );

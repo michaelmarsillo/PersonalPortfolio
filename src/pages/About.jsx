@@ -24,7 +24,7 @@ function About() {
     return (
         <div className="theme-bg min-h-screen flex flex-col overflow-x-hidden w-full">
             <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 flex-1 w-full">
-                <div className="max-w-3xl mx-auto w-full overflow-hidden">
+                <div className="max-w-2xl mx-auto w-full overflow-hidden">
                     <h1 className="text-xl sm:text-2xl font-bold italic theme-heading mb-5 sm:mb-6 break-words">
                         The Story So Far
                     </h1>
