@@ -114,7 +114,7 @@ function About() {
                                     />
                                 </div>
                                 <p className="text-xs sm:text-sm theme-muted">
-                                    nothing beats carving through some fresh powder. it's my go to for clearing my head and pushing myself.
+                                    fresh powder, clear head, no better reset.
                                 </p>
                             </div>
 
@@ -139,7 +139,7 @@ function About() {
                                     />
                                 </div>
                                 <p className="text-xs sm:text-sm theme-muted">
-                                    there's nothing quite like the rush you get from the wind blowing against you while you're cruising.
+                                    chasing that open road feeling.
                                 </p>
                             </div>
 
@@ -175,7 +175,7 @@ function About() {
                                             training
                                         </a>
                                     </span>{" "}
-                                    5x a week since i was 16. one of the best decisions i've ever made. truly changed my life.
+                                    5x a week since 16. changed everything.
                                 </p>
                             </div>
                         </div>
