@@ -78,15 +78,15 @@ code {
   }
 
   .theme-panel {
-    @apply bg-[#ebe7e2] border-[#ddd6cf] dark:bg-[#2c3034] dark:border-[#3a4045];
+    @apply bg-[#ebe7e2] border-[#ddd6cf] dark:bg-[#2c3034] dark:border-[#3a4045] transition-colors duration-300;
   }
 
   .theme-panel-solid {
-    @apply bg-[#ebe7e2] dark:bg-[#2c3034];
+    @apply bg-[#ebe7e2] dark:bg-[#2c3034] transition-colors duration-300;
   }
 
   .theme-panel-soft {
-    @apply bg-[#ebe7e2]/75 dark:bg-[#2c3034]/80;
+    @apply bg-[#ebe7e2]/75 dark:bg-[#2c3034]/80 transition-colors duration-300;
   }
 
   .theme-accent {
