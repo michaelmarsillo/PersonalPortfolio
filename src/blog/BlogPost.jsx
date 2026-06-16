@@ -196,9 +196,9 @@ function BlogPost() {
     };
 
     return (
-        <div className="theme-bg min-h-screen">
+        <div className="theme-bg">
             <div className="container mx-auto px-4 py-8 sm:py-12">
-                <div className="max-w-2xl mx-auto">
+                <div className="max-w-xl mx-auto">
                     {/* Back button */}
                     <Link 
                         to="/blog" 

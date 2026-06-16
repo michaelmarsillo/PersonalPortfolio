@@ -5,7 +5,7 @@ import { blogPosts } from "./blogData";
 
 function Blog() {
     return (
-        <div className="theme-bg min-h-screen overflow-x-hidden w-full">
+        <div className="theme-bg overflow-x-hidden w-full">
             <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 w-full">
                 <div className="max-w-xl mx-auto w-full">
                     <div className="mb-5 sm:mb-6">

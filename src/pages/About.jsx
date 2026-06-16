@@ -22,7 +22,7 @@ const DumbbellIcon = ({ title }) => (
 
 function About() {
     return (
-        <div className="theme-bg min-h-screen flex flex-col overflow-x-hidden w-full">
+        <div className="theme-bg flex flex-col overflow-x-hidden w-full">
             <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 flex-1 w-full">
                 <div className="max-w-2xl mx-auto w-full overflow-hidden">
                     <h1 className="text-xl sm:text-2xl font-bold italic theme-heading mb-5 sm:mb-6 break-words">
