@@ -4,6 +4,7 @@ function Home() {
       <div className="container mx-auto px-4 sm:px-6 max-w-xl w-full">
         {/* main div */}
         <main className="pt-10 sm:pt-14 pb-8 w-full overflow-hidden">
+          <div className="mx-auto w-fit max-w-full">
           <div className="space-y-3 sm:space-y-4">
 
 
@@ -198,6 +199,7 @@ function Home() {
               </div>
 
             </div>
+          </div>
           </div>
         </main>
       </div>
