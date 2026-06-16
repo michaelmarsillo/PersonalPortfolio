@@ -1,64 +1,72 @@
 function Home() {
   return (
     <div className="theme-bg overflow-x-hidden w-full">
-      <div className="container mx-auto px-4 sm:px-6 max-w-2xl w-full">
+      <div className="container mx-auto px-4 sm:px-6 max-w-xl w-full">
         {/* main div */}
         <main className="pt-10 sm:pt-14 pb-8 w-full overflow-hidden">
           <div className="space-y-3 sm:space-y-4">
 
-               <div className="flex justify-center items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-              <span className="theme-accent flex-shrink-0">renovations in progress.</span>
-            </div>
 
-
-            {/* work */}
-            <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
-              <span className="theme-accent flex-shrink-0">💻</span>
-              <p className="text-sm">
-                seeking software development{" "}
-                <span className="theme-pill px-1 py-0.5 rounded">co-op</span> roles (Winter 2027)
-              </p>
-            </div>
-
+            {/* education */}
             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
               <span className="theme-accent flex-shrink-0">🏫</span>
               <p className="text-sm">
                 cs @{" "}
                 <span className="theme-pill px-1 inline-flex items-baseline gap-1 rounded">
-                  <a
-                    href="https://wlu.ca"
-                    className="font-medium theme-pill-hover transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Laurier
+                    <a
+                      href="https://wlu.ca"
+                      className="font-medium theme-pill-hover transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                    laurier
                   </a>
                 </span>{" "}
-                BSc + Minor in Statistics
+                bsc + minor in statistics
               </p>
             </div>
+
+            
+            {/* work */}
+            <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
+              <span className="theme-accent flex-shrink-0">💻</span>
+              <p className="text-sm">
+                seeking software development{" "}
+                <span className="theme-pill px-1 py-0.5 rounded">
+                  <a
+                      href="https://www.wlu.ca/information-for/community-members/employers/co-op/index.html"
+                      className="font-medium theme-pill-hover transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                     co-op
+                    </a>
+                  </span> roles (winter 2027)
+              </p>
+            </div>
+
 
             {/* roadmap */}
             <div className="pt-5 flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
               <span className="theme-accent flex-shrink-0">📌</span>
-              <p className="font-medium theme-heading italic text-sm">roadmap:</p>
+              <p className="font-medium theme-heading italic text-sm">roadmap</p>
             </div>
 
             <div className="pl-4 sm:pl-8 flex items-start relative hover:translate-x-1 transition-transform duration-300">
-              <div className="flex items-baseline space-x-2 sm:space-x-4 w-full">
+              <div className="flex items-baseline space-x-2">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
-                <div className="p-1 sm:p-2 rounded-lg theme-panel-soft border theme-border w-full sm:w-auto">
+                <p className="text-sm">
+                  <strong>view my</strong> <span className="theme-accent">→</span>{" "}
                   <a
                     href="/projects"
-                    className="group relative block overflow-hidden rounded-lg border theme-border p-0.5 transition-all duration-300 theme-accent-border-hover hover:shadow-lg theme-accent-shadow-hover"
+                    className="group inline-flex items-center rounded px-2.5 py-1 font-medium theme-pill transition-all duration-300"
                   >
-                    <span className="absolute inset-0 bg-[#829C80]/15 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="w-full sm:w-max relative flex items-center justify-center rounded-md bg-[#F1ebe1] px-3 sm:px-6 py-2 font-medium theme-heading transition-all duration-300 group-hover:bg-[#ebe7e2] group-hover:text-[#52684f] dark:bg-[#242325] dark:group-hover:bg-[#2c3034] dark:group-hover:text-[#C0CBB9]">
-                      <span className="mr-2 text-sm">view my projects</span>
-                      <span className="transform transition-transform duration-300 group-hover:translate-x-1">⛏️</span>
-                    </div>
+                    <span className="flex items-center gap-1.5 theme-pill-hover transition-all duration-300 group-hover:translate-x-0.5">
+                      projects
+                      <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">⛏️</span>
+                    </span>
                   </a>
-                </div>
+                </p>
               </div>
             </div>
 
@@ -77,7 +85,7 @@ function Home() {
                       about
                     </a>
                   </span>{" "}
-                  me, my journey & interests
+                  me & my interests
                 </p>
               </div>
             </div>
@@ -107,7 +115,7 @@ function Home() {
                   <strong>you can also <span className="theme-accent">→</span> {""}</strong>
                 <a
                   href="/resume/MichaelMarsillo_Resume.pdf"
-                  className="group inline-flex items-center rounded px-3 py-1 font-medium theme-pill transition-all duration-300"
+                  className="group inline-flex items-center rounded px-2.5 py-1 font-medium theme-pill transition-all duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -124,11 +132,11 @@ function Home() {
           </div>
 
 
-          <div className="mt-10 sm:mt-12">
+          <div className="mt-8 sm:mt-10">
             {/* roadmap */}
             <div className="flex items-baseline pb-2 space-x-2 hover:translate-x-1 transition-transform duration-300">
               <span className="theme-accent flex-shrink-0">💡</span>
-              <p className="font-medium theme-heading italic text-sm">lately:</p>
+              <p className="font-medium theme-heading italic text-sm">lately</p>
             </div>
 
             {/* recent projects */}
@@ -147,8 +155,7 @@ function Home() {
                     >
                       ricoh
                     </a>
-                  </span>{" "}
-                  ☁️
+                  </span>
                 </p>
               </div>
 
@@ -167,7 +174,7 @@ function Home() {
                       content
                     </a>
                   </span>{" "}
-                  game 📷 (go sub ❤️)
+                  game
                 </p>
               </div>
 
@@ -175,7 +182,7 @@ function Home() {
               <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
                 <span className="text-gray-500 flex-shrink-0">↳</span>
                 <p className="text-sm">
-                  built a real-time multiplayer music{" "}
+                  built{" "}
                   <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">
                     <a
                       href="https://audiofy-m.vercel.app"
@@ -183,10 +190,10 @@ function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      game
+                      audiofy
                     </a>
                   </span>{" "}
-                  with 4 game modes, websockets, and a global leaderboard 🥇
+                  a real-time music game
                 </p>
               </div>
 

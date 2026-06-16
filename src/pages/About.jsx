@@ -96,6 +96,7 @@ function About() {
                                 <div className="flex min-h-8 items-center gap-2 hover:translate-x-1 transition-transform duration-300">
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">Snowboarding</p>
+                                    <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">
                                     <a
                                         href="https://www.youtube.com/watch?v=tTMI8vz6EJE&t=955s"
                                         target="_blank"
@@ -105,6 +106,7 @@ function About() {
                                     >
                                         <SnowboardIcon title="Glen Eden video" />
                                     </a>
+                                    </span>
                                 </div>
                                 <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 theme-accent-border-hover">
                                     <img
@@ -122,6 +124,7 @@ function About() {
                                 <div className="flex min-h-8 items-center gap-2 hover:translate-x-1 transition-transform duration-300">
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">Riding a motorcycle</p>
+                                    <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">
                                     <span
                                         className="pixel-icon-link"
                                         title="Motorcycle video coming soon"
@@ -129,6 +132,7 @@ function About() {
                                         aria-label="Motorcycle video coming soon"
                                     >
                                         <MotorcycleIcon title="Link soon" />
+                                    </span>
                                     </span>
                                 </div>
                                 <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 theme-accent-border-hover">
@@ -147,6 +151,7 @@ function About() {
                                 <div className="flex min-h-8 items-center gap-2 hover:translate-x-1 transition-transform duration-300">
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">At the gym</p>
+                                    <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">
                                     <a
                                         href="https://www.youtube.com/watch?v=uZzHG8SAD0Y"
                                         target="_blank"
@@ -156,6 +161,7 @@ function About() {
                                     >
                                         <DumbbellIcon title="Favourite gym video" />
                                     </a>
+                                    </span>
                                 </div>
                                 <div className="relative aspect-square rounded-lg overflow-hidden border-2 theme-border-strong group transition-all duration-300 theme-accent-border-hover">
                                     <img
