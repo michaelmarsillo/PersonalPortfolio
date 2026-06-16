@@ -62,10 +62,10 @@ export default function Footer({ className }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center px-2.5 sm:px-3 py-1.5 sm:py-2 theme-pill rounded-lg transition-all duration-500 ease-in-out hover:bg-[#d0c1b3] dark:hover:bg-[#453f38] hover:scale-105 hover:shadow-md overflow-hidden"
+              className="group flex items-center px-2.5 sm:px-3 py-1.5 sm:py-2 theme-pill rounded-lg transition-colors sm:transition-all sm:duration-500 sm:ease-in-out sm:hover:bg-[#d0c1b3] sm:dark:hover:bg-[#453f38] sm:hover:scale-105 sm:hover:shadow-md overflow-hidden"
             >
               <link.icon className="w-4 h-4 sm:w-5 sm:h-5 theme-accent-strong flex-shrink-0" />
-              <span className="text-xs sm:text-base font-medium w-0 opacity-0 whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out group-hover:w-auto group-hover:opacity-100 group-hover:ml-1.5 sm:group-hover:ml-2">
+              <span className="hidden sm:inline-block text-base font-medium w-0 opacity-0 whitespace-nowrap overflow-hidden transition-all duration-500 ease-in-out sm:group-hover:w-auto sm:group-hover:opacity-100 sm:group-hover:ml-2">
                 {link.name}
               </span>
             </a>
