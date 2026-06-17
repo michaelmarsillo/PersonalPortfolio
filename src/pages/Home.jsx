@@ -1,5 +1,14 @@
+import SEO, { personJsonLd, websiteJsonLd } from "../components/SEO";
+
 function Home() {
   return (
+    <>
+    <SEO
+      title="Michael Marsillo"
+      description="Software Developer building clean apps, working out, and documenting my journey."
+      path="/"
+      jsonLd={[personJsonLd, websiteJsonLd]}
+    />
     <div className="theme-bg overflow-x-hidden w-full">
       <div className="container mx-auto px-4 sm:px-6 max-w-xl w-full">
         {/* main div */}
@@ -204,6 +213,7 @@ function Home() {
         </main>
       </div>
     </div>
+    </>
   )
 }
 

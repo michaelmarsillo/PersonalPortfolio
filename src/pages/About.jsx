@@ -1,3 +1,5 @@
+import SEO from "../components/SEO";
+
 const SnowboardIcon = ({ title }) => (
     <svg className="interest-svg interest-svg-snowboard" viewBox="0 0 450 450" role="img" aria-label={title} fill="currentColor">
         <title>{title}</title>
@@ -22,6 +24,12 @@ const DumbbellIcon = ({ title }) => (
 
 function About() {
     return (
+        <>
+        <SEO
+            title="About | Michael Marsillo"
+            description="A minimal snapshot of me: from Ancaster, studying computer science, building software, training, snowboarding, and documenting the journey."
+            path="/about"
+        />
         <div className="theme-bg flex flex-col overflow-x-hidden w-full">
             <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 flex-1 w-full">
                 <div className="max-w-2xl mx-auto w-full overflow-hidden">
@@ -189,6 +197,7 @@ function About() {
                 </div>
             </main>
         </div>
+        </>
     )
 }
 
