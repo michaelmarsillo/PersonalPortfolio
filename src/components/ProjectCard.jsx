@@ -5,6 +5,7 @@ export default function ProjectCard({
   title,
   description,
   imageUrl,
+  darkModeUrl,
   githubUrl,
   demoUrl
 }) {
@@ -33,9 +34,20 @@ export default function ProjectCard({
               alt={title}
               className={`h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-[1.03] ${
                 imageLoaded ? 'opacity-100' : 'opacity-0'
-              }`}
+              } ${darkModeUrl ? 'dark:hidden' : ''}`}
               onLoad={() => setImageLoaded(true)}
             />
+
+            {darkModeUrl && (
+              <img
+                src={darkModeUrl}
+                alt={title}
+                className={`hidden h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-[1.03] dark:block ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setImageLoaded(true)}
+              />
+            )}
           </div>
         </a>
       )}

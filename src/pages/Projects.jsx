@@ -40,8 +40,9 @@ const Projects = () => {
         },
         {
             title: "Portfolio Website",
-            description: "Personal portfolio for my projects, writing, and a snapshot of who I am. Built to feel minimal, fast, and personal.",
-            imageUrl: "/images/portfoliowebsite.png",
+            description: "Personal portfolio for my projects, writing, and a snapshot of who I am. Built to feel minimal and personal.",
+            imageUrl: "/images/portfoliowebsite2.png",
+            darkModeUrl: "/images/portfoliowebsite.png",
             githubUrl: "https://github.com/michaelmarsillo/PersonalPortfolio",
             demoUrl: "https://www.michaelmarsillo.ca/"
         }
