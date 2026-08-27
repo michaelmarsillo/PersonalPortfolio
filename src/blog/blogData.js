@@ -136,25 +136,25 @@ I learned what I value in a work environment: good mentorship, meaningful projec
     content: `
     **May - August 2025 | Waterloo, Ontario**
 
-Summer 2025 just wrapped up, and honestly, it was one of those chapters in life that felt quietly significant. A lot happened: some big, some small, but all meaningful. I want to use this space as a way to look back on what these months were like, the things I experienced, and how they shaped me.
+Summer 2025 was my first summer living in Waterloo, and a lot changed over those four months. I landed my first co-op, lived on my own, returned to training after a torn bicep, and found a new interest in pharmacology.
 
 ## 1. Landing My First Co-op 💼
 One of the biggest highlights was landing my first ever co-op role for the **Fall 2025 term at [Ricoh Canada](https://www.ricoh.ca/)** as a Software Developer. This was a huge milestone for me, the first real step in my career in tech. I won't dive into too many details yet (that'll come in a future post after the work term I'm sure), but let's just say it felt really rewarding to see the work you put in pays off and I'm really excited to get my first experience in tech as a developer.
 ![Ricoh Co-op Offer crop-picture](/images/firstcoopoffer.png)
 The application process, the interviews, the stress, it all paid off, and for that I'm thankful.
 
-## 2. Living Alone in Waterloo 🏠
+## 2. Living Alone in Waterloo
 Another major part of this summer was living alone in Waterloo. Most of my friends went home to enjoy their time off, while I stayed for school. At first, the idea of being in an empty apartment sounded kind of isolating, but it turned out to be an experience I'm grateful for.
 ![Living Alone crop-square](/images/livingaloneinwaterloo.png)
 There's something oddly peaceful about having your own space, the silence, the independence, the time to think. I also ended up meeting a bunch of new people who were in the same boat, being in co-op and doing summer school.
 
-### MLSB Summer Softball ⚾
+### MLSB Summer Softball
 On top of that, I joined the **[MLSB](https://www.mlsb.ca/) summer softball league**, which is basically what a lot of co-op students do during the summer here. It was my first time ever playing softball, and it was such a fun way to stay active (especially since I was coming off an injury).
 ![MLSB Summer Softball crop-half](/images/mlsb1.png)
 ![MLSB Summer Softball 2 crop-half](/images/mlsb2.png)
 The league became this unexpected highlight of my week. Every game was a chance to unwind, meet people, and just enjoy being outside in the summer. There was something about playing in MLSB that brought people together in a way nothing else really does. (and also the keggers)
 
-## 3. Rehabbing My Torn Bicep 💪
+## 3. Rehabbing My Torn Bicep
 Speaking of injuries, this one was a big part of my life this year. In **late August 2024**, I tore my left bicep (partially), and for the next **8 ish months**, training (something I've built my lifestyle around) was off the table.
 ![Bicep Ultrasound Image](/images/ultrasoundimage.png)
 ![Bicep Ultrasound Result crop-picture](/images/ultrasoundresults.png)
@@ -162,22 +162,14 @@ Anyone who lifts knows how much being in the gym can influence your headspace. F
 ![Lifting Again crop-picture](/images/startedliftingagain.png)
 *Lowkey looking a little bit chunky here but this was one of my first times hitting upper body after being out of the gym for so long.*
 I learned a lot through that process. Being sidelined changes you. It forces you to reflect, but it also builds something in you, **patience, perspective, and resilience**. Coming back stronger isn't just a physical thing anymore, you've got this new mental approach to training and recovery.
-
 > The injury taught me more about myself than any PR ever did.
 
-## 4. A New Fascination: Pharmacology 💊
-Funny enough, this injury opened up a new interest for me. While I was trying to figure out why my arm wasn't healing the way I expected, I ended up going down a massive rabbit hole on human anatomy, recovery, and pharmacology.
+## 4. A New Fascination: Pharmacology
+The injury also pushed me toward an interest I did not expect. While trying to understand why my arm was not healing as quickly as I expected, I started learning more about anatomy, recovery, and eventually pharmacology.
+I began with the basics of **pharmacodynamics** and **pharmacokinetics**, then moved into muscle regeneration, tissue repair, inflammation, and recovery. I watched lectures, read studies, and kept following whatever caught my attention.
+The interest has stuck with me and is already shaping how I think about health, training, and recovery. It is definitely something I want to keep learning about.
 
-I started teaching myself about things like:
-- **Pharmacodynamics** - What drugs do to the body
-- **Pharmacokinetics** - What the body does to drugs
-- **Muscle regeneration and tissue repair**
-- **Inflammation pathways and recovery optimization**
-
-I watched lectures, read studies, and honestly just got really into it. I never expected to enjoy learning about this field, but it's something that's stuck with me, and it's shaping how I think about health, training, and recovery.
-It's wild how a setback can lead you to discover something you never knew you'd be passionate about. Who knows, maybe this curiosity will evolve into something more down the road.
-
-## 5. Family Time and Reflection 👨🏼‍👩🏼‍👧🏼‍👦🏼
+## 5. Family Time and Reflection
 And of course, no summer is complete without spending time with family. Between everything going on, the quiet moments in Waterloo, new friendships, and the ups and downs of recovery, it was nice to have that grounding time with the people who matter most.
 ![Summer With Family crop-picture](/images/summerwithfamily.jpg)
 *My sisters and I at the cottage ^*
