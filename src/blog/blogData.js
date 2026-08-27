@@ -106,7 +106,7 @@ Nobody assigned it to me, but I knew it would save the next person from repeatin
 ## 5. What I Learned: Scale, Speed, and Confidence
 Working on software used by large organizations changed how I thought about development. With personal projects, it was easy to focus on getting a feature working; at Ricoh, I had to think more carefully about testing, error handling, performance, and backward compatibility because clients relied on the product.
 I also became much more comfortable with **Java and Spring Boot**. I had used Java in school (shoutout CP213 and CP317), but working in an established codebase helped enterprise patterns, RESTful APIs, and database connections finally click.
-My personal projects helped me adapt faster than I expected. Building [CVLens](https://cvlens.vercel.app/), [Audiofy](https://audiofy-m.vercel.app/), [LuckyLease](https://luckylease.co/), and other projects from scratch had already taught me how to read unfamiliar code, debug problems, and know when to ask for help.
+My personal projects helped me adapt faster than I expected. Building [CVLens](https://cvlens.vercel.app/), [Audiofy](https://audiofy-m.vercel.app/), [LuckyLease](https://luckylease.vercel.app/), and other projects from scratch had already taught me how to read unfamiliar code, debug problems, and know when to ask for help.
 
 ## 6. Wins I'm Proud Of 🏆
 - **Shipped features** that made it to production and are being used by real customers
@@ -195,63 +195,38 @@ Looking back, I think what made this summer special wasn't any single big moment
 I just got back from SPURHACKS 2025. This was my first-ever hackathon, and what an introduction it was... With over **2000 participants**, [SPURHACKS](https://spurhacks.com/) claims to be one of Canada's largest hackathons ever and after experiencing it firsthand, I totally believe it.
 ## The Setup
 Walking into the venue in Waterloo, I was immediately hit by the energy. Developers, designers, and entrepreneurs everywhere laptops open and the unmistakable buzz of people building something amazing in a short time.
-Also the food was actually quite good too (shoutout to the organizers for keeping us fed during those long coding sessions)! 🍕
+Also the food was actually quite good too (shoutout to the organizers for keeping us fed during those long coding sessions)
 ## The Team
 ![SPURHACKS 2025 Team crop-square](/images/spurhacksteam.jpg)
-I teamed up with these three weirdos:
-- **[Tony Taseski](https://www.linkedin.com/in/a-taseski)** - Full-stack
-- **[Gurshan Sidhar](https://www.linkedin.com/in/gurshan-sidhar)** - Backend
-- **[Spencer Kelly](https://www.linkedin.com/in/spencergk)** - Frontend
+- **[Gurshan Sidhar](https://www.linkedin.com/in/gurshan-sidhar)**
+- **[Tony Taseski](https://www.linkedin.com/in/a-taseski)**
+- **[Spencer Kelly](https://www.linkedin.com/in/spencergk)**
 
 We knew we wanted to build something that would solve a real problem for students like us.
 ## The Idea: LuckyLease 🍀
 After brainstorming for about an hour, we landed on **LuckyLease**, a student sublet marketplace designed specifically for students and interns looking for short-term housing near their schools or internship locations.
 The problem was clear: existing platforms like Facebook Marketplace aren't purpose-built for student housing. We wanted to create something that understood student needs.
 ![LuckyLease Homepage crop-banner](/images/luckylease1.png)
-## The Secret Sauce: Lucky AI 🤖
-What made our project special was **Lucky** (shoutout Gurshan), our AI companion powered by Google Gemini. Lucky analyzes rental listings and provides personalized compatibility ratings based on:
-- **Budget compatibility** - How the listing price fits your budget
-- **Location preferences** - Distance and proximity to schools/campus  
-- **Amenity matching** - Pet-friendly, parking, laundry, A/C preferences
-- **Duration compatibility** - Whether lease terms match your needs
+## The Secret Sauce: Lucky AI
+What made our project different was **Lucky** (shoutout Gurshan), an AI assistant powered by Google Gemini. It compares each listing with a student's budget, preferred location, amenities, and lease length, then gives them a compatibility score and a quick breakdown of the pros and cons.
 ![Lucky's Suggestion crop-banner](/images/luckysuggestion.png)
-Lucky gives you a structured pros and cons analysis with a compatibility rating (0-10) to help students make informed decisions. No more endless scrolling through listings that don't fit your needs!
 ## The Tech Stack
-> We wanted to use something modern that we could build and ship fast:
-### Frontend
-- **Next.js 14** with TypeScript
-- **Tailwind CSS** for styling
-### Backend  
-- **Express.js** with TypeScript
-- **Supabase PostgreSQL** for database
-- **Supabase Storage** for file uploads
-- **Socket.io** for real-time chat
-### AI & Integration
-- **Google Gemini API** for Lucky AI
-- **JWT** for authentication
-- **Leaflet** for location discovery (the map)
+We used **Next.js, TypeScript, and Tailwind CSS** for the frontend, with **Express and Supabase** handling the backend. **Google Gemini** powered Lucky, while **Socket.IO** handled chat and **Leaflet** powered the map.
 ## The Grind
 > We were super late to film our [demo video](https://www.youtube.com/watch?v=ibgUSqTDZQM) (classic), thats why you can see in the bottom of the video it was filmed just after 5 in the morning. (lol)
 The final hours were intense. We were debugging a database issue (thank you Tony), polishing the UI, and making sure Lucky's AI responses were coherent, all while running on minimal sleep.
 ## Making a TikTok
 Of course, I had to document this experience! I filmed throughout the hackathon and created a [TikTok video](https://www.tiktok.com/@michaelmarsillo/video/7519321432707337478) showing the journey from idea to deployed app. I love making videos and being able to have something to look back on in the future.
 ## The Results
-We deployed LuckyLease to production and it's live at [luckylease.co](https://luckylease.co/)! The platform actually works, students can sign up, browse listings, chat with landlords, and get AI-powered recommendations.
+We deployed LuckyLease to production and it's live at [luckylease](https://luckylease.vercel.app/)! The platform actually works, students can sign up, browse listings, chat with landlords, and get AI-powered recommendations.
 Check out our code on [GitHub](https://github.com/TaseskiCS/LuckyLease) and our full submission on [Devpost](https://devpost.com/software/luckylease).
 ## What I Learned
-> This hackathon lowkey taught me a lot more than just coding:
-### Technical Skills
-- **Rapid prototyping** - Building MVPs quickly
-- **Team collaboration** - Git workflows under pressure  
-- **Full-stack deployment** - From idea to production
-### Soft Skills  
-- **Problem identification** - Finding real user pain points
-- **Time management** - Prioritizing features under tight deadlines
-- **Resilience** - Debugging at 4am requires mental toughness
+This hackathon taught me how quickly a team can build when everyone is focused on the same deadline. I got better at prioritizing an MVP, working through Git changes with other people, and taking a full-stack app from an idea to production.
+It also forced us to make decisions quickly. We could not build everything in 48 hours, so we focused on the features that made LuckyLease useful and kept debugging even when it was four in the morning.
 ## Looking Forward
 SPURHACKS 2025 was an incredible introduction to the hackathon world. The energy, the people, the learning, everything about it was addictive (and tiring). I'm already planning to participate in more hackathons and continue building solutions to real problems.
 To anyone considering their first hackathon: **just do it**. You'll learn more in 48 hours than you might in weeks of solo coding. The experience of building something from scratch with a team under pressure is unlike anything else.
-> Want to try LuckyLease? Check it out at [luckylease.co](https://luckylease.co/) and let me know what you think!
+> Want to try LuckyLease? Check it out at [luckylease](https://luckylease.vercel.app/)
     `,
     slug: "spurhacks-2025",
     readTime: "6 min read"

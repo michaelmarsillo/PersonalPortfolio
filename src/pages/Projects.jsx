@@ -16,7 +16,7 @@ const Projects = () => {
             description: "Short-term subletting platform for students and interns. Built like a cleaner marketplace, but purpose-built for rentals.",
             imageUrl: "/images/luckylease1.png",
             githubUrl: "https://github.com/TaseskiCS/LuckyLease",
-            demoUrl: "https://luckylease.co/"
+            demoUrl: "https://luckylease.vercel.app/"
         },
         {
             title: "Audiofy",
