@@ -2,8 +2,6 @@
 
 This portfolio highlights my skills, projects, and more about me in a clean, easy to use format.
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
 
 ## 📌 About
 
