@@ -101,7 +101,7 @@ function About() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
                             <div className="space-y-3">
-                                <div className="flex min-h-8 items-center gap-2 hover:translate-x-1 transition-transform duration-300">
+                                <div className="flex items-center gap-2 hover:translate-x-1 transition-transform duration-300">
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">Snowboarding</p>
                                     <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">
@@ -129,7 +129,7 @@ function About() {
                             </div>
 
                             <div className="space-y-3">
-                                <div className="flex min-h-8 items-center gap-2 hover:translate-x-1 transition-transform duration-300">
+                                <div className="flex items-center gap-2 hover:translate-x-1 transition-transform duration-300">
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">Riding a motorcycle</p>
                                     <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">
@@ -156,7 +156,7 @@ function About() {
                             </div>
 
                             <div className="space-y-3">
-                                <div className="flex min-h-8 items-center gap-2 hover:translate-x-1 transition-transform duration-300">
+                                <div className="flex items-center gap-2 hover:translate-x-1 transition-transform duration-300">
                                     <span className="text-gray-500 flex-shrink-0">&#8627;</span>
                                     <p className="text-sm font-medium">At the gym</p>
                                     <span className="px-1 py-0.5 theme-pill inline-flex items-baseline gap-1 rounded">

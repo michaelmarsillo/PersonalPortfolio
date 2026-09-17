@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Github, SquareArrowOutUpRight } from 'lucide-react';
+import { SquareArrowOutUpRight } from 'lucide-react';
+import { Github } from './BrandIcons';
 
 export default function ProjectCard({
   title,
@@ -95,7 +96,7 @@ export default function ProjectCard({
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .project-shimmer {
           background: linear-gradient(
             90deg,

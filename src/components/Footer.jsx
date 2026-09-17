@@ -1,4 +1,5 @@
-import { Twitter, Linkedin, Github, Mail, CodeXml, Instagram, Youtube } from "lucide-react"
+import { Mail, CodeXml } from "lucide-react"
+import { Twitter, Linkedin, Github, Instagram, Youtube } from "./BrandIcons"
 
 const TikTokIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Youtube } from "lucide-react";
+import { Youtube } from "../components/BrandIcons";
 import { blogPosts } from "./blogData";
 import SEO from "../components/SEO";
 
