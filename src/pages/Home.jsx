@@ -41,17 +41,7 @@ function Home() {
             <div className="flex items-baseline space-x-2 hover:translate-x-1 transition-transform duration-300">
               <span className="theme-accent flex-shrink-0">💻</span>
               <p className="text-sm">
-                seeking software development{" "}
-                <span className="theme-pill px-1 py-0.5 rounded">
-                  <a
-                      href="https://www.wlu.ca/information-for/community-members/employers/co-op/index.html"
-                      className="font-medium theme-pill-hover transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                     co-op
-                    </a>
-                  </span> roles (winter 2027)
+                seeking software development roles (full-time)
               </p>
             </div>
 
