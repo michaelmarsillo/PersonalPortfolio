@@ -1,16 +1,24 @@
 import { useEffect } from "react";
+import {
+  DEFAULT_IMAGE,
+  DEFAULT_IMAGE_ALT,
+  SITE_NAME,
+  SITE_URL,
+  personJsonLd,
+  websiteJsonLd,
+} from "../seoMetadata.mjs";
 
-const SITE_URL = "https://www.michaelmarsillo.ca";
-const SITE_NAME = "Michael Marsillo";
-const DEFAULT_TITLE = "Michael Marsillo";
+const DEFAULT_TITLE = "Michael Marsillo | Software Developer";
 const DEFAULT_DESCRIPTION =
   "Software Developer and Computer Science student building clean apps, working out, and documenting his journey.";
-const DEFAULT_IMAGE = `${SITE_URL}/images/portfoliowebsite.png`;
 
 const upsertMeta = (attribute, key, content) => {
-  if (!content) return;
-
   let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
+  if (!content) {
+    element?.remove();
+    return;
+  }
+
   if (!element) {
     element = document.createElement("meta");
     element.setAttribute(attribute, key);
@@ -50,32 +58,7 @@ const upsertJsonLd = (data) => {
   }
 };
 
-export const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: SITE_NAME,
-  url: SITE_URL,
-  jobTitle: "Software Developer",
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Wilfrid Laurier University",
-  },
-  sameAs: [
-    "https://www.linkedin.com/in/michaelmarsillo/",
-    "https://github.com/michaelmarsillo",
-    "https://x.com/michaelmarsillo",
-    "https://www.instagram.com/michaelmarsillo/",
-    "https://tiktok.com/@michaelmarsillo",
-    "https://youtube.com/@michaelmarsillofit",
-  ],
-};
-
-export const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: SITE_NAME,
-  url: SITE_URL,
-};
+export { personJsonLd, websiteJsonLd };
 
 export default function SEO({
   title = DEFAULT_TITLE,
@@ -83,6 +66,9 @@ export default function SEO({
   path = "/",
   type = "website",
   image = DEFAULT_IMAGE,
+  imageAlt = DEFAULT_IMAGE_ALT,
+  robots = "index, follow",
+  publishedDate,
   jsonLd,
 }) {
   useEffect(() => {
@@ -93,26 +79,30 @@ export default function SEO({
 
     upsertMeta("name", "description", description);
     upsertMeta("name", "author", SITE_NAME);
-    upsertMeta("name", "robots", "index, follow");
+    upsertMeta("name", "robots", robots);
 
     upsertMeta("property", "og:title", title);
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:type", type);
     upsertMeta("property", "og:url", canonical);
     upsertMeta("property", "og:image", image);
+    upsertMeta("property", "og:image:alt", imageAlt);
     upsertMeta("property", "og:site_name", SITE_NAME);
+    upsertMeta("property", "og:locale", "en_CA");
+    upsertMeta("property", "article:published_time", publishedDate);
 
     upsertMeta("name", "twitter:card", "summary_large_image");
     upsertMeta("name", "twitter:title", title);
     upsertMeta("name", "twitter:description", description);
     upsertMeta("name", "twitter:image", image);
+    upsertMeta("name", "twitter:image:alt", imageAlt);
 
     upsertJsonLd(jsonLd);
 
     return () => {
       upsertJsonLd(null);
     };
-  }, [description, image, jsonLd, path, title, type]);
+  }, [description, image, imageAlt, jsonLd, path, publishedDate, robots, title, type]);
 
   return null;
 }

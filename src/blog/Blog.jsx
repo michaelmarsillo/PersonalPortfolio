@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Youtube } from "../components/BrandIcons";
-import { blogPosts } from "./blogData";
+import { blogPosts } from "./blogData.mjs";
 import SEO from "../components/SEO";
+import { staticSeo } from "../seoMetadata.mjs";
 
 function Blog() {
     return (
         <>
-        <SEO
-            title="Blog | Michael Marsillo"
-            description="My writing about software projects, co-op, training, school, personal growth, and building things."
-            path="/blog"
-        />
+        <SEO {...staticSeo.blog} />
         <div className="theme-bg overflow-x-hidden w-full">
             <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 w-full">
                 <div className="max-w-xl mx-auto w-full">

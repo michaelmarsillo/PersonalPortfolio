@@ -3,6 +3,7 @@ export const blogPosts = [
     id: 4,
     title: "Building Audiofy: Bringing Back a Family Tradition with Code",
     date: "Jan 5, 2026",
+    publishedDate: "2026-01-05",
     excerpt: "My family had this song quiz game we loved playing at the cottage. Then it got discontinued. So I built my own version...",
     content: `
 **October 2025 - January 2026 | Waterloo, Ontario**
@@ -68,6 +69,7 @@ If you're thinking about building something similar, do it. The technical challe
     id: 3,
     title: "My First Co-op at Ricoh: 4 Months of Growth and Java",
     date: "Dec 20, 2025",
+    publishedDate: "2025-12-20",
     excerpt: "Reflecting on my first co-op term as a software developer at Ricoh. Four months of learning Java, fixing bugs, and writing documentation.",
     content: `
 **September - December 2025 | Waterloo, Ontario**
@@ -132,6 +134,7 @@ I learned what I value in a work environment: good mentorship, meaningful projec
     id: 2,
     title: "Summer 2025: First Summer in Waterloo, and a lot of Change",
     date: "Sep 8, 2025",
+    publishedDate: "2025-09-08",
     excerpt: "Landing my first co-op, living alone in Waterloo, rehabbing a torn bicep, and discovering a new fascination with pharmacology. Here's how my summer unfolded...",
     content: `
     **May - August 2025 | Waterloo, Ontario**
@@ -188,6 +191,7 @@ Looking back, I think what made this summer special wasn't any single big moment
     id: 1,
     title: "My First Hackathon: Building LuckyLease at SPURHACKS 2025",
     date: "Jun 25, 2025",
+    publishedDate: "2025-06-25",
     excerpt: "2000+ participants, 48 hours, one AI-powered sublet marketplace, and staying up all night. Here's how my first hackathon went...",
     content: `
     **June 20-22, 2025 | Waterloo, Ontario**

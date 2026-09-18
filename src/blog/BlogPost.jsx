@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { blogPosts } from "./blogData";
+import { blogPosts } from "./blogData.mjs";
 import SEO from "../components/SEO";
+import { createBlogSeo } from "../seoMetadata.mjs";
 
 function BlogPost() {
     const { slug } = useParams();
@@ -198,28 +199,7 @@ function BlogPost() {
 
     return (
         <>
-        <SEO
-            title={`${post.title} | Michael Marsillo`}
-            description={post.excerpt}
-            path={`/blog/${post.slug}`}
-            type="article"
-            jsonLd={{
-                "@context": "https://schema.org",
-                "@type": "BlogPosting",
-                headline: post.title,
-                description: post.excerpt,
-                datePublished: post.date,
-                author: {
-                    "@type": "Person",
-                    name: "Michael Marsillo",
-                    url: "https://www.michaelmarsillo.ca",
-                },
-                mainEntityOfPage: {
-                    "@type": "WebPage",
-                    "@id": `https://www.michaelmarsillo.ca/blog/${post.slug}`,
-                },
-            }}
-        />
+        <SEO {...createBlogSeo(post)} />
         <div className="theme-bg">
             <div className="container mx-auto px-4 py-8 sm:py-12">
                 <div className="max-w-xl mx-auto">

@@ -31,7 +31,7 @@ test('navigation and direct links render every page with its metadata', async ({
     await expect(page.getByRole('heading', { name: heading, exact: true })).toBeVisible();
   }
   await page.getByRole('navigation').getByRole('link', { name: 'home', exact: true }).click();
-  await expect(page).toHaveTitle('Michael Marsillo');
+  await expect(page).toHaveTitle('Michael Marsillo | Software Developer & CS Student');
 });
 
 test('theme persists across reloads and navigation', async ({ page }) => {
@@ -88,4 +88,38 @@ test('reduced motion keeps the signature readable', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.signature-name-static')).toHaveText('michael marsillo');
   await expect(page.locator('.signature-name-canvas')).toHaveCount(0);
+});
+
+test('built pages expose route-specific SEO before JavaScript runs', async ({ request }) => {
+  const routes = [
+    ['/projects.html', 'https://www.michaelmarsillo.ca/projects', 'Software Projects | Michael Marsillo'],
+    ['/about.html', 'https://www.michaelmarsillo.ca/about', 'About Michael Marsillo | Developer & CS Student'],
+    ['/blog.html', 'https://www.michaelmarsillo.ca/blog', 'Software & Life Blog | Michael Marsillo'],
+    [
+      '/blog/building-audiofy.html',
+      'https://www.michaelmarsillo.ca/blog/building-audiofy',
+      'Building Audiofy: Bringing Back a Family Tradition with Code | Michael Marsillo',
+    ],
+  ];
+
+  for (const [path, canonical, title] of routes) {
+    const response = await request.get(path);
+    expect(response.ok()).toBeTruthy();
+    const html = await response.text();
+    expect(html).toContain(`<title>${title.replace('&', '&amp;')}</title>`);
+    expect(html).toContain(`<link rel="canonical" href="${canonical}" />`);
+    expect(html).toContain('<script id="page-json-ld" type="application/ld+json">');
+  }
+
+  const articleHtml = await (await request.get('/blog/building-audiofy.html')).text();
+  expect(articleHtml).toContain('property="article:published_time" content="2026-01-05"');
+
+  const notFoundHtml = await (await request.get('/404.html')).text();
+  expect(notFoundHtml).toContain('name="robots" content="noindex, nofollow"');
+});
+
+test('unknown routes show a no-index 404 page', async ({ page }) => {
+  await page.goto('/this-page-does-not-exist');
+  await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
 });

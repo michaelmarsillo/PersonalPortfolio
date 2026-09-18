@@ -1,6 +1,7 @@
 import React from "react"
 import ProjectCard from "../components/ProjectCard";
 import SEO from "../components/SEO";
+import { staticSeo } from "../seoMetadata.mjs";
 
 const Projects = () => {
     const projects = [
@@ -51,11 +52,7 @@ const Projects = () => {
 
     return (
         <>
-        <SEO
-            title="Projects | Michael Marsillo"
-            description="Projects by me, including clean web apps, real-time games, and personal software builds."
-            path="/projects"
-        />
+        <SEO {...staticSeo.projects} />
         <div className="theme-bg flex flex-col overflow-x-hidden w-full">
             <div className="max-w-xl mx-auto px-4 sm:px-6 py-8 sm:py-10 w-full">
                 <h1 className="text-xl sm:text-2xl font-bold italic theme-heading mb-5 sm:mb-6 break-words">My Projects</h1>

@@ -12,7 +12,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-seo.mjs",
     "preview": "vite preview",
     "test": "npm run build && playwright test",
     "test:ui": "playwright test --ui"

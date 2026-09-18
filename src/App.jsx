@@ -5,6 +5,7 @@ import Projects from "./pages/Projects"
 import About from "./pages/About"
 import Blog from "./blog/Blog"
 import BlogPost from "./blog/BlogPost"
+import NotFound from "./pages/NotFound"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import "./App.css"
@@ -38,6 +39,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
