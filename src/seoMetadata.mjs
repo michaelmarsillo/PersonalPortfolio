@@ -75,7 +75,7 @@ export const staticSeo = {
     lastModified: "2026-09-17",
   },
   about: {
-    title: "About Michael Marsillo | Developer & CS Student",
+    title: "About | Michael Marsillo",
     description:
       "Learn about Michael Marsillo, a computer science student and software developer from Ontario who enjoys training, snowboarding, motorcycles, and documenting life.",
     path: "/about",
