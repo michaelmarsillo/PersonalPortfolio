@@ -54,7 +54,7 @@ const pageJsonLd = (type, path, name, description) => ({
 
 export const staticSeo = {
   home: {
-    title: "Michael Marsillo | Software Developer & CS Student",
+    title: "Michael Marsillo | Software Developer",
     description:
       "Michael Marsillo is a computer science student and software developer building web apps, documenting projects, and sharing lessons from school, co-op, and life.",
     path: "/",
