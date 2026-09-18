@@ -31,7 +31,7 @@ test('navigation and direct links render every page with its metadata', async ({
     await expect(page.getByRole('heading', { name: heading, exact: true })).toBeVisible();
   }
   await page.getByRole('navigation').getByRole('link', { name: 'home', exact: true }).click();
-  await expect(page).toHaveTitle('Michael Marsillo | Software Developer & CS Student');
+  await expect(page).toHaveTitle('Michael Marsillo | Software Developer');
 });
 
 test('theme persists across reloads and navigation', async ({ page }) => {
@@ -92,8 +92,9 @@ test('reduced motion keeps the signature readable', async ({ page }) => {
 
 test('built pages expose route-specific SEO before JavaScript runs', async ({ request }) => {
   const routes = [
+    ['/index.html', 'https://www.michaelmarsillo.ca/', 'Michael Marsillo | Software Developer'],
     ['/projects.html', 'https://www.michaelmarsillo.ca/projects', 'Software Projects | Michael Marsillo'],
-    ['/about.html', 'https://www.michaelmarsillo.ca/about', 'About Michael Marsillo | Developer & CS Student'],
+    ['/about.html', 'https://www.michaelmarsillo.ca/about', 'About | Michael Marsillo'],
     ['/blog.html', 'https://www.michaelmarsillo.ca/blog', 'Software & Life Blog | Michael Marsillo'],
     [
       '/blog/building-audiofy.html',

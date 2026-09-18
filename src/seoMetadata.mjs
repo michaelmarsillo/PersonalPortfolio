@@ -59,7 +59,7 @@ export const staticSeo = {
       "Michael Marsillo is a computer science student and software developer building web apps, documenting projects, and sharing lessons from school, co-op, and life.",
     path: "/",
     jsonLd: [personJsonLd, websiteJsonLd],
-    lastModified: "2026-09-17",
+    lastModified: "2026-09-18",
   },
   projects: {
     title: "Software Projects | Michael Marsillo",
@@ -72,7 +72,7 @@ export const staticSeo = {
       "Software Projects | Michael Marsillo",
       "Software projects by Michael Marsillo, including full-stack web apps, real-time games, developer tools, and automation projects.",
     ),
-    lastModified: "2026-09-17",
+    lastModified: "2026-09-18",
   },
   about: {
     title: "About | Michael Marsillo",
@@ -85,7 +85,7 @@ export const staticSeo = {
       "About Michael Marsillo",
       "About Michael Marsillo, a computer science student and software developer from Ontario.",
     ),
-    lastModified: "2026-09-17",
+    lastModified: "2026-09-18",
   },
   blog: {
     title: "Software & Life Blog | Michael Marsillo",
@@ -98,7 +98,7 @@ export const staticSeo = {
       "Software & Life Blog | Michael Marsillo",
       "Writing by Michael Marsillo about software, co-op, school, training, and personal growth.",
     ),
-    lastModified: "2026-09-17",
+    lastModified: "2026-09-18",
   },
   notFound: {
     title: "Page Not Found | Michael Marsillo",
