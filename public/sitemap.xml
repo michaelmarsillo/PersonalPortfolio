@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.michaelmarsillo.ca/about</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-21</lastmod>
   </url>
   <url>
     <loc>https://www.michaelmarsillo.ca/blog</loc>
@@ -31,5 +31,33 @@
   <url>
     <loc>https://www.michaelmarsillo.ca/blog/spurhacks-2025</loc>
     <lastmod>2025-06-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.michaelmarsillo.ca/about/archive</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.michaelmarsillo.ca/about/archive/art</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.michaelmarsillo.ca/about/archive/books</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.michaelmarsillo.ca/about/archive/fragrance</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.michaelmarsillo.ca/about/archive/design-objects</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.michaelmarsillo.ca/about/archive/places</loc>
+    <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.michaelmarsillo.ca/about/archive/misc</loc>
+    <lastmod>2026-09-21</lastmod>
   </url>
 </urlset>

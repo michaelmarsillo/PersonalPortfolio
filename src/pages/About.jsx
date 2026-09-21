@@ -1,4 +1,6 @@
 import SEO from "../components/SEO";
+import { Folder } from "lucide-react";
+import PersonalLink from "../components/PersonalLink";
 import { staticSeo } from "../seoMetadata.mjs";
 
 const SnowboardIcon = ({ title }) => (
@@ -191,6 +193,9 @@ function About() {
                             </div>
                         </div>
                     </section>
+                    <div className="mt-6 sm:mt-8 text-center">
+                        <PersonalLink to="/about/archive" icon={Folder}>Archive</PersonalLink>
+                    </div>
                 </div>
             </main>
         </div>

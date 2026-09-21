@@ -85,7 +85,7 @@ export const staticSeo = {
       "About Michael Marsillo",
       "About Michael Marsillo, a computer science student and software developer from Ontario.",
     ),
-    lastModified: "2026-09-18",
+    lastModified: "2026-09-21",
   },
   blog: {
     title: "Software & Life Blog | Michael Marsillo",
@@ -111,6 +111,20 @@ export const staticSeo = {
 const absoluteUrl = (path) => (
   path?.startsWith("http") ? path : `${SITE_URL}${path || ""}`
 );
+
+export const createArchiveSeo = (collection) => {
+  const path = `/about/archive${collection.slug ? `/${collection.slug}` : ""}`;
+  const title = `${collection.slug ? `${collection.title} | ` : ""}Archive | ${SITE_NAME}`;
+  const description = `${collection.title} from Michael Marsillo's personal archive. ${collection.description}`;
+
+  return {
+    title,
+    description,
+    path,
+    jsonLd: pageJsonLd("CollectionPage", path, collection.title, description),
+    lastModified: collection.lastModified,
+  };
+};
 
 export const createBlogSeo = (post) => {
   const firstImage = post.content.match(/!\[([^\]]*)\]\(([^)]+)\)/);

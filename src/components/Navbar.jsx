@@ -10,7 +10,7 @@ export default function Navbar({ theme, onToggleTheme }) {
 
   return (
     <header className="theme-bg px-4 py-6 w-full overflow-x-hidden">
-      <div className="container mx-auto max-w-6xl flex justify-between items-center gap-3 sm:gap-4 w-full">
+      <div className="container mx-auto max-w-6xl flex justify-between items-center gap-3 max-[359px]:gap-2 sm:gap-4 w-full">
         <Link
           to="/"
           className="theme-heading font-medium theme-accent-hover transition-colors text-sm sm:text-base flex-shrink-0 whitespace-nowrap"
@@ -18,8 +18,8 @@ export default function Navbar({ theme, onToggleTheme }) {
         >
           <SignatureName animate={isHome} replayKey={location.key} />
         </Link>
-        <div className="flex items-center gap-2 sm:gap-5 flex-shrink-0">
-          <nav className="flex items-center space-x-2 sm:space-x-6 text-xs sm:text-base">
+        <div className="flex items-center gap-2 max-[359px]:gap-1.5 sm:gap-5 flex-shrink-0">
+          <nav className="flex items-center space-x-2 max-[359px]:space-x-1.5 sm:space-x-6 text-xs max-[359px]:text-[11px] sm:text-base">
             <Link to="/" className="theme-muted theme-accent-hover transition-colors whitespace-nowrap">home</Link>
             <Link to="/projects" className="theme-muted theme-accent-hover transition-colors whitespace-nowrap">projects</Link>
             <Link to="/about" className="theme-muted theme-accent-hover transition-colors whitespace-nowrap">about</Link>

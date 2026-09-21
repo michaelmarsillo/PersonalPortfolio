@@ -2,11 +2,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { blogPosts } from "../src/blog/blogData.mjs";
+import { archiveCategories, archiveOverview } from "../src/archive/archiveData.mjs";
 import {
   DEFAULT_IMAGE,
   DEFAULT_IMAGE_ALT,
   SITE_URL,
   createBlogSeo,
+  createArchiveSeo,
   staticSeo,
 } from "../src/seoMetadata.mjs";
 
@@ -100,6 +102,7 @@ const routes = [
   staticSeo.about,
   staticSeo.blog,
   ...blogPosts.map(createBlogSeo),
+  ...[archiveOverview, ...archiveCategories].map(createArchiveSeo),
 ];
 
 for (const metadata of routes) {

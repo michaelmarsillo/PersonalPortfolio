@@ -170,6 +170,16 @@ code {
   }
 }
 
+/* Archive: quiet interactions, with visible keyboard focus and native disclosures. */
+.archive-focus:focus-visible {
+  outline: 2px solid #829C80;
+  outline-offset: 4px;
+}
+
+.archive-page {
+  overflow-wrap: anywhere;
+}
+
 .pixel-flag {
   position: relative;
   display: inline-block;

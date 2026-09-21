@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Youtube } from "../components/BrandIcons";
+import PersonalLink from "../components/PersonalLink";
 import { blogPosts } from "./blogData.mjs";
 import SEO from "../components/SEO";
 import { staticSeo } from "../seoMetadata.mjs";
@@ -70,15 +71,13 @@ function Blog() {
                         <p className="theme-muted text-[12.5px] leading-relaxed">
                             recently transitioned from writing &rarr; videography. still documenting, just in a different format.
                         </p>
-                        <a
+                        <PersonalLink
                             href="https://www.youtube.com/@michaelmarsillofit"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mx-auto mt-2 inline-flex items-center gap-1.5 rounded-lg bg-rose-200 px-2.5 py-1.5 text-xs text-gray-700 transition-colors hover:bg-rose-300 dark:text-black"
+                            icon={Youtube}
+                            className="mx-auto mt-2"
                         >
-                            <Youtube className="h-3.5 w-3.5" />
                             YouTube
-                        </a>
+                        </PersonalLink>
                     </div>
                 </div>
             </div>
