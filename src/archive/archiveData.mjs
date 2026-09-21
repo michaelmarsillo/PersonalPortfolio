@@ -2,7 +2,7 @@ export const ARCHIVE_PLACEHOLDER_IMAGE = "/images/archive/placeholder.svg";
 
 export const archiveOverview = {
   title: "Archive",
-  description: "A quiet corner of my site for the things I collect, study, revisit, and find meaningful.",
+  description: "A space for the things I collect, study, revisit, and find meaningful.",
   lastModified: "2026-09-21",
 };
 
