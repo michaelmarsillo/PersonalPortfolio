@@ -9,10 +9,10 @@ export default function Archive() {
         {archiveCategories.map((category) => (
           <li key={category.slug}>
             <Link
-              to={`/about/archive/${category.slug}`}
+              to={`/archive/${category.slug}`}
               className="archive-focus theme-body theme-accent-hover inline-block py-2 text-sm underline decoration-stone-400/50 underline-offset-4 transition-colors dark:decoration-stone-500/60 motion-reduce:transition-none"
             >
-              /about/archive/{category.slug}
+              /archive/{category.slug}
             </Link>
           </li>
         ))}

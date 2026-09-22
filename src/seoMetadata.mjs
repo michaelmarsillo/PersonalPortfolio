@@ -113,7 +113,7 @@ const absoluteUrl = (path) => (
 );
 
 export const createArchiveSeo = (collection) => {
-  const path = `/about/archive${collection.slug ? `/${collection.slug}` : ""}`;
+  const path = `/archive${collection.slug ? `/${collection.slug}` : ""}`;
   const title = `${collection.slug ? `${collection.title} | ` : ""}Archive | ${SITE_NAME}`;
   const description = `${collection.title} from Michael Marsillo's personal archive. ${collection.description}`;
 

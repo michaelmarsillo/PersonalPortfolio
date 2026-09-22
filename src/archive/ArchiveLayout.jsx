@@ -19,7 +19,7 @@ export default function ArchiveLayout({ collection, children }) {
         <div className="mx-auto w-full max-w-2xl">
           {isCategory && (
             <Link
-              to="/about/archive"
+              to="/archive"
               className="archive-focus theme-muted theme-accent-hover mb-6 inline-block py-2 text-xs transition-colors motion-reduce:transition-none"
             >
               Back to archive

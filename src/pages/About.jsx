@@ -194,7 +194,7 @@ function About() {
                         </div>
                     </section>
                     <div className="mt-4 sm:mt-6 text-center">
-                        <PersonalLink to="/about/archive" icon={Folder}>Archive</PersonalLink>
+                        <PersonalLink to="/archive" icon={Folder}>Archive</PersonalLink>
                     </div>
                 </div>
             </main>

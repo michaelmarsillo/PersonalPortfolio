@@ -29,12 +29,12 @@ test('the About entrance shares the YouTube button styling and opens the archive
 
   await page.goto('/about');
   const archive = page.getByRole('link', { name: 'Archive', exact: true });
-  await expect(archive).toHaveAttribute('href', '/about/archive');
+  await expect(archive).toHaveAttribute('href', '/archive');
   expect(await buttonStyles(archive)).toEqual(restingStyles);
   await archive.hover();
   expect(await buttonStyles(archive)).toEqual(hoverStyles);
   await archive.click();
-  await expect(page).toHaveURL(/\/about\/archive$/);
+  await expect(page).toHaveURL(/\/archive$/);
   await expect(page.getByRole('heading', { name: 'Archive', exact: true })).toBeVisible();
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
   await page.getByRole('link', { name: 'Back to about' }).click();
@@ -42,12 +42,12 @@ test('the About entrance shares the YouTube button styling and opens the archive
 });
 
 test('every archive category works through links, direct visits, reloads, and back navigation', async ({ page }) => {
-  await page.goto('/about/archive');
-  await expect(page.getByRole('list', { name: 'Archive categories' }).getByRole('link')).toHaveText(categories.map(([slug]) => `/about/archive/${slug}`));
+  await page.goto('/archive');
+  await expect(page.getByRole('list', { name: 'Archive categories' }).getByRole('link')).toHaveText(categories.map(([slug]) => `/archive/${slug}`));
   await expect(page).toHaveTitle('Archive | Michael Marsillo');
 
   for (const [slug, title] of categories) {
-    const path = `/about/archive/${slug}`;
+    const path = `/archive/${slug}`;
     await page.locator(`a[href="${path}"]`).click();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title);
     await expect(page.locator('article').first()).toBeVisible();
@@ -59,20 +59,20 @@ test('every archive category works through links, direct visits, reloads, and ba
     await image.scrollIntoViewIfNeeded();
     await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
     await page.getByRole('link', { name: 'Back to archive' }).click();
-    await expect(page).toHaveURL(/\/about\/archive$/);
+    await expect(page).toHaveURL(/\/archive$/);
   }
 
-  await page.goto('/about/archive/books');
+  await page.goto('/archive/books');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Books');
   for (const slug of ['not-a-category', 'people', 'friends']) {
-    await page.goto(`/about/archive/${slug}`);
+    await page.goto(`/archive/${slug}`);
     await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
   }
 });
 
 test('thoughts open with keyboard and pointer, and entries fit in both themes', async ({ page }) => {
-  await page.goto('/about/archive/art');
+  await page.goto('/archive/art');
   const details = page.locator('article details').first();
   const summary = details.locator('summary');
   const thoughts = details.locator('div').first();
@@ -110,10 +110,10 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   await expect(page.locator('html')).toHaveClass('dark');
   expect(await checkWidths()).toBe(true);
 
-  await page.goto('/about/archive/books');
+  await page.goto('/archive/books');
   await expect(page.getByText('Author to come', { exact: true })).toBeVisible();
   await expect(page.locator('article details').first()).not.toContainText('Author to come');
-  await page.goto('/about/archive/fragrance');
+  await page.goto('/archive/fragrance');
   await expect(page.getByText('Fragrance house to come', { exact: true })).toBeVisible();
   await expect(page.getByText('Notes:', { exact: true })).toBeVisible();
   await expect(page.locator('article details').first()).not.toContainText(/Fragrance house to come|Notes:/);
@@ -121,10 +121,10 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
 
 test('every archive route has production HTML metadata and a sitemap entry', async ({ request }) => {
   const sitemap = await (await request.get('/sitemap.xml')).text();
-  expect(sitemap).not.toContain('/about/archive/people');
+  expect(sitemap).not.toContain('/archive/people');
   const routes = [['', 'Archive | Michael Marsillo'], ...categories.map(([slug, title]) => [`/${slug}`, `${title} | Archive | Michael Marsillo`])];
   for (const [suffix, title] of routes) {
-    const path = `/about/archive${suffix}`;
+    const path = `/archive${suffix}`;
     const response = await request.get(`${path}.html`);
     expect(response.ok()).toBeTruthy();
     const html = await response.text();
