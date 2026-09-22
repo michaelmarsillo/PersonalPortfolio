@@ -4,7 +4,7 @@ const categories = [
   ['art', 'Art'],
   ['books', 'Books'],
   ['fragrance', 'Fragrance'],
-  ['design-objects', 'Design / Objects'],
+  ['objects', 'Objects & Design'],
   ['places', 'Places'],
   ['misc', 'Misc'],
 ];
@@ -64,11 +64,30 @@ test('every archive category works through links, direct visits, reloads, and ba
 
   await page.goto('/archive/books');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Books');
-  for (const slug of ['not-a-category', 'people', 'friends']) {
+  for (const slug of ['not-a-category', 'people', 'friends', 'design-objects']) {
     await page.goto(`/archive/${slug}`);
     await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
   }
+});
+
+test('Objects & Design presents replaceable object entries with facts outside the thoughts toggle', async ({ page }) => {
+  await page.goto('/archive/objects');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Objects & Design');
+  await expect(page.getByText('Objects, tools, and designs I find beautiful, useful, nostalgic, or personally meaningful.')).toBeVisible();
+
+  const entries = page.locator('article');
+  await expect(entries).toHaveCount(1);
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText('Sony ZV-1');
+
+  const camera = entries.first();
+  await expect(camera.getByText('Sony', { exact: true })).toBeVisible();
+  await expect(camera.getByText('Released 2020', { exact: true })).toBeVisible();
+  await expect(camera.getByText('Category:', { exact: true })).toHaveCount(0);
+  const thoughts = camera.locator('details');
+  await expect(thoughts).not.toContainText(/Sony|Released 2020/);
+  await thoughts.locator('summary').click();
+  await expect(thoughts).toContainText('A compact camera that became part of my content creation process.');
 });
 
 test('thoughts open with keyboard and pointer, and entries fit in both themes', async ({ page }) => {
@@ -122,13 +141,14 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
 test('every archive route has production HTML metadata and a sitemap entry', async ({ request }) => {
   const sitemap = await (await request.get('/sitemap.xml')).text();
   expect(sitemap).not.toContain('/archive/people');
+  expect(sitemap).not.toContain('/archive/design-objects');
   const routes = [['', 'Archive | Michael Marsillo'], ...categories.map(([slug, title]) => [`/${slug}`, `${title} | Archive | Michael Marsillo`])];
   for (const [suffix, title] of routes) {
     const path = `/archive${suffix}`;
     const response = await request.get(`${path}.html`);
     expect(response.ok()).toBeTruthy();
     const html = await response.text();
-    expect(html).toContain(`<title>${title}</title>`);
+    expect(html).toContain(`<title>${title.replaceAll('&', '&amp;')}</title>`);
     expect(html).toContain(`<link rel="canonical" href="https://www.michaelmarsillo.ca${path}" />`);
     expect(html).toContain('name="robots" content="index, follow"');
     const json = html.match(/<script id="page-json-ld" type="application\/ld\+json">([\s\S]*?)<\/script>/);

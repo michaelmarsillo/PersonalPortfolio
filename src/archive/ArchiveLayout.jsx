@@ -28,7 +28,9 @@ export default function ArchiveLayout({ collection, children }) {
 
           <header className="mb-8 sm:mb-10">
             <h1 className="theme-heading text-xl font-bold italic sm:text-2xl">{collection.title}</h1>
-            {!isCategory && <p className="theme-muted mt-3 max-w-lg text-sm leading-relaxed">{collection.description}</p>}
+            {(!isCategory || collection.showDescription) && (
+              <p className="theme-muted mt-3 max-w-lg text-sm leading-relaxed">{collection.description}</p>
+            )}
           </header>
 
           {children}
