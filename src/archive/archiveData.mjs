@@ -9,7 +9,7 @@ export const archiveOverview = {
 // Add entries to a category's items array. Give every entry a unique, stable id.
 // Images live in public/images/archive/<category>/ and use /images/archive/... URLs.
 // Replace the sample fields with your own content. No page layout edits needed.
-// creator, year, metadata, image, imageAlt, imageFit, and thoughts are optional.
+// creator, year, sourceUrl, metadata, image, imageAlt, imageFit, and thoughts are optional.
 // The title, creator, year, and metadata appear above the image. The toggle is
 // reserved for your personal thoughts.
 // imageFit accepts "contain" (default, preserves the whole image) or "cover".
@@ -19,16 +19,23 @@ export const archiveCategories = [
     slug: "art",
     title: "Art",
     description: "Paintings and visual pieces I keep coming back to.",
-    lastModified: "2026-09-21",
+    lastModified: "2026-09-23",
     items: [
       {
-        id: "the-laughing-fool",
-        title: "The Laughing Fool",
-        creator: "Attributed to Jacob Cornelisz van Oostsanen",
-        year: "c. 1500",
-        image: ARCHIVE_PLACEHOLDER_IMAGE,
-        imageAlt: "Placeholder for The Laughing Fool",
-        thoughts: "A space for my notes on this painting: the expression, the details, and what keeps bringing me back. Personal thoughts to come.",
+        id: "stanczyk",
+        title: "Stańczyk",
+        creator: "Jan Matejko",
+        year: "1862",
+        sourceUrl: "https://en.wikipedia.org/wiki/Sta%C5%84czyk_(painting)",
+        image: "/images/archive/art/stanczyk/stanczyk.jpg",
+        imageAlt: "Stańczyk by Jan Matejko",
+        thoughts: `The idea of the jester is quite provocative, especially in this context. We don’t really know what Jan Matejko was getting at here.
+
+The full title of the painting is “Stańczyk during a ball at the court of Queen Bona in the face of the loss of Smolensk.” People speculate that the jester knew about the fall of Smolensk and seemed to care deeply, while the royal family partied in the background, seemingly unconcerned.
+
+However, the note on the table is dated 1533, and the fall of Smolensk occurred in 1514. Furthermore, Queen Bona did not become queen until 1518, so the timeline does not quite add up. Why would the jester be dreading the fall of Smolensk in 1533 if it happened nineteen years earlier? Even more confusing is that this celebration of the queen would have occurred in 1518, not in 1533.
+
+The letter on the table is frustrating when trying to make sense of the painting. Anyway, just some food for thought.`,
       },
     ],
   },

@@ -1,33 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { blogPosts } from "./blogData.mjs";
 import SEO from "../components/SEO";
+import ImageLightbox from "../components/ImageLightbox";
 import { createBlogSeo } from "../seoMetadata.mjs";
 
 function BlogPost() {
     const { slug } = useParams();
     const post = blogPosts.find(p => p.slug === slug);
     const [lightboxImage, setLightboxImage] = useState(null);
-
-    // Handle ESC key to close lightbox
-    useEffect(() => {
-        const handleEscape = (e) => {
-            if (e.key === 'Escape') {
-                setLightboxImage(null);
-            }
-        };
-
-        if (lightboxImage) {
-            document.addEventListener('keydown', handleEscape);
-            // Prevent body scroll when lightbox is open
-            document.body.style.overflow = 'hidden';
-        }
-
-        return () => {
-            document.removeEventListener('keydown', handleEscape);
-            document.body.style.overflow = 'unset';
-        };
-    }, [lightboxImage]);
 
     if (!post) {
         return <Navigate to="/blog" replace />;
@@ -251,42 +232,7 @@ function BlogPost() {
                 </div>
             </div>
 
-            {/* Lightbox Modal */}
-            {lightboxImage && (
-                <div 
-                    className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
-                    onClick={() => setLightboxImage(null)}
-                >
-                    {/* Close button - fixed to top right of viewport */}
-                    <button
-                        onClick={() => setLightboxImage(null)}
-                        className="fixed top-4 right-4 text-white hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full p-2"
-                        aria-label="Close lightbox"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-
-                    <div className="relative max-w-7xl max-h-full">
-                        {/* Image */}
-                        <img 
-                            src={lightboxImage.src} 
-                            alt={lightboxImage.alt}
-                            className="max-w-full max-h-[90vh] object-contain rounded-lg"
-                            onClick={(e) => e.stopPropagation()}
-                        />
-                        
-                        {/* Alt text as caption */}
-                        {lightboxImage.alt && (
-                            <p className="text-center text-gray-300 mt-4 text-sm">
-                                {lightboxImage.alt}
-                            </p>
-                        )}
-                    </div>
-                </div>
-            )}
+            <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
         </div>
         </>
     );

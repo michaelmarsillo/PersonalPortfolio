@@ -50,7 +50,9 @@ The `My thoughts` disclosure contains only Michael's personal writing. Creator i
 
 ### Art — `/archive/art`
 
-Use a vertical diary or gallery-note format. Each work can show its title, artist or attribution, year, image, and personal thoughts. The Laughing Fool is the initial sample.
+Use a centered vertical diary or gallery-note column with left-aligned text. Each work can show its title, artist or attribution, year, an optional source link, image, and personal thoughts. Images preserve their aspect ratio, sit in the center of the column, and open in the same dark lightbox used by blog posts. Stańczyk is the first completed entry.
+
+Keep Art image alt text concise and consistent: `Artwork title by Artist`, for example `Stańczyk by Jan Matejko`.
 
 ### Books — `/archive/books`
 
@@ -83,7 +85,7 @@ The planned Habbo entry belongs at `/archive/misc/habbo`. It can be a custom, im
 
 ## Content and images
 
-Archive data currently lives in `src/archive/archiveData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `metadata`, `image`, `imageAlt`, `imageFit`, and `thoughts`.
+Archive data currently lives in `src/archive/archiveData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `sourceUrl`, `metadata`, `image`, `imageAlt`, `imageFit`, and `thoughts`.
 
 Place images under:
 

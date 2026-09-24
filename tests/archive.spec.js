@@ -92,17 +92,27 @@ test('Objects & Design presents replaceable object entries with facts outside th
 
 test('thoughts open with keyboard and pointer, and entries fit in both themes', async ({ page }) => {
   await page.goto('/archive/art');
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText('Stańczyk');
   const details = page.locator('article details').first();
   const summary = details.locator('summary');
   const thoughts = details.locator('div').first();
   const image = page.locator('article img').first();
-  const attribution = page.getByText('Attributed to Jacob Cornelisz van Oostsanen', { exact: true });
-  await expect(attribution).toBeVisible();
-  const attributionBox = await attribution.boundingBox();
+  const artist = page.getByText('Jan Matejko', { exact: true });
+  await expect(artist).toBeVisible();
+  await expect(page.getByText('1862', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Source', exact: true })).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/Sta%C5%84czyk_(painting)');
+  await expect(image).toHaveAttribute('src', '/images/archive/art/stanczyk/stanczyk.jpg');
+  const artistBox = await artist.boundingBox();
   const imageBoxBefore = await image.boundingBox();
-  expect(attributionBox.y).toBeLessThan(imageBoxBefore.y);
-  await expect(details).not.toContainText('Attributed to Jacob Cornelisz van Oostsanen');
+  expect(artistBox.y).toBeLessThan(imageBoxBefore.y);
+  await expect(details.getByText('Jan Matejko', { exact: true })).toHaveCount(0);
+  await expect(details.getByText('1862', { exact: true })).toHaveCount(0);
   await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+  const articleBox = await page.locator('article').first().boundingBox();
+  const centeredImageBox = await image.boundingBox();
+  const viewportWidth = page.viewportSize().width;
+  expect(Math.abs(articleBox.x + articleBox.width / 2 - viewportWidth / 2)).toBeLessThanOrEqual(1);
+  expect(Math.abs(centeredImageBox.x + centeredImageBox.width / 2 - viewportWidth / 2)).toBeLessThanOrEqual(1);
   const imageSizeBefore = await image.evaluate((element) => ({ width: element.clientWidth, height: element.clientHeight }));
   await expect(thoughts).toBeHidden();
   await summary.focus();
@@ -110,6 +120,8 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   await page.keyboard.press('Enter');
   await expect(details).toHaveAttribute('open', '');
   await expect(thoughts).toBeVisible();
+  await expect(thoughts).toContainText('The idea of the jester is quite provocative');
+  await expect(thoughts).toContainText('Anyway, just some food for thought.');
   await page.keyboard.press('Space');
   await expect(details).not.toHaveAttribute('open');
   await expect(thoughts).toBeHidden();
@@ -119,6 +131,19 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   const imageBox = await image.boundingBox();
   const toggleBox = await summary.boundingBox();
   expect(toggleBox.y).toBeGreaterThanOrEqual(imageBox.y + imageBox.height);
+
+  const expandImage = page.getByRole('button', { name: 'Expand Stańczyk' });
+  await expandImage.click();
+  const lightbox = page.getByRole('dialog', { name: /Expanded image: Stańczyk/ });
+  await expect(lightbox).toBeVisible();
+  await expect(lightbox.locator('img')).toHaveAttribute('src', '/images/archive/art/stanczyk/stanczyk.jpg');
+  expect(await page.evaluate(() => document.body.style.overflow)).toBe('hidden');
+  await page.keyboard.press('Escape');
+  await expect(lightbox).toHaveCount(0);
+  expect(await page.evaluate(() => document.body.style.overflow)).toBe('');
+  await expandImage.click();
+  await page.getByRole('button', { name: 'Close lightbox' }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
 
   const checkWidths = () => page.locator('main, article').evaluateAll((elements) => elements.every((element) => element.scrollWidth <= element.clientWidth));
   expect(await checkWidths()).toBe(true);
