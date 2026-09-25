@@ -46,6 +46,8 @@ For journal-style entries, factual information appears above the image in this o
 
 The `My thoughts` disclosure contains only Michael's personal writing. Creator information and metadata never belong inside it.
 
+Preserve Michael's natural voice when lightly editing this writing. Fix obvious spelling, capitalization, punctuation, and paragraph flow without making it sound formal or rewritten. Do not use em dashes in any `My thoughts` copy.
+
 ## Category direction
 
 ### Art — `/archive/art`
@@ -53,6 +55,8 @@ The `My thoughts` disclosure contains only Michael's personal writing. Creator i
 Use a centered vertical diary or gallery-note column with left-aligned text. Each work can show its title, artist or attribution, year, an optional source link, image, and personal thoughts. Images preserve their aspect ratio, sit in the center of the column, and open in the same dark lightbox used by blog posts. Stańczyk is the first completed entry.
 
 Keep Art image alt text concise and consistent: `Artwork title by Artist`, for example `Stańczyk by Jan Matejko`.
+
+An artwork may have multiple images, such as the complete work followed by a detail. Keep the images together and place the single `My thoughts` disclosure beneath the complete image group.
 
 ### Books — `/archive/books`
 
@@ -85,7 +89,7 @@ The planned Habbo entry belongs at `/archive/misc/habbo`. It can be a custom, im
 
 ## Content and images
 
-Archive data currently lives in `src/archive/archiveData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `sourceUrl`, `metadata`, `image`, `imageAlt`, `imageFit`, and `thoughts`.
+Archive data currently lives in `src/archive/archiveData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `sourceUrl`, `metadata`, `image`, `imageAlt`, `images`, `imageFit`, and `thoughts`. Use `image` and `imageAlt` for one image, or an `images` array containing `{ src, alt }` objects for several.
 
 Place images under:
 

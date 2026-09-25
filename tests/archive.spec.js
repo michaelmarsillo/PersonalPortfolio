@@ -92,15 +92,16 @@ test('Objects & Design presents replaceable object entries with facts outside th
 
 test('thoughts open with keyboard and pointer, and entries fit in both themes', async ({ page }) => {
   await page.goto('/archive/art');
-  await expect(page.getByRole('heading', { level: 2 })).toHaveText('Stańczyk');
+  await expect(page.getByRole('heading', { level: 2, name: 'Stańczyk' })).toBeVisible();
   const details = page.locator('article details').first();
+  const stanczyk = page.locator('article').first();
   const summary = details.locator('summary');
   const thoughts = details.locator('div').first();
   const image = page.locator('article img').first();
   const artist = page.getByText('Jan Matejko', { exact: true });
   await expect(artist).toBeVisible();
   await expect(page.getByText('1862', { exact: true })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Source', exact: true })).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/Sta%C5%84czyk_(painting)');
+  await expect(stanczyk.getByRole('link', { name: 'Source', exact: true })).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/Sta%C5%84czyk_(painting)');
   await expect(image).toHaveAttribute('src', '/images/archive/art/stanczyk/stanczyk.jpg');
   const artistBox = await artist.boundingBox();
   const imageBoxBefore = await image.boundingBox();
@@ -161,6 +162,91 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   await expect(page.getByText('Fragrance house to come', { exact: true })).toBeVisible();
   await expect(page.getByText('Notes:', { exact: true })).toBeVisible();
   await expect(page.locator('article details').first()).not.toContainText(/Fragrance house to come|Notes:/);
+});
+
+test('art entries support centered single and multi-image groups with one thoughts disclosure', async ({ page }) => {
+  await page.goto('/archive/art');
+  const entries = page.locator('article');
+  await expect(entries).toHaveCount(5);
+
+  const fallenAngel = entries.nth(1);
+  await expect(fallenAngel.getByRole('heading', { level: 2 })).toHaveText('The Fallen Angel');
+  await expect(fallenAngel.getByText('Alexandre Cabanel', { exact: true })).toBeVisible();
+  await expect(fallenAngel.getByText('1847', { exact: true })).toBeVisible();
+  await expect(fallenAngel.getByRole('link', { name: 'Source' })).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/The_Fallen_Angel_(painting)');
+
+  const images = fallenAngel.locator('img');
+  await expect(images).toHaveCount(2);
+  await expect(images.nth(0)).toHaveAttribute('src', '/images/archive/art/fallen-angel/thefallenangel.jpg');
+  await expect(images.nth(1)).toHaveAttribute('src', '/images/archive/art/fallen-angel/thefallenangel2.jpg');
+  for (const image of await images.all()) {
+    await expect(image).toHaveAttribute('alt', 'The Fallen Angel by Alexandre Cabanel');
+    await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+    const imageBox = await image.boundingBox();
+    expect(Math.abs(imageBox.x + imageBox.width / 2 - page.viewportSize().width / 2)).toBeLessThanOrEqual(1);
+  }
+
+  const details = fallenAngel.locator('details');
+  await expect(details).toHaveCount(1);
+  const secondImageBox = await images.nth(1).boundingBox();
+  const summaryBox = await details.locator('summary').boundingBox();
+  expect(summaryBox.y).toBeGreaterThanOrEqual(secondImageBox.y + secondImageBox.height);
+  await details.locator('summary').click();
+  await expect(details).toContainText('There is something so thought-provoking about those eyes.');
+
+  await fallenAngel.getByRole('button', { name: 'Expand The Fallen Angel image 2' }).click();
+  const lightbox = page.getByRole('dialog', { name: 'Expanded image: The Fallen Angel by Alexandre Cabanel' });
+  await expect(lightbox).toBeVisible();
+  await expect(lightbox.locator('img')).toHaveAttribute('src', '/images/archive/art/fallen-angel/thefallenangel2.jpg');
+  await page.keyboard.press('Escape');
+  await expect(lightbox).toHaveCount(0);
+
+  const laughingFool = entries.nth(2);
+  await expect(laughingFool.getByRole('heading', { level: 2 })).toHaveText('Laughing Fool');
+  await expect(laughingFool.getByText('Attributed to Jacob Cornelisz van Oostsanen', { exact: true })).toBeVisible();
+  await expect(laughingFool.getByText('c. 1500', { exact: true })).toBeVisible();
+  await expect(laughingFool.getByRole('link', { name: 'Source' })).toHaveAttribute('href', 'https://commons.wikimedia.org/wiki/File:Laughing_Fool.jpg');
+  const laughingFoolImage = laughingFool.locator('img');
+  await expect(laughingFoolImage).toHaveAttribute('src', '/images/archive/art/laughing-fool/thelaughingfool.jpg');
+  await expect(laughingFoolImage).toHaveAttribute('alt', 'Laughing Fool by Jacob Cornelisz van Oostsanen');
+  await expect.poll(() => laughingFoolImage.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+  const laughingFoolImageBox = await laughingFoolImage.boundingBox();
+  expect(Math.abs(laughingFoolImageBox.x + laughingFoolImageBox.width / 2 - page.viewportSize().width / 2)).toBeLessThanOrEqual(1);
+  const laughingFoolThoughts = laughingFool.locator('details');
+  await laughingFoolThoughts.locator('summary').click();
+  await expect(laughingFoolThoughts).toContainText('he is laughing at us, not with us');
+
+  const soirBleu = entries.nth(3);
+  await expect(soirBleu.getByRole('heading', { level: 2 })).toHaveText('Soir Bleu');
+  await expect(soirBleu.getByText('Edward Hopper', { exact: true })).toBeVisible();
+  await expect(soirBleu.getByText('1914', { exact: true })).toBeVisible();
+  await expect(soirBleu.getByRole('link', { name: 'Source' })).toHaveAttribute('href', 'https://fr.wikipedia.org/wiki/Soir_bleu');
+  const soirBleuImage = soirBleu.locator('img');
+  await expect(soirBleuImage).toHaveAttribute('src', '/images/archive/art/soirbleu/soirbleu.jpg');
+  await expect(soirBleuImage).toHaveAttribute('alt', 'Soir Bleu by Edward Hopper');
+  await expect.poll(() => soirBleuImage.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+  const soirBleuImageBox = await soirBleuImage.boundingBox();
+  expect(Math.abs(soirBleuImageBox.x + soirBleuImageBox.width / 2 - page.viewportSize().width / 2)).toBeLessThanOrEqual(1);
+  const soirBleuThoughts = soirBleu.locator('details');
+  await soirBleuThoughts.locator('summary').click();
+  await expect(soirBleuThoughts).toContainText('Everyone is physically close, but emotionally distant.');
+  await expect(soirBleuThoughts).toContainText('You become the strange one for being yourself.');
+
+  const lionsDen = entries.nth(4);
+  await expect(lionsDen.getByRole('heading', { level: 2 })).toHaveText('Daniel in the Lions’ Den');
+  await expect(lionsDen.getByText('Briton Rivière', { exact: true })).toBeVisible();
+  await expect(lionsDen.getByText('1872', { exact: true })).toBeVisible();
+  await expect(lionsDen.getByRole('link', { name: 'Source' })).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/Briton_Rivi%C3%A8re');
+  const lionsDenImage = lionsDen.locator('img');
+  await expect(lionsDenImage).toHaveAttribute('src', '/images/archive/art/lionsden/danielinthelionsden.jpg');
+  await expect(lionsDenImage).toHaveAttribute('alt', 'Daniel in the Lions’ Den by Briton Rivière');
+  await expect.poll(() => lionsDenImage.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+  const lionsDenImageBox = await lionsDenImage.boundingBox();
+  expect(Math.abs(lionsDenImageBox.x + lionsDenImageBox.width / 2 - page.viewportSize().width / 2)).toBeLessThanOrEqual(1);
+  const lionsDenThoughts = lionsDen.locator('details');
+  await lionsDenThoughts.locator('summary').click();
+  await expect(lionsDenThoughts).toContainText('He is focused on the only thing he can actually control: himself.');
+  await expect(lionsDenThoughts).toContainText('He is completely surrounded, but somehow he still feels free.');
 });
 
 test('every archive route has production HTML metadata and a sitemap entry', async ({ request }) => {
