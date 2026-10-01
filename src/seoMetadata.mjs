@@ -72,7 +72,7 @@ export const staticSeo = {
       "Software Projects | Michael Marsillo",
       "Software projects by Michael Marsillo, including full-stack web apps, real-time games, developer tools, and automation projects.",
     ),
-    lastModified: "2026-09-18",
+    lastModified: "2026-10-01",
   },
   about: {
     title: "About | Michael Marsillo",

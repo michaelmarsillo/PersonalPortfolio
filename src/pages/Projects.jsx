@@ -6,6 +6,19 @@ import { staticSeo } from "../seoMetadata.mjs";
 const Projects = () => {
     const projects = [
         {
+            title: "Moss & Mind",
+            description: "Student-focused e-commerce storefront concept for nootropics and everyday rituals. Built with React, Vite, and TypeScript for CP340.",
+            imageUrl: "/images/mossandmind.png",
+            githubUrl: "https://github.com/michaelmarsillo/cp340-ecommerce-platform",
+            demoUrl: "https://mossandmind.vercel.app/"
+        },
+        {
+            title: "Deeplink Generator",
+            description: "Personal tool for generating shareable YouTube, Instagram, and TikTok deep links, paired with a public social-profile page. Built with React and TypeScript.",
+            imageUrl: "/images/deeplinkgenerator.png",
+            demoUrl: "https://links.michaelmarsillo.ca/"
+        },
+        {
             title: "CVLens",
             description: "Fullstack resume parser that extracts structured data from PDF/DOCX files using NLP. Clean Next.js frontend with a spaCy-powered backend.",
             imageUrl: "/images/cvlens.png",

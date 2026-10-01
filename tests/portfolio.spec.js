@@ -69,9 +69,17 @@ test('all blog deep links load, and photo lightbox opens and closes', async ({ p
 
 test('project images, resume, and signature font remain available', async ({ page, request }) => {
   await page.goto('/projects');
-  await expect(page.locator('a[aria-label$="GitHub repository"]')).toHaveCount(6);
+  await expect(page.locator('a[aria-label$="GitHub repository"]')).toHaveCount(7);
+  await expect(page.getByRole('link', { name: 'Moss & Mind GitHub repository' })).toHaveAttribute('href', 'https://github.com/michaelmarsillo/cp340-ecommerce-platform');
+  await expect(page.getByRole('link', { name: 'Moss & Mind live demo' })).toHaveAttribute('href', 'https://mossandmind.vercel.app/');
+  await expect(page.getByRole('link', { name: 'Open Moss & Mind', exact: true })).toHaveAttribute('href', 'https://mossandmind.vercel.app/');
+  await expect(page.getByRole('link', { name: 'Deeplink Generator live demo' })).toHaveAttribute('href', 'https://links.michaelmarsillo.ca/');
+  await expect(page.getByRole('link', { name: 'Open Deeplink Generator', exact: true })).toHaveAttribute('href', 'https://links.michaelmarsillo.ca/');
+  await expect(page.getByRole('link', { name: 'Deeplink Generator GitHub repository' })).toHaveCount(0);
+  await expect(page.locator('a[aria-label^="Open "]').nth(0)).toHaveAttribute('aria-label', 'Open Moss & Mind');
+  await expect(page.locator('a[aria-label^="Open "]').nth(1)).toHaveAttribute('aria-label', 'Open Deeplink Generator');
   const images = page.locator('img:visible');
-  await expect(images).toHaveCount(6);
+  await expect(images).toHaveCount(8);
   for (const image of await images.all()) {
     await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
   }
