@@ -3,7 +3,7 @@ import ImageLightbox from "../components/ImageLightbox";
 import { ARCHIVE_PLACEHOLDER_IMAGE } from "./archiveData.mjs";
 import ArchiveToggle from "./ArchiveToggle";
 
-function ArchiveImage({ item, imageData, expandLabel, onExpand }) {
+function ArchiveImage({ item, imageData, imageVariant, expandLabel, onExpand }) {
   const [failed, setFailed] = useState(false);
   const configuredSrc = imageData?.src;
   const isPlaceholder = !configuredSrc || failed || configuredSrc === ARCHIVE_PLACEHOLDER_IMAGE;
@@ -19,7 +19,7 @@ function ArchiveImage({ item, imageData, expandLabel, onExpand }) {
       loading="lazy"
       decoding="async"
       onError={() => setFailed(true)}
-      className={`mx-auto block h-auto max-h-[40rem] max-w-full object-center ${isPlaceholder ? "theme-panel-solid w-full" : "w-auto transition-opacity group-hover:opacity-90 motion-reduce:transition-none"} ${imageFit === "cover" && !isPlaceholder ? "object-cover" : "object-contain"}`}
+      className={`mx-auto block h-auto max-w-full object-center ${imageVariant === "book-cover" ? "max-h-96" : "max-h-[40rem]"} ${isPlaceholder ? "theme-panel-solid w-full" : "w-auto transition-opacity group-hover:opacity-90 motion-reduce:transition-none"} ${imageFit === "cover" && !isPlaceholder ? "object-cover" : "object-contain"}`}
     />
   );
 
@@ -39,7 +39,7 @@ function ArchiveImage({ item, imageData, expandLabel, onExpand }) {
   );
 }
 
-export default function ArchiveEntry({ item }) {
+export default function ArchiveEntry({ item, imageVariant }) {
   const [lightboxImage, setLightboxImage] = useState(null);
   const images = item.images?.length
     ? item.images
@@ -80,6 +80,7 @@ export default function ArchiveEntry({ item }) {
             key={`${imageData.src || ARCHIVE_PLACEHOLDER_IMAGE}-${index}`}
             item={item}
             imageData={imageData}
+            imageVariant={imageVariant}
             expandLabel={`Expand ${item.title}${images.length > 1 ? ` image ${index + 1}` : ""}`}
             onExpand={setLightboxImage}
           />

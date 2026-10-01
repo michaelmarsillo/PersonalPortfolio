@@ -62,6 +62,12 @@ An artwork may have multiple images, such as the complete work followed by a det
 
 The journal format works initially: title, author, publication information, cover, and thoughts. It may later become a bookshelf or reading log if the collection grows.
 
+Start with nonfiction. Deep Work by Cal Newport is the first entry, with Michael's personal thoughts now included. An empty `thoughts` field hides the disclosure until personal writing is added.
+
+Use flat front-cover images, preferably from the book's official publisher page. If unavailable, use an author or library catalog source, matching the edition by ISBN. Download the cover into `public/images/archive/books/<book-slug>/<book-slug>-<author-slug>.jpg` (or `.png` when that is the source format), for example `deep-work/deep-work-cal-newport.jpg`, and link the publisher or catalog page through `sourceUrl`. Keep covers uncropped, centered, and capped at 24rem tall so varied cover dimensions stay consistent. Retain the shared click-to-expand lightbox. Alt text follows `Book title by Author`.
+
+Deep Work uses the cover supplied on Hachette's ISBN 9781455586691 page: `https://www.hachettebookgroup.com/titles/cal-newport/deep-work/9781455586691/`. The downloaded publisher asset is `https://www.hachettebookgroup.com/wp-content/uploads/2026/01/9781455586691.jpg?resize=678,1024`; downloaded October 1, 2026. Its January 5, 2016 date is the book's original publication date, not the cover-image upload date.
+
 ### Fragrance — `/archive/fragrance`
 
 This category will need a custom collection experience because the collection has more than twenty bottles and will keep growing. The likely direction is a visual shelf, board, or tier list where visitors immediately see favourites.

@@ -16,7 +16,7 @@ export default function ArchiveCategoryPage() {
         <ul className="space-y-12 sm:space-y-16" aria-label={`${category.title} entries`}>
           {category.items.map((item) => (
             <li key={`${category.slug}/${item.id}`}>
-              <ArchiveEntry item={item} />
+              <ArchiveEntry item={item} imageVariant={category.slug === "books" ? "book-cover" : undefined} />
             </li>
           ))}
         </ul>

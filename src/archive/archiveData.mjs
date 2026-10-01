@@ -127,18 +127,22 @@ Daniel feels like the visual version of that lesson. He is surrounded by chaos, 
   {
     slug: "books",
     title: "Books",
-    description: "Books I’ve read, saved, or want to revisit.",
-    lastModified: "2026-09-21",
+    description: "Nonfiction books I’m reading, have read, or want to revisit.",
+    lastModified: "2026-10-01",
     items: [
       {
-        id: "first-book",
-        title: "A book to return to",
-        creator: "Author to come",
-        year: "Publication year to come",
-        image: ARCHIVE_PLACEHOLDER_IMAGE,
-        imageAlt: "Placeholder for a book cover",
-        metadata: [{ label: "Shelf", value: "To revisit" }],
-        thoughts: "A space for the passages I underline, ideas I carry with me, and reasons I might read this again.",
+        id: "deep-work",
+        title: "Deep Work",
+        creator: "Cal Newport",
+        year: "January 5, 2016",
+        sourceUrl: "https://www.hachettebookgroup.com/titles/cal-newport/deep-work/9781455586691/",
+        image: "/images/archive/books/deep-work/deep-work-cal-newport.jpg",
+        imageAlt: "Deep Work by Cal Newport",
+        thoughts: `Honestly, a really great read. It took me a while to get through this book, and I would typically read it for about 15 minutes before bed every night.
+
+I think the ideas Cal Newport talks about are very important. I like how he brings up influential people like Bill Gates and the extreme periods of focused work they would go into.
+
+The only critique I have is that the book drags on a little bit. I think the ideas he argues for could have been more condensed and gotten across in fewer pages. It could have been shorter, but still a good book all around.`,
       },
     ],
   },
