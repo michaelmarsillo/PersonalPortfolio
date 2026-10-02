@@ -1,8 +1,10 @@
+import { fragranceItems } from "./fragranceData.mjs";
+
 export const ARCHIVE_PLACEHOLDER_IMAGE = "/images/archive/placeholder.svg";
 
 export const archiveOverview = {
   title: "Archive",
-  description: "A space for the things I collect, study, revisit, and find meaningful.",
+  description: "a space for the things I collect, study, revisit, and find meaningful.",
   lastModified: "2026-09-21",
 };
 
@@ -19,8 +21,9 @@ export const archiveCategories = [
   {
     slug: "art",
     title: "Art",
-    description: "Paintings and visual pieces I keep coming back to.",
-    lastModified: "2026-09-25",
+    description: "my favorite art pieces.",
+    showDescription: true,
+    lastModified: "2026-10-02",
     items: [
       {
         id: "stanczyk",
@@ -127,8 +130,9 @@ Daniel feels like the visual version of that lesson. He is surrounded by chaos, 
   {
     slug: "books",
     title: "Books",
-    description: "Nonfiction books I’m reading, have read, or want to revisit.",
-    lastModified: "2026-10-01",
+    description: "books i’ve read.",
+    showDescription: true,
+    lastModified: "2026-10-02",
     items: [
       {
         id: "deep-work",
@@ -149,20 +153,10 @@ The only critique I have is that the book drags on a little bit. I think the ide
   {
     slug: "fragrance",
     title: "Fragrance",
-    description: "Scents I like, wear, or find interesting.",
-    lastModified: "2026-09-21",
-    items: [
-      {
-        id: "first-fragrance",
-        title: "A scent worth remembering",
-        creator: "Fragrance house to come",
-        year: "Year to come",
-        image: ARCHIVE_PLACEHOLDER_IMAGE,
-        imageAlt: "Placeholder for a fragrance bottle",
-        metadata: [{ label: "Notes", value: "To be added" }],
-        thoughts: "A space for how this scent feels, when I would wear it, and the memories it brings to mind.",
-      },
-    ],
+    description: "fragrances in my collection.",
+    showDescription: true,
+    lastModified: "2026-10-02",
+    items: fragranceItems,
   },
   {
     slug: "objects",

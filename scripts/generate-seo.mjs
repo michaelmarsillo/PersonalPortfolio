@@ -9,6 +9,7 @@ import {
   SITE_URL,
   createBlogSeo,
   createArchiveSeo,
+  createFragranceSeo,
   staticSeo,
 } from "../src/seoMetadata.mjs";
 
@@ -103,6 +104,8 @@ const routes = [
   staticSeo.blog,
   ...blogPosts.map(createBlogSeo),
   ...[archiveOverview, ...archiveCategories].map(createArchiveSeo),
+  ...archiveCategories.filter(({ slug }) => slug === "fragrance")
+    .flatMap((collection) => collection.items.map((item) => createFragranceSeo(item, collection))),
 ];
 
 for (const metadata of routes) {
@@ -116,7 +119,7 @@ await writeFile(
   renderMetadata(baseHtml, staticSeo.notFound),
 );
 
-const sitemapEntries = routes.map((metadata) => [
+const sitemapEntries = routes.filter((metadata) => !metadata.robots?.includes("noindex")).map((metadata) => [
   `${SITE_URL}${metadata.path}`,
   metadata.lastModified,
 ]);

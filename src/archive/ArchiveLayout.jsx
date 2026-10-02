@@ -3,18 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 import SEO from "../components/SEO";
 import { createArchiveSeo } from "../seoMetadata.mjs";
 
-export default function ArchiveLayout({ collection, children }) {
+export default function ArchiveLayout({ collection, children, scrollKey, seo }) {
   const { pathname } = useLocation();
   const isCategory = Boolean(collection.slug);
+  const pageScrollKey = scrollKey || pathname;
 
   // The entrance is below the About photos; always arrive at the new page's top.
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [pathname]);
+  }, [pageScrollKey]);
 
   return (
     <>
-      <SEO {...createArchiveSeo(collection)} />
+      <SEO {...(seo || createArchiveSeo(collection))} />
       <main className="archive-page container mx-auto w-full px-4 py-8 sm:px-6 sm:py-10">
         <div className="mx-auto w-full max-w-2xl">
           {isCategory && (
@@ -34,14 +35,12 @@ export default function ArchiveLayout({ collection, children }) {
           </header>
 
           {children}
-          {!isCategory && (
-            <Link
-              to="/about"
-              className="archive-focus theme-muted theme-accent-hover mt-8 inline-block py-2 text-xs transition-colors motion-reduce:transition-none"
-            >
-              Back to about
-            </Link>
-          )}
+          <Link
+            to={isCategory ? "/archive" : "/about"}
+            className="archive-focus theme-muted theme-accent-hover mt-8 inline-block py-2 text-xs transition-colors motion-reduce:transition-none"
+          >
+            {isCategory ? "Back to archive" : "Back to about"}
+          </Link>
         </div>
       </main>
     </>

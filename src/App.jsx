@@ -5,6 +5,7 @@ import Projects from "./pages/Projects"
 import About from "./pages/About"
 import Archive from "./archive/Archive"
 import ArchiveCategoryPage from "./archive/ArchiveCategoryPage"
+import FragrancePage from "./archive/FragrancePage"
 import Blog from "./blog/Blog"
 import BlogPost from "./blog/BlogPost"
 import NotFound from "./pages/NotFound"
@@ -40,6 +41,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/archive" element={<Archive />} />
+            <Route path="/archive/fragrance/:fragranceId?" element={<FragrancePage />} />
             <Route path="/archive/:categorySlug" element={<ArchiveCategoryPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

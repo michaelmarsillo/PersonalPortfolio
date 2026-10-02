@@ -180,6 +180,23 @@ code {
   overflow-wrap: anywhere;
 }
 
+.fragrance-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(42rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  overflow-wrap: anywhere;
+  border-radius: 12px;
+}
+
+.fragrance-dialog::backdrop {
+  background: rgb(0 0 0 / 75%);
+}
+
 .pixel-flag {
   position: relative;
   display: inline-block;

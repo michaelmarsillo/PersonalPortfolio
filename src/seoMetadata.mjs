@@ -126,6 +126,23 @@ export const createArchiveSeo = (collection) => {
   };
 };
 
+export const createFragranceSeo = (item, collection) => {
+  const path = `/archive/fragrance/${item.id}`;
+  const title = `${item.title} | Fragrance | Archive | ${SITE_NAME}`;
+  const description = `${item.title}${item.creator ? ` by ${item.creator}` : ""} from Michael Marsillo's fragrance collection.`;
+
+  return {
+    title,
+    description,
+    path,
+    image: item.image ? absoluteUrl(item.image) : DEFAULT_IMAGE,
+    imageAlt: item.imageAlt || item.title,
+    robots: item.isPlaceholder ? "noindex, follow" : "index, follow",
+    jsonLd: pageJsonLd("WebPage", path, item.title, description),
+    lastModified: item.lastModified || collection.lastModified,
+  };
+};
+
 export const createBlogSeo = (post) => {
   const firstImage = post.content.match(/!\[([^\]]*)\]\(([^)]+)\)/);
   const path = `/blog/${post.slug}`;

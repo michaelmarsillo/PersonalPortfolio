@@ -58,7 +58,7 @@ test('every archive category works through links, direct visits, reloads, and ba
     const image = page.locator('article img').first();
     await image.scrollIntoViewIfNeeded();
     await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
-    await page.getByRole('link', { name: 'Back to archive' }).click();
+    await page.getByRole('link', { name: 'Back to archive' }).last().click();
     await expect(page).toHaveURL(/\/archive$/);
   }
 
@@ -151,7 +151,7 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   await page.getByRole('button', { name: 'Switch to dark mode' }).click();
   await expect(page.locator('html')).toHaveClass('dark');
   expect(await checkWidths()).toBe(true);
-  await page.getByRole('link', { name: 'Back to archive' }).click();
+  await page.getByRole('link', { name: 'Back to archive' }).first().click();
   await expect(page.locator('html')).toHaveClass('dark');
   expect(await checkWidths()).toBe(true);
 
@@ -179,9 +179,8 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   await page.keyboard.press('Escape');
   await expect(bookLightbox).toHaveCount(0);
   await page.goto('/archive/fragrance');
-  await expect(page.getByText('Fragrance house to come', { exact: true })).toBeVisible();
-  await expect(page.getByText('Notes:', { exact: true })).toBeVisible();
-  await expect(page.locator('article details').first()).not.toContainText(/Fragrance house to come|Notes:/);
+  await expect(page.getByRole('list', { name: 'Fragrance shelf' })).toBeVisible();
+  await expect(page.locator('main article details')).toHaveCount(0);
 });
 
 test('art entries support centered single and multi-image groups with one thoughts disclosure', async ({ page }) => {
