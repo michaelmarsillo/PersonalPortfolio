@@ -35,7 +35,7 @@ There is no People or Friends category. Fragrance remains singular in its route.
 
 Every archive category has matching `Back to archive` links above the heading and below its content, before the site footer. Both links align with the content column and share the same understated styling. The Archive index keeps its bottom `Back to about` link.
 
-Art, Books, and Fragrance show small, muted, fully lowercase subtitles directly beneath their titles: `my favorite art pieces.`, `books i’ve read.`, and `fragrances in my collection.` respectively. The Archive index subtitle is `a space for the things I collect, study, revisit, and find meaningful.` Use the existing heading spacing and description styling.
+Art, Books, and Fragrance show small, muted, fully lowercase subtitles directly beneath their titles: `my favourite art pieces.`, `books i’ve read.`, and `fragrances in my collection.` respectively. The Archive index subtitle is `a space for the things I collect, study, revisit, and find meaningful.` Use the existing heading spacing and description styling. Use Canadian spelling in personal copy.
 
 Do not force every category into the same repeated component. Reuse small pieces when they fit, while allowing each collection to express its content naturally.
 
@@ -83,7 +83,7 @@ Fragrance has its own visual shelf rather than the repeated journal layout. Mich
 - Selecting a bottle opens a native dialog over the shelf, with its name, house, release year, image, optional metadata, brief personal thoughts, a small personal rating out of 10 beneath the thoughts, and a Fragrantica link. Show thoughts directly as one or two sentences, without a heading or dropdown. Fragrance writing is a quick personal note rather than the longer Art and Books essays. Leave thoughts empty and ratings null until Michael provides them; hide both when absent, without placeholder copy. Ratings represent Michael's overall enjoyment, preserving the numbers Michael supplies, including decimals such as 7.8. Keep the shelf minimal; ratings live in the detail panel for now.
 - Bottles have stable routes such as `/archive/fragrance/sauvage-elixir`. Direct visits and reloads open the same panel; Close, Escape, or backdrop returns to the shelf. Normal shelf navigation preserves scrolling, restores focus, and supports Back/Forward. A native dialog makes the background inert, with a small keyboard handler keeping Tab focus inside the panel.
 - Small previous and next arrows sit in the panel's bottom corners and stay visible when it scrolls. They follow shelf order and wrap at either end. Switching bottles updates the URL and resets the panel's scroll, while keeping the dialog open and focus on the chosen arrow. Cycling replaces the current history entry so Close or Back returns straight to the shelf and restores focus to the bottle originally opened.
-- A small, muted counter in the panel's top left shows the current shelf position and collection size, such as `1/24`, with Close on the right. Derive both from the collection data so direct visits, cycling, and newly added bottles stay accurate automatically.
+- A small, muted 11px counter in the panel's top left shows the current shelf position and collection size, such as `1/24`, with Close on the right. Derive both from the collection data so direct visits, cycling, and newly added bottles stay accurate automatically.
 - Real bottle routes receive their own canonical metadata, production HTML, and generated sitemap entry. Preview routes are `noindex` and excluded from the sitemap.
 - A tier list may be explored later. Do not add ranking or filtering controls before the collection needs them.
 
@@ -130,6 +130,8 @@ Reference them from data with a public URL such as:
 ```
 
 Use descriptive filenames and meaningful alt text. Update a category's `lastModified` date when its public content changes.
+
+When converting Michael's personal HEIC photos to JPG for the archive, verify the JPG copies before removing the HEIC originals, as he requested.
 
 ## Routing, metadata, and verification
 

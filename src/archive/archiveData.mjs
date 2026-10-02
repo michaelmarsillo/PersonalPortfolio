@@ -21,7 +21,7 @@ export const archiveCategories = [
   {
     slug: "art",
     title: "Art",
-    description: "my favorite art pieces.",
+    description: "my favourite art pieces.",
     showDescription: true,
     lastModified: "2026-10-02",
     items: [

@@ -60,7 +60,7 @@ export default function FragranceDetails({ item, position, total, onClose, onPre
       onCancel={(event) => { event.preventDefault(); onClose(); }}
     >
       <div className="flex items-center justify-between gap-3 px-6 pt-4 sm:px-8">
-        <span className="theme-muted text-xs tabular-nums">
+        <span className="theme-muted text-[11px] tabular-nums">
           <span aria-hidden="true">{position}/{total}</span>
           <span className="sr-only">Fragrance {position} of {total}</span>
         </span>
