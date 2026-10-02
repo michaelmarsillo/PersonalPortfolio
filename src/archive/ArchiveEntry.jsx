@@ -3,32 +3,35 @@ import ImageLightbox from "../components/ImageLightbox";
 import { ARCHIVE_PLACEHOLDER_IMAGE } from "./archiveData.mjs";
 import ArchiveToggle from "./ArchiveToggle";
 
-function ArchiveImage({ item, imageData, imageVariant, expandLabel, onExpand }) {
+function ArchiveImage({ item, imageData, imageVariant, expandLabel, onExpand, className = "", frameAspectRatio }) {
   const [failed, setFailed] = useState(false);
   const configuredSrc = imageData?.src;
   const isPlaceholder = !configuredSrc || failed || configuredSrc === ARCHIVE_PLACEHOLDER_IMAGE;
   const src = isPlaceholder ? ARCHIVE_PLACEHOLDER_IMAGE : configuredSrc;
   const alt = isPlaceholder ? `Image placeholder for ${item.title}` : imageData.alt || item.title;
   const imageFit = imageData?.fit || item.imageFit;
+  const imageSizing = frameAspectRatio ? "h-full w-full object-cover"
+    : `h-auto max-w-full ${imageVariant === "book-cover" ? "max-h-96" : "max-h-[40rem]"} ${isPlaceholder ? "w-full" : "w-auto"} ${imageFit === "cover" && !isPlaceholder ? "object-cover" : "object-contain"}`;
   const image = (
     <img
       src={src}
       alt={alt}
-      width="640"
-      height="480"
+      width={imageData?.width || 640}
+      height={imageData?.height || 480}
       loading="lazy"
       decoding="async"
       onError={() => setFailed(true)}
-      className={`mx-auto block h-auto max-w-full object-center ${imageVariant === "book-cover" ? "max-h-96" : "max-h-[40rem]"} ${isPlaceholder ? "theme-panel-solid w-full" : "w-auto transition-opacity group-hover:opacity-90 motion-reduce:transition-none"} ${imageFit === "cover" && !isPlaceholder ? "object-cover" : "object-contain"}`}
+      style={frameAspectRatio ? { objectPosition: imageData.position || "center" } : undefined}
+      className={`mx-auto block object-center ${imageSizing} ${isPlaceholder ? "theme-panel-solid" : "transition-opacity group-hover:opacity-90 motion-reduce:transition-none"}`}
     />
   );
 
   return (
-    <div className="flex w-full justify-center">
+    <div className={`flex w-full justify-center ${className}`} style={frameAspectRatio ? { aspectRatio: frameAspectRatio } : undefined}>
       {isPlaceholder ? image : (
         <button
           type="button"
-          className="archive-focus group block w-full cursor-pointer"
+          className={`archive-focus group block w-full cursor-pointer ${frameAspectRatio ? "h-full" : ""}`}
           aria-label={expandLabel}
           onClick={() => onExpand({ src, alt })}
         >
@@ -39,11 +42,20 @@ function ArchiveImage({ item, imageData, imageVariant, expandLabel, onExpand }) 
   );
 }
 
-export default function ArchiveEntry({ item, imageVariant }) {
+export default function ArchiveEntry({ item, imageVariant, imageLayout }) {
   const [lightboxImage, setLightboxImage] = useState(null);
   const images = item.images?.length
     ? item.images
     : [{ src: item.image, alt: item.imageAlt }];
+  const isGallery = imageLayout === "gallery" && images.length > 1;
+  const mixedPair = images.length === 2 && images.every(({ width, height }) => width && height)
+    && (images[0].width > images[0].height) !== (images[1].width > images[1].height);
+  const hasLeadPhoto = isGallery && images.length % 2 === 1;
+  const pairedPhotos = hasLeadPhoto ? images.slice(1) : images;
+  // Match the tallest crop in the group to retain faces, objects, and captions.
+  const photoRatios = pairedPhotos.map(({ width, height }) => width / height)
+    .filter((ratio) => Number.isFinite(ratio) && ratio > 0);
+  const galleryAspectRatio = item.galleryAspectRatio || (photoRatios.length ? Math.min(...photoRatios) : 3 / 4);
 
   return (
     <article aria-labelledby={`archive-item-${item.id}`} className="mx-auto w-full max-w-xl">
@@ -74,13 +86,15 @@ export default function ArchiveEntry({ item, imageVariant }) {
           </dl>
         )}
       </header>
-      <div className={images.length > 1 ? "space-y-3 sm:space-y-4" : undefined}>
+      <div className={isGallery ? `grid items-center gap-3 sm:gap-4 ${mixedPair ? "" : "sm:grid-cols-2"}` : images.length > 1 ? "space-y-3 sm:space-y-4" : undefined}>
         {images.map((imageData, index) => (
           <ArchiveImage
             key={`${imageData.src || ARCHIVE_PLACEHOLDER_IMAGE}-${index}`}
             item={item}
             imageData={imageData}
             imageVariant={imageVariant}
+            className={hasLeadPhoto && index === 0 ? "sm:col-span-2" : undefined}
+            frameAspectRatio={isGallery && !mixedPair && !(hasLeadPhoto && index === 0) ? galleryAspectRatio : undefined}
             expandLabel={`Expand ${item.title}${images.length > 1 ? ` image ${index + 1}` : ""}`}
             onExpand={setLightboxImage}
           />

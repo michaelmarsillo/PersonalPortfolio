@@ -1,4 +1,5 @@
 import { fragranceItems } from "./fragranceData.mjs";
+import { objectItems } from "./objectsData.mjs";
 
 export const ARCHIVE_PLACEHOLDER_IMAGE = "/images/archive/placeholder.svg";
 
@@ -161,20 +162,10 @@ The only critique I have is that the book drags on a little bit. I think the ide
   {
     slug: "objects",
     title: "Objects & Design",
-    description: "Objects, tools, and designs I find beautiful, useful, nostalgic, or personally meaningful.",
+    description: "objects, tools, and designs i find beautiful, useful, or meaningful.",
     showDescription: true,
-    lastModified: "2026-09-22",
-    items: [
-      {
-        id: "sony-zv-1",
-        title: "Sony ZV-1",
-        creator: "Sony",
-        year: "Released 2020",
-        image: ARCHIVE_PLACEHOLDER_IMAGE,
-        imageAlt: "Placeholder for a Sony ZV-1 camera",
-        thoughts: "A compact camera that became part of my content creation process. I like tools that are simple, functional, and let me capture moments without making the process feel too heavy.",
-      },
-    ],
+    lastModified: "2026-10-02",
+    items: objectItems,
   },
   {
     slug: "places",

@@ -101,7 +101,17 @@ The current collection uses consistent transparent bottle-only PNG photos primar
 
 This collection is for physical objects, tools, products, creator gear, vehicles, clothing, and everyday items that feel beautiful, useful, nostalgic, or personally meaningful. It is broader than graphic design.
 
-The current page uses the journal-style entry layout and starts with the Sony ZV-1. Object entries show only the name, maker or brand, release year or era, image, and `My thoughts` disclosure. Do not add category tags or other metadata to Objects unless Michael changes this direction. A denser visual collection can replace this layout later if the number of objects warrants it.
+Show the small, muted subtitle beneath Objects & Design: `objects, tools, and designs I find beautiful, useful, nostalgic, or personally meaningful.` Michael will supply his own photos, with one to four photos per object, organised under `public/images/archive/objects/<object-slug>/`.
+
+The current page uses a journal-style entry layout with a photo gallery per object. Keep this order: Sony ZV-1, DJI Mic Mini, AULA F75, iPhone 16 Pro without a case, iPad Air and Apple Pencil, fidget cube, candles, earplugs and sleep mask, Alani energy drinks (honourable mention), and açaí bowls and healthy food spots (honourable mention). Sony's mirror photo of Michael holding the camera comes first (left on desktop); the camera-only photo comes second. His 22 personal photos were imported October 2, 2026. Entry data lives in `src/archive/objectsData.mjs`, imported into the shared category data.
+
+Object entries show the name, photos, and one `My thoughts` disclosure below the entire photo group. Leave thoughts empty until Michael supplies his writing; the empty disclosure hides automatically. Maker or brand and release year or era are optional on a per-object basis: include them when Michael finds them meaningful, otherwise omit those fields so no empty labels or gaps appear. Do not add category tags or other metadata to Objects unless Michael changes this direction.
+
+Gallery layout applies only to Objects: one photo is centred, two sit side by side, three use a full-width first photo above a pair, and four use a two-by-two grid. A two-photo pair with mixed portrait and landscape orientations stacks on desktop too. On mobile, all photos stack. Paired photos share an aspect ratio and use `object-fit: cover` so their top and bottom edges align without stretching. By default, use the narrowest width-to-height ratio among the paired crops to retain their full height; an optional per-object `galleryAspectRatio` overrides that frame. Optional per-photo `position` sets the focal point. Single photos and full-width lead photos retain their natural proportions. Clicking opens the full edited file in the existing lightbox. More than four images can flow into the same grid; odd counts put the first image across both columns. Art and Books retain their existing layouts.
+
+Michael makes the major crops directly in the objects image folders. Refresh photo `width` and `height` in `objectsData.mjs` after those edits, then adjust display framing as needed. Preserve his edited files rather than re-exporting the original conversions over them.
+
+Next crop pass: Michael plans to refine the two lower AULA F75 photos further. After he supplies those edits, refresh their dimensions and check their alignment before adding more personal writing.
 
 ### Places — `/archive/places`
 
@@ -115,7 +125,7 @@ The planned Habbo entry belongs at `/archive/misc/habbo`. It can be a custom, im
 
 ## Content and images
 
-Archive data lives in `src/archive/archiveData.mjs`, with the fragrance collection imported from `src/archive/fragranceData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `sourceUrl`, `metadata`, `image`, `imageAlt`, `images`, `imageFit`, and `thoughts`. Use `image` and `imageAlt` for one image, or an `images` array containing `{ src, alt }` objects for several.
+Archive data lives in `src/archive/archiveData.mjs`, with the fragrance collection imported from `src/archive/fragranceData.mjs` and objects from `src/archive/objectsData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `sourceUrl`, `metadata`, `image`, `imageAlt`, `images`, `imageFit`, and `thoughts`. Use `image` and `imageAlt` for one image, or an `images` array containing `{ src, alt }` objects for several. Objects photos also provide `width` and `height` for the upright JPG so the browser reserves the correct space while loading.
 
 Place images under:
 

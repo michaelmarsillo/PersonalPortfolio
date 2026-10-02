@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { objectItems } from '../src/archive/objectsData.mjs';
 
 const categories = [
   ['art', 'Art'],
@@ -71,23 +72,70 @@ test('every archive category works through links, direct visits, reloads, and ba
   }
 });
 
-test('Objects & Design presents replaceable object entries with facts outside the thoughts toggle', async ({ page }) => {
+test('Objects & Design groups personal photos responsively with optional facts and expanding images', async ({ page }, testInfo) => {
   await page.goto('/archive/objects');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Objects & Design');
-  await expect(page.getByText('Objects, tools, and designs I find beautiful, useful, nostalgic, or personally meaningful.')).toBeVisible();
+  await expect(page.getByText('objects, tools, and designs I find beautiful, useful, nostalgic, or personally meaningful.')).toBeVisible();
 
   const entries = page.locator('article');
-  await expect(entries).toHaveCount(1);
-  await expect(page.getByRole('heading', { level: 2 })).toHaveText('Sony ZV-1');
+  await expect(entries).toHaveCount(objectItems.length);
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(objectItems.map(({ title }) => title));
 
   const camera = entries.first();
   await expect(camera.getByText('Sony', { exact: true })).toBeVisible();
   await expect(camera.getByText('Released 2020', { exact: true })).toBeVisible();
   await expect(camera.getByText('Category:', { exact: true })).toHaveCount(0);
-  const thoughts = camera.locator('details');
-  await expect(thoughts).not.toContainText(/Sony|Released 2020/);
-  await thoughts.locator('summary').click();
-  await expect(thoughts).toContainText('A compact camera that became part of my content creation process.');
+  // Personal writing is not fabricated while Michael is still preparing it.
+  await expect(entries.locator('details')).toHaveCount(0);
+  for (const [index, item] of objectItems.entries()) {
+    const entry = entries.nth(index);
+    const photos = entry.getByRole('img');
+    await expect(photos).toHaveCount(item.images.length);
+    for (const [photoIndex, photo] of (await photos.all()).entries()) {
+      await photo.scrollIntoViewIfNeeded();
+      await expect(photo).toHaveAttribute('src', item.images[photoIndex].src);
+      await expect.poll(() => photo.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+      const dimensions = await photo.evaluate((element) => ({
+        rendered: element.getBoundingClientRect().width / element.getBoundingClientRect().height,
+        natural: element.naturalWidth / element.naturalHeight,
+        width: element.naturalWidth,
+        height: element.naturalHeight,
+        fit: getComputedStyle(element).objectFit,
+      }));
+      expect(dimensions.width).toBe(item.images[photoIndex].width);
+      expect(dimensions.height).toBe(item.images[photoIndex].height);
+      if (dimensions.fit === 'contain') expect(dimensions.rendered).toBeCloseTo(dimensions.natural, 2);
+    }
+    if (item.images.length > 1) {
+      const gallery = entry.locator('div.grid').first();
+      const columns = await gallery.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length);
+      const mixedPair = item.images.length === 2
+        && (item.images[0].width > item.images[0].height) !== (item.images[1].width > item.images[1].height);
+      expect(columns).toBe(testInfo.project.name === 'mobile' || mixedPair ? 1 : 2);
+      if (item.images.length === 3 && testInfo.project.name === 'desktop') {
+        expect(await gallery.locator(':scope > div').first().evaluate((element) => getComputedStyle(element).gridColumnEnd)).toBe('span 2');
+      }
+      if (columns === 2) {
+        const start = item.images.length % 2 === 1 ? 1 : 0;
+        for (let photoIndex = start; photoIndex < item.images.length - 1; photoIndex += 2) {
+          const left = await photos.nth(photoIndex).boundingBox();
+          const right = await photos.nth(photoIndex + 1).boundingBox();
+          expect(Math.abs(left.y - right.y)).toBeLessThan(1);
+          expect(Math.abs(left.height - right.height)).toBeLessThan(1);
+          expect(Math.abs(left.width - right.width)).toBeLessThan(1);
+        }
+      }
+    }
+  }
+  expect(await page.locator('main').evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(true);
+  await expect(entries.filter({ has: page.getByRole('heading', { name: 'Fidget Cube', exact: true }) }).locator('header p')).toHaveCount(0);
+
+  await camera.getByRole('button', { name: 'Expand Sony ZV-1 image 2', exact: true }).click();
+  const lightbox = page.getByRole('dialog', { name: /Expanded image:/ });
+  await expect(lightbox).toBeVisible();
+  await expect(lightbox.getByRole('img')).toHaveAttribute('src', objectItems[0].images[1].src);
+  await page.keyboard.press('Escape');
+  await expect(lightbox).toHaveCount(0);
 });
 
 test('thoughts open with keyboard and pointer, and entries fit in both themes', async ({ page }) => {
