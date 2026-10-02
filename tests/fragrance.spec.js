@@ -89,10 +89,12 @@ test('panel arrows cycle in shelf order, wrap, and return to the original bottle
   const scrollBefore = await page.evaluate(() => window.scrollY);
   await bottle.click();
   const panel = page.getByRole('dialog');
+  await expect(panel.getByText(`1/${collection.items.length}`, { exact: true })).toBeVisible();
   const next = panel.getByRole('button', { name: 'Next fragrance', exact: true });
   const previous = panel.getByRole('button', { name: 'Previous fragrance', exact: true });
   await next.click();
   await expect(panel).toHaveAccessibleName(collection.items[1].title);
+  await expect(panel.getByText(`2/${collection.items.length}`, { exact: true })).toBeVisible();
   await expect(page).toHaveURL(`/archive/fragrance/${collection.items[1].id}`);
   await expect(panel.getByRole('img')).toHaveAttribute('src', collection.items[1].image);
   await expect(next).toBeFocused();
@@ -100,9 +102,11 @@ test('panel arrows cycle in shelf order, wrap, and return to the original bottle
   await expect(panel).toHaveAccessibleName(firstItem.title);
   await previous.click();
   await expect(panel).toHaveAccessibleName(collection.items.at(-1).title);
+  await expect(panel.getByText(`${collection.items.length}/${collection.items.length}`, { exact: true })).toBeVisible();
   await expect(page).toHaveURL(`/archive/fragrance/${collection.items.at(-1).id}`);
   await next.click();
   await expect(panel).toHaveAccessibleName(firstItem.title);
+  await expect(panel.getByText(`1/${collection.items.length}`, { exact: true })).toBeVisible();
   await next.click();
   await page.keyboard.press('Escape');
   await expect(panel).toHaveCount(0);
@@ -115,6 +119,7 @@ test('panel arrows cycle in shelf order, wrap, and return to the original bottle
   await next.click();
   await page.reload();
   await expect(panel).toHaveAccessibleName(collection.items[1].title);
+  await expect(panel.getByText(`2/${collection.items.length}`, { exact: true })).toBeVisible();
   await panel.getByRole('button', { name: 'Close fragrance details' }).click();
   await expect(page).toHaveURL('/archive/fragrance');
 });

@@ -13,7 +13,8 @@ export default function FragrancePage() {
   const location = useLocation();
   const navigate = useNavigate();
   const collection = archiveCategories.find(({ slug }) => slug === "fragrance");
-  const selectedItem = collection.items.find(({ id }) => id === fragranceId);
+  const selectedIndex = collection.items.findIndex(({ id }) => id === fragranceId);
+  const selectedItem = collection.items[selectedIndex];
 
   if (fragranceId && !selectedItem) return <NotFound />;
 
@@ -23,8 +24,7 @@ export default function FragrancePage() {
   };
 
   const cycleFragrance = (direction) => {
-    const currentIndex = collection.items.findIndex(({ id }) => id === fragranceId);
-    const nextIndex = (currentIndex + direction + collection.items.length) % collection.items.length;
+    const nextIndex = (selectedIndex + direction + collection.items.length) % collection.items.length;
     // Keep one history entry for the panel so Close returns straight to the shelf.
     navigate(`${SHELF_PATH}/${collection.items[nextIndex].id}`, { replace: true, state: location.state });
   };
@@ -58,6 +58,8 @@ export default function FragrancePage() {
       {selectedItem && (
         <FragranceDetails
           item={selectedItem}
+          position={selectedIndex + 1}
+          total={collection.items.length}
           onClose={closeDetails}
           onPrevious={collection.items.length > 1 ? () => cycleFragrance(-1) : undefined}
           onNext={collection.items.length > 1 ? () => cycleFragrance(1) : undefined}

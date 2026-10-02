@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import FragranceImage from "./FragranceImage";
 
-export default function FragranceDetails({ item, onClose, onPrevious, onNext }) {
+export default function FragranceDetails({ item, position, total, onClose, onPrevious, onNext }) {
   const dialogRef = useRef(null);
   const thoughts = item.thoughts?.trim();
   const hasRating = Number.isFinite(item.rating) && item.rating >= 0 && item.rating <= 10;
@@ -59,7 +59,11 @@ export default function FragranceDetails({ item, onClose, onPrevious, onNext }) 
       onKeyDown={keepFocusInPanel}
       onCancel={(event) => { event.preventDefault(); onClose(); }}
     >
-      <div className="flex justify-end px-5 pt-4 sm:px-8">
+      <div className="flex items-center justify-between gap-3 px-6 pt-4 sm:px-8">
+        <span className="theme-muted text-xs tabular-nums">
+          <span aria-hidden="true">{position}/{total}</span>
+          <span className="sr-only">Fragrance {position} of {total}</span>
+        </span>
         <button
           type="button"
           className="archive-focus theme-muted theme-accent-hover px-2 py-2 text-xs"
