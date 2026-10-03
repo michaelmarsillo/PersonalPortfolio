@@ -85,8 +85,8 @@ test('Objects groups personal photos responsively with optional facts and expand
   await expect(camera.getByText('Sony', { exact: true })).toBeVisible();
   await expect(camera.getByText('Released 2020', { exact: true })).toBeVisible();
   await expect(camera.getByText('Category:', { exact: true })).toHaveCount(0);
-  // Personal writing is not fabricated while Michael is still preparing it.
-  await expect(entries.locator('details')).toHaveCount(0);
+  // Only entries with Michael's supplied writing display a disclosure.
+  await expect(entries.locator('details')).toHaveCount(objectItems.filter(({ thoughts }) => thoughts?.trim()).length);
   for (const [index, item] of objectItems.entries()) {
     const entry = entries.nth(index);
     const photos = entry.getByRole('img');
@@ -104,6 +104,9 @@ test('Objects groups personal photos responsively with optional facts and expand
       }));
       expect(dimensions.width).toBe(item.images[photoIndex].width);
       expect(dimensions.height).toBe(item.images[photoIndex].height);
+      if (item.images.length > 1 && dimensions.height > dimensions.width) {
+        expect(dimensions.rendered).toBeCloseTo(3 / 4, 2);
+      }
       if (dimensions.fit === 'contain') expect(dimensions.rendered).toBeCloseTo(dimensions.natural, 2);
     }
     if (item.images.length > 1) {

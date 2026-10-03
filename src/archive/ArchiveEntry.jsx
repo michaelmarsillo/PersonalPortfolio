@@ -51,11 +51,6 @@ export default function ArchiveEntry({ item, imageVariant, imageLayout }) {
   const mixedPair = images.length === 2 && images.every(({ width, height }) => width && height)
     && (images[0].width > images[0].height) !== (images[1].width > images[1].height);
   const hasLeadPhoto = isGallery && images.length % 2 === 1;
-  const pairedPhotos = hasLeadPhoto ? images.slice(1) : images;
-  // Match the tallest crop in the group to retain faces, objects, and captions.
-  const photoRatios = pairedPhotos.map(({ width, height }) => width / height)
-    .filter((ratio) => Number.isFinite(ratio) && ratio > 0);
-  const galleryAspectRatio = item.galleryAspectRatio || (photoRatios.length ? Math.min(...photoRatios) : 3 / 4);
 
   return (
     <article aria-labelledby={`archive-item-${item.id}`} className="mx-auto w-full max-w-xl">
@@ -94,7 +89,7 @@ export default function ArchiveEntry({ item, imageVariant, imageLayout }) {
             imageData={imageData}
             imageVariant={imageVariant}
             className={hasLeadPhoto && index === 0 ? "sm:col-span-2" : undefined}
-            frameAspectRatio={isGallery && !mixedPair && !(hasLeadPhoto && index === 0) ? galleryAspectRatio : undefined}
+            frameAspectRatio={isGallery && imageData.height > imageData.width ? 3 / 4 : undefined}
             expandLabel={`Expand ${item.title}${images.length > 1 ? ` image ${index + 1}` : ""}`}
             onExpand={setLightboxImage}
           />

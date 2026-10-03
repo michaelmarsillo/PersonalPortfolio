@@ -10,9 +10,9 @@ The eleven HEIC originals were replaced with verified JPG counterparts in Michae
 
 Michael subsequently cropped the public JPGs himself. The public files now represent those edits; preserve them, refresh their data dimensions after cropping, and use matching gallery frames for alignment. The initial conversion dimensions and hashes are historical, not a reason to replace his updated photos.
 
-The updated AULA F75 desk photo is 2160 × 3255 and the work photo is 1206 × 1790. Their gallery uses a 3:4 display frame to shorten and align the pair while the landscape lead remains unchanged. The lightbox opens the complete edited JPGs.
+The updated AULA F75 desk photo is 2160 × 3255 and the work photo is 1206 × 1790. All Objects gallery portraits now share that pair's 3:4 display frame. Landscape photos and the single HEAL photo retain their natural proportions. The lightbox opens the complete edited JPGs; display framing does not modify the files.
 
-Photo layout and content editing guidance lives in `archive-vision.md`. Personal thoughts remain empty until Michael supplies them. Maker and year are optional. The video screenshot of the fidget cube belongs to the Fidget Cube entry. Alani has four photos; the breakfast photo is fourth because it shows Michael having an Alani with his breakfast.
+Photo layout and content editing guidance lives in `archive-vision.md`. Michael began supplying personal thoughts on October 3, 2026; each completed note lives in `objectsData.mjs`, and other entries remain empty until he supplies them. Maker and year are optional. The video screenshot of the fidget cube belongs to the Fidget Cube entry. Alani has four photos; the breakfast photo is fourth because it shows Michael having an Alani with his breakfast.
 
 ## Original filenames and public copies
 
