@@ -2,13 +2,15 @@
 
 Michael supplied 22 personal photos for ten Objects entries, imported October 2, 2026.
 
-On October 3, four more HEIC photos were converted at full resolution and imported. The sunset Alani case replaces the first Cosmic Stardust can photo. Candles keeps only the two desk shots, with the new working-at-the-desk photo first; the handheld Urban Burn candle photo was removed. Coconut Water is its own entry above Alani, with the carton and case photos. Açaí Bowls (honourable mention) remains below Alani with its single HEAL photo, bringing the page to eleven entries. There are 24 active public photos. These four new HEIC originals were also replaced with verified JPG counterparts in the source folder before removal.
+On October 3, four more HEIC photos were converted at full resolution and imported. The sunset Alani case replaces the first Cosmic Stardust can photo. Candles keeps only the two desk shots, with the new working-at-the-desk photo first; the handheld Urban Burn candle photo was removed. Coconut Water is its own entry above Alani, with the carton and case photos. Açaí Bowls (honourable mention) remains below Alani with its single HEAL photo, bringing the page to eleven entries. There were 24 active public photos after this import. These four new HEIC originals were also replaced with verified JPG counterparts in the source folder before removal.
 
 All public assets are JPGs with their original resolution and correct orientation. Camera metadata is omitted; embedded colour profiles are retained. Eleven HEIC files and two PNG files were converted, and the existing JPGs were exported consistently. Full-size JPGs were decoded and their dimensions and file hashes verified after copying into the repository.
 
 The eleven HEIC originals were replaced with verified JPG counterparts in Michael's source folder, then removed at his request. Existing JPG and PNG originals remain there.
 
 Michael subsequently cropped the public JPGs himself. The public files now represent those edits; preserve them, refresh their data dimensions after cropping, and use matching gallery frames for alignment. The initial conversion dimensions and hashes are historical, not a reason to replace his updated photos.
+
+The updated AULA F75 desk photo is 2160 × 3255 and the work photo is 1206 × 1790. Their gallery uses a 3:4 display frame to shorten and align the pair while the landscape lead remains unchanged. The lightbox opens the complete edited JPGs.
 
 Photo layout and content editing guidance lives in `archive-vision.md`. Personal thoughts remain empty until Michael supplies them. Maker and year are optional. The video screenshot of the fidget cube belongs to the Fidget Cube entry. Alani has four photos; the breakfast photo is fourth because it shows Michael having an Alani with his breakfast.
 
@@ -42,3 +44,13 @@ Photo layout and content editing guidance lives in `archive-vision.md`. Personal
 | `IMG_9806.HEIC` | `coconut-water/holding-coconut-water.jpg` |
 | `IMG_9809.HEIC` | `coconut-water/coconut-water-case.jpg` |
 | `IMG_9817.HEIC` | `candles/working-with-a-candle.jpg` |
+
+## Sony and iPhone refresh, October 3, 2026
+
+The Sony mirror photo now leads above the new handheld window portrait (left) and screen close-up (right). The old top-down Sony photo was removed from the public assets. The iPhone glare photo was replaced by the new handheld photo in front of the Laurier sign; its existing second photo remains. There are now 25 active photos across eleven entries. Original JPG sources remain untouched. The new Sony HEIC was converted upright at full resolution and replaced with a verified JPG in the source folder before removal.
+
+| Original | Public image under `public/images/archive/objects/` |
+| --- | --- |
+| `IMG_9823.HEIC` | `sony-zv-1/sony-zv-1-by-the-window.jpg` |
+| `IMG_9821.jpg` | `sony-zv-1/sony-zv-1-screen-close-up.jpg` |
+| `DSC09797.JPG` | `iphone-16-pro/iphone-16-pro-by-laurier-sign.jpg` |

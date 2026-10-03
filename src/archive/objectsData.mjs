@@ -17,10 +17,16 @@ export const objectItems = [
         "height": 2160
       },
       {
-        "src": "/images/archive/objects/sony-zv-1/sony-zv-1-on-desk.jpg",
-        "alt": "My Sony ZV-1 on the desk",
-        "width": 2796,
-        "height": 1943
+        "src": "/images/archive/objects/sony-zv-1/sony-zv-1-by-the-window.jpg",
+        "alt": "Holding my Sony ZV-1 by the window",
+        "width": 3024,
+        "height": 4032
+      },
+      {
+        "src": "/images/archive/objects/sony-zv-1/sony-zv-1-screen-close-up.jpg",
+        "alt": "A close-up of my Sony ZV-1 screen while filming",
+        "width": 1206,
+        "height": 1602
       }
     ],
     "thoughts": ""
@@ -29,6 +35,7 @@ export const objectItems = [
     "id": "dji-mic-mini",
     "title": "DJI Mic Mini",
     "creator": "DJI",
+    "year": "Released 2024",
     "images": [
       {
         "src": "/images/archive/objects/dji-mic-mini/dji-mic-mini-kit.jpg",
@@ -49,10 +56,12 @@ export const objectItems = [
     "id": "aula-f75",
     "title": "AULA F75",
     "creator": "AULA",
+    "year": "Released 2023",
+    "galleryAspectRatio": 0.75,
     "images": [
       {
         "src": "/images/archive/objects/aula-f75/aula-f75-working-at-home.jpg",
-        "alt": "Using my AULA F75 at my desk by the window",
+        "alt": "Using my AULA F75 at my desk",
         "width": 3840,
         "height": 2160
       },
@@ -60,13 +69,13 @@ export const objectItems = [
         "src": "/images/archive/objects/aula-f75/aula-f75-desk-setup.jpg",
         "alt": "My AULA F75 in my desk setup",
         "width": 2160,
-        "height": 3840
+        "height": 3255
       },
       {
         "src": "/images/archive/objects/aula-f75/aula-f75-at-work.jpg",
         "alt": "Using my AULA F75 at work",
         "width": 1206,
-        "height": 2136
+        "height": 1790
       }
     ],
     "thoughts": ""
@@ -75,16 +84,17 @@ export const objectItems = [
     "id": "iphone-16-pro",
     "title": "iPhone 16 Pro (without a case)",
     "creator": "Apple",
+    "year": "Released 2024",
     "images": [
       {
-        "src": "/images/archive/objects/iphone-16-pro/iphone-16-pro-without-case.jpg",
-        "alt": "My iPhone 16 Pro without a case",
-        "width": 1485,
-        "height": 2227
+        "src": "/images/archive/objects/iphone-16-pro/iphone-16-pro-by-laurier-sign.jpg",
+        "alt": "Holding my iPhone 16 Pro without a case",
+        "width": 3648,
+        "height": 5472
       },
       {
         "src": "/images/archive/objects/iphone-16-pro/iphone-16-pro-case-off.jpg",
-        "alt": "My iPhone 16 Pro on the desk",
+        "alt": "My iPhone 16 Pro on my desk",
         "width": 3648,
         "height": 5472
       }
@@ -95,16 +105,17 @@ export const objectItems = [
     "id": "ipad-air-and-apple-pencil",
     "title": "iPad Air & Apple Pencil",
     "creator": "Apple",
+    "year": "Released 2022 (Ipad Air 5th Gen) & 2018 (Apple Pencil 2nd Gen)",
     "images": [
       {
         "src": "/images/archive/objects/ipad-air-and-apple-pencil/ipad-air-desk-setup.jpg",
-        "alt": "My iPad Air and Apple Pencil in my desk setup",
+        "alt": "My iPad Air and Apple Pencil on my desk",
         "width": 3024,
         "height": 4032
       },
       {
         "src": "/images/archive/objects/ipad-air-and-apple-pencil/ipad-air-taking-notes.jpg",
-        "alt": "Taking notes on my iPad Air with an Apple Pencil",
+        "alt": "Doing WebWork on my iPad Air with an Apple Pencil",
         "width": 3024,
         "height": 4032
       }
@@ -200,13 +211,13 @@ export const objectItems = [
       },
       {
         "src": "/images/archive/objects/alani-energy-drinks/alani-pink-can.jpg",
-        "alt": "An Alani energy drink by the window",
+        "alt": "A Pink Slush alani",
         "width": 1242,
         "height": 1915
       },
       {
         "src": "/images/archive/objects/alani-energy-drinks/alani-stash.jpg",
-        "alt": "My Alani energy drinks",
+        "alt": "Me opening a box of alani energy drinks",
         "width": 1206,
         "height": 1742
       },
