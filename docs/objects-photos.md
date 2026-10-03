@@ -1,6 +1,8 @@
 # Objects photo import
 
-Michael supplied 22 personal photos for ten Objects & Design entries, imported October 2, 2026.
+Michael supplied 22 personal photos for ten Objects entries, imported October 2, 2026.
+
+On October 3, four more HEIC photos were converted at full resolution and imported. The sunset Alani case replaces the first Cosmic Stardust can photo. Candles keeps only the two desk shots, with the new working-at-the-desk photo first; the handheld Urban Burn candle photo was removed. Coconut Water is its own entry above Alani, with the carton and case photos. Açaí Bowls (honourable mention) remains below Alani with its single HEAL photo, bringing the page to eleven entries. There are 24 active public photos. These four new HEIC originals were also replaced with verified JPG counterparts in the source folder before removal.
 
 All public assets are JPGs with their original resolution and correct orientation. Camera metadata is omitted; embedded colour profiles are retained. Eleven HEIC files and two PNG files were converted, and the existing JPGs were exported consistently. Full-size JPGs were decoded and their dimensions and file hashes verified after copying into the repository.
 
@@ -25,14 +27,18 @@ Photo layout and content editing guidance lives in `archive-vision.md`. Personal
 | `IMG_9788.jpg` | `earplugs-and-sleep-mask/wearing-sleep-mask.jpg` |
 | `DSC09792.JPG` | `iphone-16-pro/iphone-16-pro-without-case.jpg` |
 | `DSC09793.JPG` | `iphone-16-pro/iphone-16-pro-case-off.jpg` |
-| `IMG_9493.HEIC` | `alani-energy-drinks/alani-cosmic-stardust.jpg` |
+| `IMG_9493.HEIC` | Retired from the page; replaced by the sunset photo below |
 | `IMG_9419.JPG` | `alani-energy-drinks/alani-pink-can.jpg` |
 | `IMG_9189.jpg` | `fidget-cube/fidgetcubefromvideo.jpg` |
 | `IMG_9791.jpg` | `alani-energy-drinks/alani-stash.jpg` |
-| `IMG_9784 2.HEIC` | `candles/mango-candle.jpg` |
+| `IMG_9784 2.HEIC` | Retired from the page; the two desk shots remain |
 | `IMG_9324.HEIC` | `candles/candle-at-desk.jpg` |
 | `IMG_9783.HEIC` | `fidget-cube/fidget-cube.jpg` |
 | `IMG_9445.HEIC` | `ipad-air-and-apple-pencil/ipad-air-desk-setup.jpg` |
 | `IMG_9574.HEIC` | `ipad-air-and-apple-pencil/ipad-air-taking-notes.jpg` |
 | `IMG_9348.HEIC` | `acai-bowls-and-healthy-food/acai-bowl-at-heal.jpg` |
 | `IMG_9620.HEIC` | `alani-energy-drinks/alani-with-breakfast.jpg` |
+| `IMG_9805.HEIC` | `alani-energy-drinks/alani-case-at-sunset.jpg` |
+| `IMG_9806.HEIC` | `coconut-water/holding-coconut-water.jpg` |
+| `IMG_9809.HEIC` | `coconut-water/coconut-water-case.jpg` |
+| `IMG_9817.HEIC` | `candles/working-with-a-candle.jpg` |

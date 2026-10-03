@@ -135,8 +135,8 @@ export const objectItems = [
     "title": "Candles",
     "images": [
       {
-        "src": "/images/archive/objects/candles/mango-candle.jpg",
-        "alt": "Holding one of my candles",
+        "src": "/images/archive/objects/candles/working-with-a-candle.jpg",
+        "alt": "Working at my desk with a lit candle",
         "width": 4284,
         "height": 5712
       },
@@ -169,15 +169,34 @@ export const objectItems = [
     "thoughts": ""
   },
   {
+    "id": "coconut-water",
+    "title": "Coconut Water",
+    "images": [
+      {
+        "src": "/images/archive/objects/coconut-water/holding-coconut-water.jpg",
+        "alt": "Holding a carton of Rubicon organic coconut water",
+        "width": 4284,
+        "height": 5712
+      },
+      {
+        "src": "/images/archive/objects/coconut-water/coconut-water-case.jpg",
+        "alt": "Holding a case of Kirkland organic coconut water",
+        "width": 4284,
+        "height": 5712
+      }
+    ],
+    "thoughts": ""
+  },
+  {
     "id": "alani-energy-drinks",
     "title": "Alani Energy Drinks (honourable mention)",
     "creator": "Alani Nu",
     "images": [
       {
-        "src": "/images/archive/objects/alani-energy-drinks/alani-cosmic-stardust.jpg",
-        "alt": "Holding an Alani Cosmic Stardust energy drink",
-        "width": 4284,
-        "height": 5712
+        "src": "/images/archive/objects/alani-energy-drinks/alani-case-at-sunset.jpg",
+        "alt": "Holding a case of Alani energy drinks by the window at sunset",
+        "width": 3024,
+        "height": 4032
       },
       {
         "src": "/images/archive/objects/alani-energy-drinks/alani-pink-can.jpg",
@@ -202,7 +221,7 @@ export const objectItems = [
   },
   {
     "id": "acai-bowls-and-healthy-food",
-    "title": "Açaí Bowls & Healthy Food Spots (honourable mention)",
+    "title": "Açaí Bowls (honourable mention)",
     "images": [
       {
         "src": "/images/archive/objects/acai-bowls-and-healthy-food/acai-bowl-at-heal.jpg",

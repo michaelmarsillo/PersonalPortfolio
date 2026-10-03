@@ -161,10 +161,10 @@ The only critique I have is that the book drags on a little bit. I think the ide
   },
   {
     slug: "objects",
-    title: "Objects & Design",
-    description: "objects, tools, and designs i find beautiful, useful, or meaningful.",
+    title: "Objects",
+    description: "objects i find beautiful, useful, or meaningful.",
     showDescription: true,
-    lastModified: "2026-10-02",
+    lastModified: "2026-10-03",
     items: objectItems,
   },
   {

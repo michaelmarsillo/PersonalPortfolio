@@ -27,7 +27,7 @@ The About page is the entrance. The Archive itself lives at `/archive`.
 └── /archive/misc
 ```
 
-There is no People or Friends category. Fragrance remains singular in its route. Objects & Design uses the shorter `/archive/objects` route.
+There is no People or Friends category. Fragrance remains singular in its route. Objects uses the shorter `/archive/objects` route.
 
 ## Shared behavior
 
@@ -97,13 +97,13 @@ Keep bottle images under `public/images/archive/fragrance/<house>-<fragrance>-<v
 
 The current collection uses consistent transparent bottle-only PNG photos primarily from My Perfume Shop, with Dr. Squatch's official Fireside Bourbon photo and Easycosmetic's Ana Abiyedh White photo. After Effect and Burberry London for Men use imagegen background cutouts of catalog images. Burberry London uses the dark brown-glass bottle with a black cap, as Michael requested, rather than the silver-cap design. Product pages, original image URLs, date references, and the cutout prompts are recorded in `docs/fragrance-sources.md`. Ameer Al Oudh is the confirmed Intense Oud version, and Acqua di Giò Profondo is the confirmed EDP. The One and Profondo use the original EDP bottle designs. Ana Abiyedh (White) has no release year displayed because sources disagree.
 
-### Objects & Design — `/archive/objects`
+### Objects — `/archive/objects`
 
 This collection is for physical objects, tools, products, creator gear, vehicles, clothing, and everyday items that feel beautiful, useful, nostalgic, or personally meaningful. It is broader than graphic design.
 
-Show the small, muted subtitle beneath Objects & Design: `objects, tools, and designs I find beautiful, useful, nostalgic, or personally meaningful.` Michael will supply his own photos, with one to four photos per object, organised under `public/images/archive/objects/<object-slug>/`.
+The page title is `Objects`, with the small, muted subtitle `objects i find beautiful, useful, or meaningful.` Michael will supply his own photos, with one to four photos per object, organised under `public/images/archive/objects/<object-slug>/`.
 
-The current page uses a journal-style entry layout with a photo gallery per object. Keep this order: Sony ZV-1, DJI Mic Mini, AULA F75, iPhone 16 Pro without a case, iPad Air and Apple Pencil, fidget cube, candles, earplugs and sleep mask, Alani energy drinks (honourable mention), and açaí bowls and healthy food spots (honourable mention). Sony's mirror photo of Michael holding the camera comes first (left on desktop); the camera-only photo comes second. His 22 personal photos were imported October 2, 2026. Entry data lives in `src/archive/objectsData.mjs`, imported into the shared category data.
+The current page uses a journal-style entry layout with a photo gallery per object. Keep this order: Sony ZV-1, DJI Mic Mini, AULA F75, iPhone 16 Pro without a case, iPad Air and Apple Pencil, fidget cube, candles, earplugs and sleep mask, coconut water, Alani energy drinks (honourable mention), and açaí bowls (honourable mention). Sony's mirror photo of Michael holding the camera comes first (left on desktop); the camera-only photo comes second. His first 22 personal photos were imported October 2, 2026. Four more were added October 3, replacing one Alani photo. Removing the handheld Urban Burn candle photo leaves 24 active photos. Alani's sunset case photo comes first, followed by the pink can, indoor case photo, and breakfast. Candles keeps only the two desk shots side by side, with the new working-with-a-candle photo first. Coconut Water is a separate entry immediately before the honourable mentions, with its carton and case photos side by side. Açaí Bowls remains an honourable mention after Alani, with its single HEAL photo. Entry data lives in `src/archive/objectsData.mjs`, imported into the shared category data.
 
 Object entries show the name, photos, and one `My thoughts` disclosure below the entire photo group. Leave thoughts empty until Michael supplies his writing; the empty disclosure hides automatically. Maker or brand and release year or era are optional on a per-object basis: include them when Michael finds them meaningful, otherwise omit those fields so no empty labels or gaps appear. Do not add category tags or other metadata to Objects unless Michael changes this direction.
 
@@ -111,7 +111,9 @@ Gallery layout applies only to Objects: one photo is centred, two sit side by si
 
 Michael makes the major crops directly in the objects image folders. Refresh photo `width` and `height` in `objectsData.mjs` after those edits, then adjust display framing as needed. Preserve his edited files rather than re-exporting the original conversions over them.
 
-Next crop pass: Michael plans to refine the two lower AULA F75 photos further. After he supplies those edits, refresh their dimensions and check their alignment before adding more personal writing.
+Michael prefers two photo formats for future entries: a pair of portrait photos, or a landscape lead photo above two portrait photos, as in the AULA F75 entry. The page is becoming a personal collection of everyday essentials, similar to a “what's in my bag” page, while still allowing other meaningful objects.
+
+Next photo pass: Michael plans to improve the Sony ZV-1 photos, aiming for a landscape lead shot above two portraits, and retake one iPhone photo. He may also refine crops, including the two lower AULA F75 photos. Wait for his replacement photos rather than changing these entries prematurely. Refresh image dimensions and check alignment after his edits, then add his supplied `My thoughts` writing to each entry.
 
 ### Places — `/archive/places`
 

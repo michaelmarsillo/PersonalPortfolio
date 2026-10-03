@@ -5,7 +5,7 @@ const categories = [
   ['art', 'Art'],
   ['books', 'Books'],
   ['fragrance', 'Fragrance'],
-  ['objects', 'Objects & Design'],
+  ['objects', 'Objects'],
   ['places', 'Places'],
   ['misc', 'Misc'],
 ];
@@ -72,10 +72,10 @@ test('every archive category works through links, direct visits, reloads, and ba
   }
 });
 
-test('Objects & Design groups personal photos responsively with optional facts and expanding images', async ({ page }, testInfo) => {
+test('Objects groups personal photos responsively with optional facts and expanding images', async ({ page }, testInfo) => {
   await page.goto('/archive/objects');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Objects & Design');
-  await expect(page.getByText('objects, tools, and designs I find beautiful, useful, nostalgic, or personally meaningful.')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Objects');
+  await expect(page.getByText('objects i find beautiful, useful, or meaningful.')).toBeVisible();
 
   const entries = page.locator('article');
   await expect(entries).toHaveCount(objectItems.length);
