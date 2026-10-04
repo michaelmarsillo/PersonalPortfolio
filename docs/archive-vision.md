@@ -200,7 +200,34 @@ This custom page shows its original Written date beneath the heading because the
 
 Preserve Michael's voice, humour, and qualified memories: he was ten when he made michael-9 on January 21, 2016; michael_hockey followed January 24; his earlier account is deliberately misspelt Annonymas, created November 21, 2015, as confirmed by habbo9.png. Its motto reads [WH] SS Cadet II [DIS]; Michael worked at the White House as a cadet on that account too. The screenshots show 10,520 and **1,132** activity points respectively (the dictated 1,032 was a transcription error). Keep those numbers and last-login labels as snapshot observations. Include his White House / Secret Service role-playing, weekly tasks and new-member training, worldwide friendships, thousands of hours, and his last consistent play around COVID in 2020–2021. His dog michael shows 3,905 days in `habbo6.png`; the Hen Hat offer shows 550 credits in `habbo4.png`, and the Cow Beanie offer shows 997 in `habbo8.png`. These are screenshot listings, not live valuations. The approximate CAD conversions in his dictation were uncertain, so retain his memory of buying things for maybe five dollars without asserting an exchange rate or resale proceeds. The Azure fans, Venetian dividers, café, ice cream maker, room light, HC box, and room description come from his own explanation.
 
-Background facts were checked October 4, 2026: [Sulake](https://www.sulake.com/) describes Habbo's user-created rooms, pixel avatars, role-playing, and furniture trading; [Guinness World Records](https://www.guinnessworldrecords.com/world-records/largest-virtual-community-for-teens) records Habbo (Sulake, 2000) with over 15 million users in August 2010; [Habbo Club support](https://help.habbo.com/hc/en-us/articles/360011620299-What-is-Habbo-Club) explains its clothing and room-layout benefits; [Habbo's AIR client support](https://help.habbo.com/hc/en-us/articles/360021200079-How-to-use-the-downloadable-AIR-client) explains the end of Flash and the downloadable familiar client. The page links the latter three beside the related writing. Do not claim that Habbo can only be played in an installed app: the source also describes a browser client. Do not add contemporary game statistics or marketplace prices that could silently age.
+Background facts were checked October 4, 2026: [Sulake](https://www.sulake.com/) describes Habbo's user-created rooms, pixel avatars, role-playing, and furniture trading; [Guinness World Records](https://www.guinnessworldrecords.com/world-records/largest-virtual-community-for-teens) records Habbo (Sulake, 2000) with over 15 million users in August 2010; [Habbo Club support](https://help.habbo.com/hc/en-us/articles/360011620299-What-is-Habbo-Club) explains its clothing and room-layout benefits; [Habbo's AIR client support](https://help.habbo.com/hc/en-us/articles/360021200079-How-to-use-the-downloadable-AIR-client) explains the end of Flash and the downloadable familiar client. The page links Guinness World Records and Habbo Club beside the related writing. Michael removed the public Flash / downloadable-app source link on October 4, 2026; keep its checked background here for provenance. Do not claim that Habbo can only be played in an installed app: the source also describes a browser client. Do not add contemporary game statistics or marketplace prices that could silently age.
+
+On October 4, 2026 Michael edited his Habbo wording directly. Preserve that wording verbatim. At his request, the office now displays a transparent-background sibling, habbo1-transparent.png (1586×992 RGBA), made with the built-in imagegen tool. Retain habbo1.png unchanged as the original screenshot. The generated cutout is an image edit rather than an exact pixel mask; its prompt and provenance are recorded in docs/habbo-office-cutout.md. Only its image reference and the removed source link changed during this work; his paragraphs and titles were verified unchanged.
+
+Habbo's White House section now includes a small `from the White House archives`
+collection after the office screenshot. `habboWhiteHouseData.mjs` contains
+the dated welcome-list excerpt from the May 14, 2017 SS Times, Michael's
+confirmed Mike/Canada profile from the August issue, and undated handbook task
+requirements. Show concise text with source/page labels; keep each real PDF
+clipping inside a closed native `View original clipping` disclosure, with the
+existing click-to-expand lightbox. Michael requested light spelling and wording
+cleanup directly in his old profile image. Its visible entry is now just the
+August 6th date, `My Little Introduction`, a short description, source label and
+clipping disclosure. Use `ss-times-2017-08-06-mike-profile-edited.png` (1794×877),
+with the original crop retained unchanged. Its small personal caption about
+the 2014 Senate claim sits beneath the image inside the disclosure only; keep
+it separate from image alt text and out of the expanded lightbox. The weekly-tasks
+clipping also has his personal caption about never missing Sunday meetings,
+delaying family dinner, and postponing chores, in the same placement and style.
+Remove the separate transcript and
+public editing note at his request; document the image edit and prompt in
+`docs/habbo-profile-edit.md`. The redundant August welcome entry and its image
+were removed. Never infer his promotions or training totals from
+other members' awards or branch requirements. Store clippings under
+`public/images/archive/misc/habbo/white-house/`; retain original PDFs in his source
+folder rather than adding all four to public. Exact source pages, crop bounds,
+and editing decisions are in `docs/habbo-white-house-sources.md`. His current
+story paragraphs remain unchanged.
 
 ## Content and images
 

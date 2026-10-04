@@ -23,6 +23,37 @@ function Photo({ image, onExpand, room = false }) {
 
 const backLinkClass = "archive-focus theme-muted theme-accent-hover inline-block py-2 text-xs";
 
+function WhiteHouseArchive({ archive, onExpand }) {
+  return (
+    <aside className="habbo-clippings" aria-labelledby="habbo-clippings-title">
+      <h3 id="habbo-clippings-title">{archive.title}</h3>
+      <p>{archive.introduction}</p>
+      <ol>
+        {archive.entries.map((entry) => (
+          <li key={entry.id}>
+            <div className="habbo-clipping-date">
+              {entry.date ? <time dateTime={entry.date}>{entry.dateLabel}</time> : entry.dateLabel}
+            </div>
+            <h4>{entry.title}</h4>
+            {entry.quote && (
+              <blockquote>
+                <p>{entry.quote}</p>
+                {entry.account && <p className="habbo-clipping-account">{entry.account}</p>}
+              </blockquote>
+            )}
+            <p className="habbo-clipping-note">{entry.note}</p>
+            <p className="habbo-clipping-source">{entry.source}</p>
+            <details>
+              <summary className="archive-focus">View original clipping</summary>
+              <Photo image={entry.image} onExpand={onExpand} />
+            </details>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  );
+}
+
 export default function HabboPage({ entry, collection }) {
   const [expandedImage, setExpandedImage] = useState(null);
   const lastImageButton = useRef(null);
@@ -70,6 +101,7 @@ export default function HabboPage({ entry, collection }) {
                     {section.sources.map((source) => <Reference key={source.url} source={source} />)}
                   </p>
                 )}
+                {section.archive && <WhiteHouseArchive archive={section.archive} onExpand={expandImage} />}
               </section>
             ))}
           </div>

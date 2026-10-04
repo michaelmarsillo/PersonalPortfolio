@@ -37,7 +37,11 @@ test('Habbo keeps its room blue in either theme and restores the saved theme whe
 
 test('all memories load without overflow and the full room closes the story', async ({ page }) => {
   await page.goto(path);
-  const images = [...habboStory.sections.flatMap(section => section.images || []), habboStory.room];
+  const clippings = habboStory.sections.flatMap(section => section.archive?.entries || []);
+  for (const disclosure of await page.locator('.habbo-clippings details').all()) {
+    await disclosure.locator('summary').click();
+  }
+  const images = [...habboStory.sections.flatMap(section => section.images || []), ...clippings.map(entry => entry.image), habboStory.room];
   for (const image of images) {
     const element = page.locator(`main img[src="${image.src}"]`);
     await element.scrollIntoViewIfNeeded();
@@ -53,11 +57,40 @@ test('all memories load without overflow and the full room closes the story', as
   }
   await expect(page.locator('main img').last()).toHaveAttribute('src', habboStory.room.src);
   expect(await page.locator('main').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
-  await expect(page.locator('main details')).toHaveCount(0);
+  await expect(page.locator('main details')).toHaveCount(clippings.length);
+  await expect(page.locator('main summary').filter({ hasText: 'My thoughts' })).toHaveCount(0);
   await expect(page.locator('[data-thoughts-date] time')).toHaveAttribute('datetime', '2026-10-04');
   await expect(page.getByText('Memories to come.')).toHaveCount(0);
   await expect(page.locator('main')).toContainText('3,905 days');
   await expect(page.locator('main')).toContainText('Last login: 10 years ago');
+});
+
+test('White House excerpts preserve dates and offer expandable clippings', async ({ page }) => {
+  await page.goto(path);
+  const archive = page.getByRole('complementary', { name: 'from the White House archives' });
+  await expect(archive.locator('li')).toHaveCount(3);
+  await expect(archive.locator('time')).toHaveCount(2);
+  await expect(archive.getByText('Undated handbook', { exact: true })).toBeVisible();
+  await expect(archive).toContainText('rather than a record of my own training totals');
+  await expect(archive).not.toContainText('another familiar name');
+  const profile = archive.locator('li').filter({ has: page.getByRole('heading', { name: 'My Little Introduction', exact: true }) });
+  await expect(profile).toContainText('Answering a question about why I joined SS and a few things about me.');
+  await expect(profile.locator('dl')).toHaveCount(0);
+  const disclosure = profile.locator('details');
+  await expect(disclosure).not.toHaveAttribute('open', '');
+  const summary = disclosure.locator('summary');
+  await summary.focus();
+  await page.keyboard.press('Enter');
+  await expect(disclosure).toHaveAttribute('open', '');
+  const profileImage = habboStory.sections.find(section => section.archive).archive.entries.find(entry => entry.id === 'mike-profile').image;
+  const opener = disclosure.getByRole('button', { name: `Expand ${profileImage.alt}`, exact: true });
+  await opener.click();
+  await expect(page.getByRole('dialog').locator('img')).toHaveAttribute('src', /ss-times-2017-08-06-mike-profile-edited\.png$/);
+  await page.keyboard.press('Escape');
+  await expect(opener).toBeFocused();
+  await summary.click();
+  await expect(disclosure).not.toHaveAttribute('open', '');
+  expect(await page.locator('main').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
 });
 
 test('screenshots expand with keyboard access and Habbo has its own share image', async ({ page, request }) => {

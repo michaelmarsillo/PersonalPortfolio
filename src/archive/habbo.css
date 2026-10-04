@@ -141,6 +141,79 @@ html.habbo-active body {
   text-decoration-color: currentColor;
 }
 
+.habbo-clippings {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgb(22 58 76 / 18%);
+}
+
+.habbo-clippings h3 {
+  margin-bottom: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.habbo-clippings ol {
+  margin-top: 1.75rem;
+  list-style: none;
+}
+
+.habbo-clippings li + li {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgb(22 58 76 / 12%);
+}
+
+.habbo-clipping-date,
+.habbo-clipping-source,
+.habbo-clipping-note {
+  color: var(--habbo-muted);
+  font-size: 0.6875rem;
+  line-height: 1.7;
+}
+
+.habbo-clippings h4 {
+  margin: 0.25rem 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.habbo-clippings blockquote {
+  border-left: 2px solid rgb(22 58 76 / 28%);
+  padding-left: 1rem;
+  font-size: 0.875rem;
+}
+
+.habbo-clipping-account {
+  font-weight: 500;
+}
+
+.habbo-clippings .habbo-clipping-note {
+  margin-top: 0.75rem;
+}
+
+.habbo-clippings .habbo-clipping-source {
+  margin-top: 0.5rem;
+}
+
+.habbo-clippings summary {
+  width: fit-content;
+  padding-block: 0.5rem;
+  color: var(--habbo-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.habbo-clippings summary:hover {
+  color: var(--habbo-ink);
+}
+
+.habbo-clippings .habbo-photo {
+  max-width: 32rem;
+  margin: 0.75rem auto 0;
+}
+
 /* On phones, trim only the room screenshot's empty blue side margins.
    The entire room still fits, and the lightbox retains the original image. */
 @media (max-width: 639px) {
