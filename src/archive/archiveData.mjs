@@ -1,5 +1,6 @@
 import { fragranceItems } from "./fragranceData.mjs";
 import { objectItems } from "./objectsData.mjs";
+import { placeItems } from "./placesData.mjs";
 
 export const ARCHIVE_PLACEHOLDER_IMAGE = "/images/archive/placeholder.svg";
 
@@ -170,20 +171,10 @@ The only critique I have is that the book drags on a little bit. I think the ide
   {
     slug: "places",
     title: "Places",
-    description: "Places I’ve been, want to go, or find meaningful.",
-    lastModified: "2026-09-21",
-    items: [
-      {
-        id: "first-place",
-        title: "Somewhere to remember",
-        creator: "Location to come",
-        year: "Date to come",
-        image: ARCHIVE_PLACEHOLDER_IMAGE,
-        imageAlt: "Placeholder for a place",
-        imageFit: "cover",
-        thoughts: "A space for a place, a moment, and the details I hope I don’t forget. Notes and photographs to come.",
-      },
-    ],
+    description: "places that mean something to me.",
+    showDescription: true,
+    lastModified: "2026-10-03",
+    items: placeItems,
   },
   {
     slug: "misc",

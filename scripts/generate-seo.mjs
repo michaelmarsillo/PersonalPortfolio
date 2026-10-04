@@ -10,6 +10,7 @@ import {
   createBlogSeo,
   createArchiveSeo,
   createFragranceSeo,
+  createPlaceSeo,
   staticSeo,
 } from "../src/seoMetadata.mjs";
 
@@ -106,6 +107,8 @@ const routes = [
   ...[archiveOverview, ...archiveCategories].map(createArchiveSeo),
   ...archiveCategories.filter(({ slug }) => slug === "fragrance")
     .flatMap((collection) => collection.items.map((item) => createFragranceSeo(item, collection))),
+  ...archiveCategories.filter(({ slug }) => slug === "places")
+    .flatMap((collection) => collection.items.map((item) => createPlaceSeo(item, collection))),
 ];
 
 for (const metadata of routes) {

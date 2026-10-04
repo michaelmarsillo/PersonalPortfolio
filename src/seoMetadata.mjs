@@ -126,6 +126,22 @@ export const createArchiveSeo = (collection) => {
   };
 };
 
+export const createPlaceSeo = (item, collection) => {
+  const path = `/archive/places/${item.id}`;
+  const description = `${item.title}${item.creator ? ` in ${item.creator}` : ""} from Michael Marsillo's personal places archive.${item.year ? ` ${item.year}.` : ""}`;
+  const firstImage = item.images?.[0];
+
+  return {
+    title: `${item.title} | Places | Archive | ${SITE_NAME}`,
+    description,
+    path,
+    image: firstImage?.src ? absoluteUrl(firstImage.src) : DEFAULT_IMAGE,
+    imageAlt: firstImage?.alt || item.title,
+    jsonLd: pageJsonLd("CollectionPage", path, item.title, description),
+    lastModified: item.lastModified || collection.lastModified,
+  };
+};
+
 export const createFragranceSeo = (item, collection) => {
   const path = `/archive/fragrance/${item.id}`;
   const title = `${item.title} | Fragrance | Archive | ${SITE_NAME}`;

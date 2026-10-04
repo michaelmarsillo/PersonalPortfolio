@@ -24,6 +24,10 @@ The About page is the entrance. The Archive itself lives at `/archive`.
 ├── /archive/fragrance
 ├── /archive/objects
 ├── /archive/places
+│   ├── /archive/places/universal-orlando
+│   ├── /archive/places/pure-muscle-and-fitness
+│   ├── /archive/places/the-cottage
+│   └── /archive/places/peek-n-peak
 └── /archive/misc
 ```
 
@@ -33,7 +37,7 @@ There is no People or Friends category. Fragrance remains singular in its route.
 
 `ArchiveLayout` provides the common page width, background, heading treatment, back link, and SEO integration. Categories may use different content layouts inside that shell.
 
-Every archive category has matching `Back to archive` links above the heading and below its content, before the site footer. Both links align with the content column and share the same understated styling. The Archive index keeps its bottom `Back to about` link.
+Every archive category has matching `Back to archive` links above the heading and below its content, before the site footer. Both links align with the content column and share the same understated styling. Individual place pages instead use `Back to places` links to return to their directory. The Archive index keeps its bottom `Back to about` link.
 
 Art, Books, and Fragrance show small, muted, fully lowercase subtitles directly beneath their titles: `my favourite art pieces.`, `books i’ve read.`, and `fragrances in my collection.` respectively. The Archive index subtitle is `a space for the things I collect, study, revisit, and find meaningful.` Use the existing heading spacing and description styling. Use Canadian spelling in personal copy.
 
@@ -49,6 +53,8 @@ For journal-style entries, factual information appears above the image in this o
 6. a native `My thoughts` disclosure
 
 The `My thoughts` disclosure contains only Michael's personal writing. Creator information and metadata never belong inside it.
+
+Thoughts support optional inline links using `[label](https://...)` in the data. Render these with the homepage's subtle `theme-pill` wrapper, matching its rounded background, padding, medium-weight link and hover colours. Links open in a new tab; plain paragraphs keep their existing layout. Pure Muscle + Fitness's HD Muscle sponsorship shout-out links to Michael's exact referral URL: `https://hdmuscle.com/?ref=marsillo`.
 
 Preserve Michael's natural voice when lightly editing this writing. Fix obvious spelling, capitalization, punctuation, and paragraph flow without making it sound formal or rewritten. Do not use em dashes in any `My thoughts` copy.
 
@@ -115,7 +121,7 @@ For Coconut Water, keep his sodium/potassium motivation, enjoyment of the taste,
 
 Alani's personal note refers to his Canadian 355 mL cans with 140 mg caffeine and zero sugar, checked against Costco Canada's variety-pack listing: https://www.costco.ca/p/-/alani-nu-energy-drink-variety-18-x-355-ml/4000120658. Do not substitute the 200 mg figure on the brand's general storefront. His daily ritual is anchored to 2026.
 
-Gallery layout applies only to Objects: one photo is centred, two sit side by side, three use a full-width first photo above a pair, and four use a two-by-two grid. A two-photo pair with mixed portrait and landscape orientations stacks on desktop too. On mobile, all photos stack. Every gallery portrait uses a fixed 3:4 display frame and `object-fit: cover`, matching the AULA F75 pair, so portrait proportions stay consistent across entries without stretching. Optional per-photo `position` sets the focal point. Landscape photos retain their natural proportions. The single HEAL açaí photo also retains its natural proportions, as Michael requested. Clicking opens the full edited file in the existing lightbox; display framing does not alter image files. More than four images can flow into the same grid; odd counts put the first image across both columns. Art and Books retain their existing layouts.
+Objects gallery layout: one photo is centred, two sit side by side, three use a full-width first photo above a pair, and four use a two-by-two grid. A two-photo pair with mixed portrait and landscape orientations stacks on desktop too. On mobile, all photos stack. Every gallery portrait uses a fixed 3:4 display frame and `object-fit: cover`, matching the AULA F75 pair, so portrait proportions stay consistent across entries without stretching. Optional per-photo `position` sets the focal point. Landscape photos retain their natural proportions. The single HEAL açaí photo also retains its natural proportions, as Michael requested. Clicking opens the full edited file in the existing lightbox; display framing does not alter image files. More than four images can flow into the same grid; odd counts put the first image across both columns. Art and Books retain their existing layouts.
 
 Michael makes the major crops directly in the objects image folders. Refresh photo `width` and `height` in `objectsData.mjs` after those edits, then adjust display framing as needed. Preserve his edited files rather than re-exporting the original conversions over them.
 
@@ -125,7 +131,37 @@ The Sony landscape-and-two-portraits gallery and the replacement iPhone shot are
 
 ### Places — `/archive/places`
 
-This may evolve into a photo log, location index, or map. Choose the format after real place entries and images exist.
+Places is a minimal directory, with the subtitle `places that mean something to me.` It reuses the Archive index's plain route links, without thumbnails, cards, icons, or descriptions beside each link. Display shortened labels such as `/places/universal-orlando`; destinations retain the full `/archive/places/<id>` path. Keep this top-to-bottom order: Universal Orlando, Pure Muscle + Fitness, The cottage, and Peek’n Peak. Each place opens its own full page with its existing photo journal, facts, optional thoughts, and photo disclosure. This structure supports Michael's lifelong travel archive and return visits without an ever-growing category page. Keep a single place identity and stable URL over time; dated visits can be developed within that place's page when needed.
+
+Michael supplied the initial photo collection and additional Universal Orlando/Peek’n Peak memories on October 3, 2026. Entry data lives in `src/archive/placesData.mjs`, with images grouped under `public/images/archive/places/<place-slug>/`. The collection has 35 unique public JPGs: fourteen for Universal Orlando, six for Pure Muscle + Fitness, six for The cottage, and nine for Peek’n Peak, including supplied resort/pool images. Original-to-public filename mappings are in `docs/places-photos.md`.
+
+Reuse the centred journal entries and click-to-expand lightbox from Objects. Portrait pairs use 3:4 display frames; landscape and standalone photos can set `fullWidth: true` to span both desktop columns and retain their natural proportions. The flag also disables the automatic odd-count lead placement so photo order stays explicit. All photos stack on mobile. Keep the complete image files unchanged by display framing. Each place gets one `My thoughts` disclosure below its complete photo group once Michael supplies writing. Leave thoughts empty while setting up photos.
+
+Michael wants to keep as many distinct memories as possible without making the page feel like a long blog post. Universal Orlando sets `previewImageCount: 5` and Peek’n Peak sets `previewImageCount: 6`, with their remaining photos inside a small native `More photos (N)` disclosure below the initial gallery. The count comes from data. Opening it reveals the same photo layout and lightbox; the single `My thoughts` section stays below the entire photo collection. Other entries currently show all their photos. Change the preview count or omit it as the collection is refined. Preserve Michael’s photo filenames, alt text, and later manual ordering edits. Only remove verified duplicate files or formats after JPG replacements have been decoded and hash-verified; do not automatically discard similar compositions.
+
+Universal Orlando’s extra photos form four desktop pairs: Weasleys' Wizard Wheezes beside the dragon above Gringotts, the Butterbeer close-up beside Michael drinking Butterbeer, the Chocolate Emporium building beside the funhouse mirror photo with his sister in The Simpsons Ride queue, then the Greek restaurant meal beside the restaurant memory with his mother. Michael identified the two restaurant shots as Florida-trip photos and moved them out of Peek’n Peak. The landscape plane photo follows those pairs as the final, full-width image inside the disclosure, wrapping up the trip. It does not appear in the initial gallery; the Hogwarts group photo closes that gallery. Michael identified the building previously mislabeled as the VelociCoaster entrance as Chocolate Emporium. CityWalk at Night was removed from the website; retain the original personal JPG in his source folder. The Butterbeer selfie is a paired portrait, without `fullWidth`.
+
+Michael supplied Universal Orlando's personal thoughts on October 3, 2026. They appear in its single native `My thoughts` disclosure below the photo collection. Preserve his uncertain recollection of staying in Tampa for a couple of nights, his first flight in over five years, family Harry Potter enthusiasm, Greek restaurant visits, The Simpsons Ride nausea, and Hagrid's as his favourite ride. The park names and Hagrid's ride name were checked against [Universal's Hogsmeade page](https://www.universalorlando.com/web/en/us/theme-parks/islands-of-adventure/the-wizarding-world-of-harry-potter-hogsmeade) and [official ride page](https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hagrids-magical-creatures-motorbike-adventure). Use Express Pass for his weekend pass, matching [Universal's official naming](https://www.universalorlando.com/web/en/us/tickets-packages/express-passes).
+
+Pure Muscle + Fitness has three desktop pairs in this order: the gym-floor mirror photo and wide-angle atmosphere shot, Michael with Jeff Nippard and Jesse James West, then Michael with Kyle Forgeard (NELK) and Kyle Landi. All six use the same portrait frames and stack on mobile. Michael identified the people for the alt text. The post-workout mirror photo was removed from the website at his request; retain his source JPG.
+
+Michael supplied Pure Muscle + Fitness thoughts on October 3, 2026, with the date range `2021 to present`. Preserve his first gym at Crunch on Main West in Hamilton, his love for Pure Muscle + Fitness from his first visit, the people he has met, its impact on his life and work ethic, and his HD Muscle sponsorship shout-out. His praise belongs in his personal voice, without presenting an independently verified gym ranking.
+
+The cottage keeps six photos: the beach landscape, two portrait pairs of Michael with his sisters and the sunset, then the full-width interior shot. Michael prefers this moving shot in his HD Muscle shirt; its alt text describes eating dinner and spending quality time with his family. The similar bottom interior shot by the table and the last evening beach photo were removed from the website at his request; retain his source JPGs.
+
+Michael supplied The cottage thoughts on October 3, 2026. It is his aunt's cottage, visited annually, typically around Canada Day. Keep the uncertain starting date as `2015 or 2016 to present` rather than choosing a year for him. Preserve the sense of a sacred family tradition, unwinding in nature, gratitude, and valuable lessons from his aunt, uncle and cousins. Michael confirmed its location as Port Elgin, Ontario.
+
+Peek’n Peak keeps the nostalgic lodge exterior and wide pool image. Michael is snowboarding in the clear-sky portrait and sitting on the slopes in the image previously mistaken for a chairlift view. The remaining three photos inside `More photos` are the lodge selfie, the play-area memory, and the vintage pool image. The nighttime pool video screenshot was removed. The vintage pool photo is not Michael's own; he supplied it because its glowing lights and old Pepsi vending machine evoke the pool he remembers growing up.
+
+Michael supplied Peek’n Peak thoughts on October 3, 2026, completing all four initial Places entries. Preserve his uncertain first visit in 2015 or 2016, March break family trips, skiing as a child and snowboarding on his return, the smaller-feeling playroom at age 19, nostalgic lodge architecture and pool atmosphere, and the possibility of returning with his own kids someday. The date range is `2015 or 2016 to 2024`. Saved original capture metadata for the two slope photos confirms February 18 and 19, 2024, matching his recollection of the most recent trip. The current public JPG hashes match those original import records. His personal trip photos are from that recent visit; the supplied resort/pool reference images are separate from his own photography.
+
+Location (`creator`) and visit date (`year`) are optional. Universal Orlando displays `Orlando, Florida` and `December 2023`, as Michael requested; the entry can include surrounding Florida-trip photos. Pure Muscle + Fitness displays `Burlington, Ontario` and `2021 to present`, as Michael requested. The cottage displays `Port Elgin, Ontario` and `2015 or 2016 to present`. Peek’n Peak displays `Clymer, New York` (the resort is near Pennsylvania but located in New York) and `2015 or 2016 to 2024`. Keep uncertain starting years rather than choosing one for Michael.
+
+#### Adding a place
+
+Add a record to `placeItems` in `src/archive/placesData.mjs`. Use a unique, descriptive `id`, a `title`, an `images` array, and Michael's supplied `thoughts` (or `""` until he supplies writing). The `id` is the URL segment and should remain unchanged after publication. Array order controls the directory order. Location (`creator`), visit date (`year`), and per-place `lastModified` are optional. Each image supplies `src`, `alt`, `width`, and `height`; `fullWidth` and `position` remain optional framing controls. Set `previewImageCount` when additional photos should be tucked into the native disclosure.
+
+Save photos in `public/images/archive/places/<id>/` and reference `/images/archive/places/<id>/<filename>.jpg`. The directory link and page appear automatically; no individual route registration or new page component is required. The production build also discovers each place and generates its HTML metadata, canonical URL, and sitemap entry. Update the place's `lastModified` (or the category date) when changing content, run the build, and copy `build/sitemap.xml` to `public/sitemap.xml` as with existing archive changes. Direct visits, refreshes, unknown-place handling, parent navigation, mobile galleries, and the lightbox are covered by browser tests. No map or filters are needed yet.
 
 ### Misc — `/archive/misc`
 
@@ -135,7 +171,7 @@ The planned Habbo entry belongs at `/archive/misc/habbo`. It can be a custom, im
 
 ## Content and images
 
-Archive data lives in `src/archive/archiveData.mjs`, with the fragrance collection imported from `src/archive/fragranceData.mjs` and objects from `src/archive/objectsData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `sourceUrl`, `metadata`, `image`, `imageAlt`, `images`, `imageFit`, and `thoughts`. Use `image` and `imageAlt` for one image, or an `images` array containing `{ src, alt }` objects for several. Objects photos also provide `width` and `height` for the upright JPG so the browser reserves the correct space while loading.
+Archive data lives in `src/archive/archiveData.mjs`, with the fragrance collection imported from `src/archive/fragranceData.mjs`, objects from `src/archive/objectsData.mjs`, and places from `src/archive/placesData.mjs`. Each item needs a unique, stable `id`. Optional fields include `creator`, `year`, `sourceUrl`, `metadata`, `image`, `imageAlt`, `images`, `imageFit`, and `thoughts`. Use `image` and `imageAlt` for one image, or an `images` array containing `{ src, alt }` objects for several. Objects and Places photos also provide `width` and `height` for the upright JPG so the browser reserves the correct space while loading.
 
 Place images under:
 

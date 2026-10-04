@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { objectItems } from '../src/archive/objectsData.mjs';
+import { placeItems } from '../src/archive/placesData.mjs';
 
 const categories = [
   ['art', 'Art'],
@@ -51,14 +52,21 @@ test('every archive category works through links, direct visits, reloads, and ba
     const path = `/archive/${slug}`;
     await page.locator(`a[href="${path}"]`).click();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title);
-    await expect(page.locator('article').first()).toBeVisible();
+    if (slug === 'places') {
+      await expect(page.getByRole('list', { name: 'Places', exact: true })).toBeVisible();
+      await expect(page.locator('article')).toHaveCount(0);
+    } else {
+      await expect(page.locator('article').first()).toBeVisible();
+    }
     await expect(page).toHaveTitle(`${title} | Archive | Michael Marsillo`);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://www.michaelmarsillo.ca${path}`);
     await page.reload();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title);
-    const image = page.locator('article img').first();
-    await image.scrollIntoViewIfNeeded();
-    await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+    if (slug !== 'places') {
+      const image = page.locator('article img').first();
+      await image.scrollIntoViewIfNeeded();
+      await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+    }
     await page.getByRole('link', { name: 'Back to archive' }).last().click();
     await expect(page).toHaveURL(/\/archive$/);
   }
@@ -139,6 +147,108 @@ test('Objects groups personal photos responsively with optional facts and expand
   await expect(lightbox.getByRole('img')).toHaveAttribute('src', objectItems[0].images[1].src);
   await page.keyboard.press('Escape');
   await expect(lightbox).toHaveCount(0);
+});
+
+test('Places links to individual journals with direct loads, galleries, and parent navigation', async ({ page }, testInfo) => {
+  await page.goto('/archive/places');
+  await expect(page.getByText('places that mean something to me.')).toBeVisible();
+  await expect(page.getByRole('list', { name: 'Places', exact: true }).getByRole('link')).toHaveText(placeItems.map(({ id }) => `/places/${id}`));
+  await expect(page.locator('main img')).toHaveCount(0);
+
+  for (const place of placeItems) {
+    const path = `/archive/places/${place.id}`;
+    const link = page.getByRole('link', { name: `/places/${place.id}`, exact: true });
+    await expect(link).toHaveAttribute('href', path);
+    await link.click();
+    await expect(page).toHaveURL(new RegExp(`${path}$`));
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(place.title);
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+    await expect(page).toHaveTitle(`${place.title} | Places | Archive | Michael Marsillo`);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://www.michaelmarsillo.ca${path}`);
+    await page.reload();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(place.title);
+    const entry = page.getByRole('article', { name: place.title, exact: true });
+    await expect(page.locator('article')).toHaveCount(1);
+    if (place.creator) await expect(entry.getByText(place.creator, { exact: true })).toBeVisible();
+    if (place.year) await expect(entry.getByText(place.year, { exact: true })).toBeVisible();
+    await expect(entry.locator('details:not([data-archive-photos])')).toHaveCount(place.thoughts?.trim() ? 1 : 0);
+    const photos = entry.getByRole('img');
+    const morePhotos = entry.locator('details[data-archive-photos]');
+    const hasMorePhotos = place.images.length > (place.previewImageCount || place.images.length);
+    if (hasMorePhotos) {
+      await expect(photos).toHaveCount(place.previewImageCount);
+      await expect(morePhotos).not.toHaveAttribute('open');
+      await morePhotos.locator('summary').focus();
+      await page.keyboard.press('Enter');
+      await expect(morePhotos).toHaveAttribute('open', '');
+    }
+    await expect(photos).toHaveCount(place.images.length);
+    for (const [photoIndex, photoData] of place.images.entries()) {
+      const photo = photos.nth(photoIndex);
+      await photo.scrollIntoViewIfNeeded();
+      await expect(photo).toHaveAttribute('src', photoData.src);
+      await expect.poll(() => photo.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);
+      const dimensions = await photo.evaluate((element) => ({
+        width: element.naturalWidth,
+        height: element.naturalHeight,
+        ratio: element.getBoundingClientRect().width / element.getBoundingClientRect().height,
+      }));
+      expect([dimensions.width, dimensions.height]).toEqual([photoData.width, photoData.height]);
+      expect(dimensions.ratio).toBeCloseTo(photoData.fullWidth ? photoData.width / photoData.height : 3 / 4, 2);
+      if (photoData.fullWidth && testInfo.project.name === 'desktop') {
+        expect(await photo.locator('xpath=../..').evaluate((element) => getComputedStyle(element).gridColumnEnd)).toBe('span 2');
+      }
+    }
+    for (const gallery of await entry.locator('div.grid').all()) {
+      const columns = await gallery.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length);
+      expect(columns).toBe(testInfo.project.name === 'mobile' ? 1 : 2);
+    }
+    if (hasMorePhotos) {
+      await morePhotos.locator('summary').click();
+      await expect(morePhotos).not.toHaveAttribute('open');
+      await expect(photos).toHaveCount(place.previewImageCount);
+    }
+    if (place.thoughts?.trim()) {
+      const thoughts = entry.locator('details:not([data-archive-photos])');
+      await thoughts.locator('summary').focus();
+      await page.keyboard.press('Enter');
+      await expect(thoughts).toHaveAttribute('open', '');
+      if (place.id === 'pure-muscle-and-fitness') {
+        const referral = thoughts.getByRole('link', { name: 'HD Muscle', exact: true });
+        await expect(referral).toBeVisible();
+        await expect(referral).toHaveAttribute('href', 'https://hdmuscle.com/?ref=marsillo');
+        await expect(referral).toHaveAttribute('target', '_blank');
+        await expect(referral.locator('..')).toHaveClass(/theme-pill/);
+        await expect(thoughts).toContainText('Also, shout out HD Muscle for sponsoring me.');
+      }
+      await thoughts.locator('summary').click();
+      await expect(thoughts).not.toHaveAttribute('open');
+    }
+    expect(await page.locator('main').evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(true);
+    await expect(page.getByRole('link', { name: 'Back to places', exact: true })).toHaveCount(2);
+    await page.getByRole('link', { name: 'Back to places', exact: true }).last().click();
+    await expect(page).toHaveURL(/\/archive\/places$/);
+  }
+  await page.goto('/archive/places/peek-n-peak');
+  const peak = page.locator('article');
+  await peak.locator('details[data-archive-photos] summary').click();
+  const peakImages = placeItems.find(({ id }) => id === 'peek-n-peak').images;
+  await page.getByRole('button', { name: `Expand Peek’n Peak image ${peakImages.length}`, exact: true }).click();
+  const lightbox = page.getByRole('dialog', { name: /Expanded image:/ });
+  await expect(lightbox).toBeVisible();
+  await expect(lightbox.getByRole('img')).toHaveAttribute('src', peakImages.at(-1).src);
+  await page.keyboard.press('Escape');
+  await expect(lightbox).toHaveCount(0);
+  await page.getByRole('link', { name: 'Back to places' }).first().click();
+  await expect(page).toHaveURL(/\/archive\/places$/);
+  await page.goBack();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Peek’n Peak');
+  await page.goto('/archive/places/not-a-place');
+  await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+  await page.goto('/archive/places');
+  await page.getByRole('link', { name: 'Back to archive' }).last().click();
+  await expect(page).toHaveURL(/\/archive$/);
 });
 
 test('thoughts open with keyboard and pointer, and entries fit in both themes', async ({ page }) => {
@@ -323,7 +433,11 @@ test('every archive route has production HTML metadata and a sitemap entry', asy
   const sitemap = await (await request.get('/sitemap.xml')).text();
   expect(sitemap).not.toContain('/archive/people');
   expect(sitemap).not.toContain('/archive/design-objects');
-  const routes = [['', 'Archive | Michael Marsillo'], ...categories.map(([slug, title]) => [`/${slug}`, `${title} | Archive | Michael Marsillo`])];
+  const routes = [
+    ['', 'Archive | Michael Marsillo'],
+    ...categories.map(([slug, title]) => [`/${slug}`, `${title} | Archive | Michael Marsillo`]),
+    ...placeItems.map(({ id, title }) => [`/places/${id}`, `${title} | Places | Archive | Michael Marsillo`]),
+  ];
   for (const [suffix, title] of routes) {
     const path = `/archive${suffix}`;
     const response = await request.get(`${path}.html`);

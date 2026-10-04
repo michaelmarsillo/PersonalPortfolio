@@ -42,20 +42,39 @@ function ArchiveImage({ item, imageData, imageVariant, expandLabel, onExpand, cl
   );
 }
 
-export default function ArchiveEntry({ item, imageVariant, imageLayout }) {
+export default function ArchiveEntry({ item, imageVariant, imageLayout, showTitle = true }) {
   const [lightboxImage, setLightboxImage] = useState(null);
   const images = item.images?.length
     ? item.images
     : [{ src: item.image, alt: item.imageAlt }];
   const isGallery = imageLayout === "gallery" && images.length > 1;
-  const mixedPair = images.length === 2 && images.every(({ width, height }) => width && height)
+  const explicitGalleryLayout = images.some(({ fullWidth }) => fullWidth);
+  const mixedPair = !explicitGalleryLayout && images.length === 2 && images.every(({ width, height }) => width && height)
     && (images[0].width > images[0].height) !== (images[1].width > images[1].height);
-  const hasLeadPhoto = isGallery && images.length % 2 === 1;
+  // Places can arrange landscape and standalone shots explicitly. Objects
+  // retain the automatic full-width lead above paired photos for odd counts.
+  const hasLeadPhoto = isGallery && !explicitGalleryLayout && images.length % 2 === 1;
+  const previewCount = isGallery && Number.isInteger(item.previewImageCount) && item.previewImageCount > 0
+    ? item.previewImageCount : images.length;
+  const galleryClassName = isGallery ? `grid items-center gap-3 sm:gap-4 ${mixedPair ? "" : "sm:grid-cols-2"}`
+    : images.length > 1 ? "space-y-3 sm:space-y-4" : undefined;
+  const renderImage = (imageData, index) => (
+    <ArchiveImage
+      key={`${imageData.src || ARCHIVE_PLACEHOLDER_IMAGE}-${index}`}
+      item={item}
+      imageData={imageData}
+      imageVariant={imageVariant}
+      className={isGallery && (imageData.fullWidth || (hasLeadPhoto && index === 0)) ? "sm:col-span-2" : undefined}
+      frameAspectRatio={isGallery && !imageData.fullWidth && imageData.height > imageData.width ? 3 / 4 : undefined}
+      expandLabel={`Expand ${item.title}${images.length > 1 ? ` image ${index + 1}` : ""}`}
+      onExpand={setLightboxImage}
+    />
+  );
 
   return (
-    <article aria-labelledby={`archive-item-${item.id}`} className="mx-auto w-full max-w-xl">
+    <article aria-labelledby={showTitle ? `archive-item-${item.id}` : undefined} aria-label={showTitle ? undefined : item.title} className="mx-auto w-full max-w-xl">
       <header className="mb-4">
-        <h2 id={`archive-item-${item.id}`} className="theme-heading text-base font-medium leading-snug">{item.title}</h2>
+        {showTitle && <h2 id={`archive-item-${item.id}`} className="theme-heading text-base font-medium leading-snug">{item.title}</h2>}
         {item.creator && (
           <p className="theme-body mt-1 text-xs leading-relaxed">{item.creator}</p>
         )}
@@ -81,20 +100,19 @@ export default function ArchiveEntry({ item, imageVariant, imageLayout }) {
           </dl>
         )}
       </header>
-      <div className={isGallery ? `grid items-center gap-3 sm:gap-4 ${mixedPair ? "" : "sm:grid-cols-2"}` : images.length > 1 ? "space-y-3 sm:space-y-4" : undefined}>
-        {images.map((imageData, index) => (
-          <ArchiveImage
-            key={`${imageData.src || ARCHIVE_PLACEHOLDER_IMAGE}-${index}`}
-            item={item}
-            imageData={imageData}
-            imageVariant={imageVariant}
-            className={hasLeadPhoto && index === 0 ? "sm:col-span-2" : undefined}
-            frameAspectRatio={isGallery && imageData.height > imageData.width ? 3 / 4 : undefined}
-            expandLabel={`Expand ${item.title}${images.length > 1 ? ` image ${index + 1}` : ""}`}
-            onExpand={setLightboxImage}
-          />
-        ))}
+      <div className={galleryClassName}>
+        {images.slice(0, previewCount).map(renderImage)}
       </div>
+      {images.length > previewCount && (
+        <details data-archive-photos className="mt-2">
+          <summary className="archive-focus theme-muted theme-accent-hover w-fit cursor-pointer list-inside py-2 text-xs">
+            More photos ({images.length - previewCount})
+          </summary>
+          <div className={`mt-2 ${galleryClassName}`}>
+            {images.slice(previewCount).map((imageData, index) => renderImage(imageData, index + previewCount))}
+          </div>
+        </details>
+      )}
       <div className="mt-2">
         <ArchiveToggle thoughts={item.thoughts} />
       </div>
