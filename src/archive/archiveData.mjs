@@ -19,16 +19,19 @@ export const archiveOverview = {
 // reserved for your personal thoughts.
 // imageFit accepts "contain" (default, preserves the whole image) or "cover".
 // Separate thoughts paragraphs with a blank line. Update lastModified when editing a category.
+// Set thoughtsWrittenOn once (YYYY-MM-DD); preserve it when updating the entry.
+// Only add/update thoughtsEditedOn when revising the actual personal writing.
 export const archiveCategories = [
   {
     slug: "art",
     title: "Art",
     description: "my favourite art pieces.",
     showDescription: true,
-    lastModified: "2026-10-02",
+    lastModified: "2026-10-03",
     items: [
       {
         id: "stanczyk",
+        thoughtsWrittenOn: "2026-09-23",
         title: "Stańczyk",
         creator: "Jan Matejko",
         year: "1862",
@@ -45,6 +48,7 @@ The letter on the table is frustrating when trying to make sense of the painting
       },
       {
         id: "the-fallen-angel",
+        thoughtsWrittenOn: "2026-09-25",
         title: "The Fallen Angel",
         creator: "Alexandre Cabanel",
         year: "1847",
@@ -67,6 +71,7 @@ It makes me question how he was able to draw that sort of emotion with his own t
       },
       {
         id: "laughing-fool",
+        thoughtsWrittenOn: "2026-09-25",
         title: "Laughing Fool",
         creator: "Attributed to Jacob Cornelisz van Oostsanen",
         year: "c. 1500",
@@ -85,6 +90,7 @@ Such an interesting piece of work, even though it seems like the jester is taunt
       },
       {
         id: "soir-bleu",
+        thoughtsWrittenOn: "2026-09-25",
         title: "Soir Bleu",
         creator: "Edward Hopper",
         year: "1914",
@@ -107,6 +113,7 @@ That is why I like this painting. I do not think it gives you one clean answer. 
       },
       {
         id: "daniel-in-the-lions-den",
+        thoughtsWrittenOn: "2026-09-25",
         title: "Daniel in the Lions’ Den",
         creator: "Briton Rivière",
         year: "1872",
@@ -134,10 +141,11 @@ Daniel feels like the visual version of that lesson. He is surrounded by chaos, 
     title: "Books",
     description: "books i’ve read.",
     showDescription: true,
-    lastModified: "2026-10-02",
+    lastModified: "2026-10-03",
     items: [
       {
         id: "deep-work",
+        thoughtsWrittenOn: "2026-10-01",
         title: "Deep Work",
         creator: "Cal Newport",
         year: "January 5, 2016",
@@ -157,7 +165,7 @@ The only critique I have is that the book drags on a little bit. I think the ide
     title: "Fragrance",
     description: "fragrances in my collection.",
     showDescription: true,
-    lastModified: "2026-10-02",
+    lastModified: "2026-10-03",
     items: fragranceItems,
   },
   {

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import FragranceImage from "./FragranceImage";
+import ThoughtsDate from "./ThoughtsDate";
 
 export default function FragranceDetails({ item, position, total, onClose, onPrevious, onNext }) {
   const dialogRef = useRef(null);
@@ -101,6 +102,7 @@ export default function FragranceDetails({ item, position, total, onClose, onPre
                 {thoughts.split(/\n\s*\n/).filter(Boolean).map((paragraph, index) => (
                   <p key={index} className="whitespace-pre-line">{paragraph}</p>
                 ))}
+                <ThoughtsDate writtenOn={item.thoughtsWrittenOn} editedOn={item.thoughtsEditedOn} />
               </div>
             )}
             {hasRating && (

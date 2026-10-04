@@ -15,6 +15,36 @@ test.beforeEach(async ({ page }) => {
   page.on('pageerror', (error) => { throw error; });
 });
 
+test.describe('reflection dates', () => {
+  test.use({ timezoneId: 'America/Los_Angeles' });
+
+  test('written dates stay on the original calendar day across journal layouts and reloads', async ({ page }) => {
+    const journals = [
+      ['/archive/art', '2026-09-23', 'Written Sep 23, 2026'],
+      ['/archive/books', '2026-10-01', 'Written Oct 1, 2026'],
+      ['/archive/objects', '2026-10-03', 'Written Oct 3, 2026'],
+      ['/archive/places/universal-orlando', '2026-10-03', 'Written Oct 3, 2026'],
+    ];
+    for (const [path, isoDate, label] of journals) {
+      await page.goto(path);
+      const thoughts = page.locator('article details:not([data-archive-photos])').first();
+      const date = thoughts.locator('[data-thoughts-date]');
+      await expect(date).toBeHidden();
+      await thoughts.locator('summary').click();
+      await expect(date).toBeVisible();
+      await expect(date).toHaveText(label);
+      await expect(date.locator('time')).toHaveCount(1);
+      await expect(date.locator('time')).toHaveAttribute('datetime', isoDate);
+      await page.reload();
+      await expect(date).toBeHidden();
+      await thoughts.locator('summary').click();
+      await expect(date).toHaveText(label);
+    }
+    await page.goto('/archive/misc');
+    await expect(page.locator('[data-thoughts-date]')).toHaveCount(0);
+  });
+});
+
 const buttonStyles = (link) => link.evaluate((element) => {
   const styles = getComputedStyle(element);
   return Object.fromEntries(['backgroundColor', 'borderRadius', 'padding', 'gap', 'fontSize', 'color', 'transitionProperty']
@@ -258,6 +288,7 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   const stanczyk = page.locator('article').first();
   const summary = details.locator('summary');
   const thoughts = details.locator('div').first();
+  const writtenDate = details.locator('[data-thoughts-date]');
   const image = page.locator('article img').first();
   const artist = page.getByText('Jan Matejko', { exact: true });
   await expect(artist).toBeVisible();
@@ -277,16 +308,21 @@ test('thoughts open with keyboard and pointer, and entries fit in both themes', 
   expect(Math.abs(centeredImageBox.x + centeredImageBox.width / 2 - viewportWidth / 2)).toBeLessThanOrEqual(1);
   const imageSizeBefore = await image.evaluate((element) => ({ width: element.clientWidth, height: element.clientHeight }));
   await expect(thoughts).toBeHidden();
+  await expect(writtenDate).toBeHidden();
   await summary.focus();
   await expect(summary).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(details).toHaveAttribute('open', '');
   await expect(thoughts).toBeVisible();
+  await expect(writtenDate).toHaveText('Written Sep 23, 2026');
+  await expect(writtenDate.locator('time')).toHaveAttribute('datetime', '2026-09-23');
+  await expect(writtenDate).toBeVisible();
   await expect(thoughts).toContainText('The idea of the jester is quite provocative');
   await expect(thoughts).toContainText('Anyway, just some food for thought.');
   await page.keyboard.press('Space');
   await expect(details).not.toHaveAttribute('open');
   await expect(thoughts).toBeHidden();
+  await expect(writtenDate).toBeHidden();
   await summary.click();
   await expect(thoughts).toBeVisible();
   expect(await image.evaluate((element) => ({ width: element.clientWidth, height: element.clientHeight }))).toEqual(imageSizeBefore);

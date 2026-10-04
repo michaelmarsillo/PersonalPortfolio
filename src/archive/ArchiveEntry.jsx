@@ -114,7 +114,7 @@ export default function ArchiveEntry({ item, imageVariant, imageLayout, showTitl
         </details>
       )}
       <div className="mt-2">
-        <ArchiveToggle thoughts={item.thoughts} />
+        <ArchiveToggle thoughts={item.thoughts} writtenOn={item.thoughtsWrittenOn} editedOn={item.thoughtsEditedOn} />
       </div>
       <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
     </article>

@@ -13,6 +13,7 @@ test('the shelf is responsive and details keep keyboard focus and the reader’s
   await page.goto('/archive/fragrance');
   const shelf = page.getByRole('list', { name: 'Fragrance shelf' });
   await expect(shelf.getByRole('link')).toHaveCount(collection.items.length);
+  await expect(page.locator('[data-thoughts-date]')).toHaveCount(0);
   const columns = await shelf.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length);
   expect(columns).toBe(testInfo.project.name === 'mobile' ? 2 : 4);
   const images = shelf.getByRole('img');
@@ -76,6 +77,10 @@ test('a missing photo falls back to a bottle placeholder without breaking detail
   await expect(panel.getByRole('img')).toHaveAttribute('src', '/images/archive/fragrance/bottle-placeholder.svg');
   await expect(panel.getByText('Thoughts to come.', { exact: true })).toHaveCount(0);
   if (firstItem.thoughts) await expect(panel.getByText(firstItem.thoughts, { exact: true })).toBeVisible();
+  const writtenDate = panel.locator('[data-thoughts-date]');
+  await expect(writtenDate).toHaveText('Written Oct 1, 2026');
+  await expect(writtenDate.locator('time')).toHaveAttribute('datetime', '2026-10-01');
+  await expect(writtenDate).toBeVisible();
   if (Number.isFinite(firstItem.rating)) await expect(panel.getByText(`My rating ${firstItem.rating}/10`, { exact: true })).toBeVisible();
   await expect(panel.locator('details')).toHaveCount(0);
   await page.keyboard.press('Escape');

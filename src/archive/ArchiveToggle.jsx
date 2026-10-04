@@ -1,3 +1,5 @@
+import ThoughtsDate from "./ThoughtsDate";
+
 // Keep thoughts as plain text, with optional [label](https://...) links.
 function renderParagraph(paragraph) {
   const content = [];
@@ -24,7 +26,7 @@ function renderParagraph(paragraph) {
   return content;
 }
 
-export default function ArchiveToggle({ thoughts }) {
+export default function ArchiveToggle({ thoughts, writtenOn, editedOn }) {
   if (!thoughts?.trim()) return null;
 
   return (
@@ -33,6 +35,7 @@ export default function ArchiveToggle({ thoughts }) {
         My thoughts
       </summary>
       <div className="theme-body mt-1 space-y-3 pl-5 text-sm leading-relaxed">
+        <ThoughtsDate writtenOn={writtenOn} editedOn={editedOn} />
         {thoughts?.trim().split(/\n\s*\n/).filter(Boolean).map((paragraph, index) => (
           <p key={index} className="whitespace-pre-line">{renderParagraph(paragraph)}</p>
         ))}

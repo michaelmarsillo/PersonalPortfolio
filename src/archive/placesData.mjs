@@ -2,6 +2,8 @@
 // Each stable id becomes /archive/places/<id>; keep it unchanged after publishing.
 // Adding a place automatically adds its directory link, page, and build metadata.
 // Location (creator), visit date (year), and thoughts are optional.
+// Set thoughtsWrittenOn once (YYYY-MM-DD), separately from the visit date.
+// Only set thoughtsEditedOn when revising the actual personal writing.
 // Photos live in public/images/archive/places/<place-slug>/.
 // Portrait pairs use 3:4 frames; fullWidth photos retain their natural proportions.
 // Set fullWidth: true for a landscape or a standalone photo.
@@ -101,6 +103,7 @@ export const placeItems = [
         "fullWidth": true
       }
     ],
+    "thoughtsWrittenOn": "2026-10-03",
     "thoughts": `This was December 2023, and probably my first time on a plane in over five years. I think the last time was when we went to Myrtle Beach. It was really fun going on vacation with my family. We stayed in Tampa for a couple of nights before heading to Orlando and staying right by the theme parks. That's where those photos of me in the Sp5der tracksuit and standing by the palm trees with my shirt off were taken.
 
 We went to Universal Studios Florida and Islands of Adventure, and I went on pretty much every ride except for a couple of the bigger roller coasters. We had Express Pass for the weekend. Me and my family are huge Harry Potter fans, so obviously the Harry Potter areas and Gringotts were a highlight. My favourite ride was definitely Hagrid's Magical Creatures Motorbike Adventure. The part where you go by Hagrid's hut and the part where you go backwards, then fall through the ground was so good.
@@ -155,7 +158,9 @@ But honestly, it was a really fun trip. I'd definitely go back with friends or w
         "height": 4032
       }
     ],
-    "thoughts": `This gym holds a special place in my heart, man. The first gym I ever went to was Crunch on Main West in Hamilton, but Pure Muscle + Fitness is in Burlington, about an 18-minute drive from my house. If you're in the gym community in Southern Ontario, you've definitely heard of it. Honestly, I'd put it up there with the best bodybuilding gyms in Ontario, if not all of Canada.
+    "thoughtsWrittenOn": "2026-10-03",
+    "thoughtsEditedOn": "2026-10-03",
+    "thoughts": `This gym holds a special place in my heart, man. The first gym I ever went to was Crunch on Main West in Hamilton, and if I went back, I'd probably shed a tear from the nostalgia. But Pure Muscle + Fitness is on another level. It's in Burlington, about an 18-minute drive from my house. If you're in the gym community in Southern Ontario, you've definitely heard of it. Honestly, I'd put it up there with the best bodybuilding gyms in Ontario, if not all of Canada.
 
 I fell in love with it the first time I went in 2021. When I had the chance, I bought a membership, and I've been training there ever since. I'll probably still be training there after university. It's every gym goer's dream of a gym. If you love bodybuilding or just love going to the gym, you'll love this place. Not to mention all the amazing, cool people I've been able to meet and talk to there. You can see a few of them in the photos above.
 
@@ -208,6 +213,7 @@ Also, shout out [HD Muscle](https://hdmuscle.com/?ref=marsillo) for sponsoring m
         "fullWidth": true
       }
     ],
+    "thoughtsWrittenOn": "2026-10-03",
     "thoughts": `I think the first time me and my family went up to my aunt's cottage was either 2015 or 2016, and we've been going annually ever since, typically around Canada Day. At this point, the cottage is honestly a sacred place for me and my family. It's something we look forward to every year.
 
 When the weather's nice, it's so good to go up for a couple of days, unwind, get a nice tan and spend quality time with family. Long walks on the beach, walks down the road, or just being out in nature. It's really good for detaching, getting away from everything and bringing back that sense of gratitude. You know what I mean? It's always nice to do once a year.
@@ -279,6 +285,7 @@ I really enjoy spending time with my aunt, my uncle and my cousins. They're all 
         "fullWidth": true
       }
     ],
+    "thoughtsWrittenOn": "2026-10-03",
     "thoughts": `I always thought this place was in Pennsylvania, but it's actually in Clymer, New York, right near the border. Funny enough, we would always go over March break, so as Canadians we were technically heading south to go skiing instead of up north. Kind of ironic, but nevertheless, Peek'n Peak was always a really nice place to ski.
 
 I think the first time me and my family went was either 2015 or 2016. I mostly grew up skiing when we went there, and the last time we went was in February 2024, when I went back to snowboard. The photos I took here are all from that most recent trip. It's unfortunate that I don't have any pictures from when we used to go before COVID.

@@ -1,6 +1,8 @@
 // Shelf order follows this array. Ratings and thoughts belong to Michael.
 // Add a record with a stable id and a local bottle image to grow the collection.
 // Thoughts display directly in the panel. Rating is a number out of 10, or null when unset.
+// Set thoughtsWrittenOn once (YYYY-MM-DD); preserve it on later edits.
+// Only set thoughtsEditedOn when revising the actual personal writing.
 // Image and release-year references are recorded in docs/fragrance-sources.md.
 export const fragranceItems = [
   {
@@ -18,6 +20,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 9,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "I love this for cozy nights and close, personal date nights. It smells amazing, but the projection is soft and the longevity lets it down."
   },
   {
@@ -35,6 +38,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 7,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "Fresh pineapple with a darker side. It’s decent, but there are others I prefer and reach for more often."
   },
   {
@@ -52,6 +56,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 7.5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "A sweet winter fragrance that works day or night, with good longevity and projection. I don’t quite get the hype, and I tend to reach for other bottles."
   },
   {
@@ -69,6 +74,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 7.8,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "I know some people say it smells like a car dealership, but I really like it. The sweetness can get a bit much after a while, though longevity and projection are good."
   },
   {
@@ -86,6 +92,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 7,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "A plum scent that leans a little feminine to me, and I can see the grandma’s house comparison. I like the bottle, but I’ve only worn it a couple of times and wouldn’t call it blind-buy safe."
   },
   {
@@ -103,6 +110,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 4,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "My dad gave me this, and it’s basically my bathroom freshener at this point."
   },
   {
@@ -120,6 +128,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 5.5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "Smells like pine trees to me. Personally, it’s not for me and isn’t something I’d reach for."
   },
   {
@@ -137,6 +146,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 8,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "A winter fragrance with great performance that lasts all day and projects really well. It reminds me of cocoa butter Vaseline, but it gets too sweet for me after a while."
   },
   {
@@ -154,6 +164,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 8.5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "My first introduction to oud, and I loved it from the first smell. It’s seriously strong, though I don’t find myself wearing it that often."
   },
   {
@@ -171,6 +182,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 8,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "I get a coconut vibe from this with a darker side that I like for winter nights. It lasts all day and projects well, but I don’t really pick up any oud."
   },
   {
@@ -188,6 +200,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 9,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "A syrupy, smoky tobacco scent with a cherry vibe that I love for winter nights out. To me, it’s about 90% of Side Effect for a fraction of the price."
   },
   {
@@ -205,6 +218,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 8.5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "It’s too dark for my taste, and I’ve smelled it a bit too much at this point. I’d honestly rather wear Sauvage EDT or EDP."
   },
   {
@@ -222,6 +236,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 9,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "A sweet bubblegum scent that lasts a long time and works really well for going out. I’ve been wearing it a lot lately (October 2026), though it can get overly sweet."
   },
   {
@@ -239,6 +254,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 9,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "I wore it a lot in first year (2023). Definitely leans a little bit feminine, but has a distinct smell. People will know that you’re wearing it. I’m gonna wear it more this winter (2026)."
   },
   {
@@ -256,6 +272,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 9,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "The opening smells amazing, and it projects strongly and lasts forever. It’s definitely for cooler weather, though the sweetness gets a bit much and the dry down doesn’t excite me as much."
   },
   {
@@ -273,6 +290,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 9.7,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "A sweet scent that leans feminine, but I absolutely love it. It gives me that Baccarat Rouge 540 feel for cheap, and I’ve already finished the bottle and need another."
   },
   {
@@ -289,6 +307,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 8.2,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "Synthetic as hell, strong as hell, and projects like crazy. It’s a distinct scent I can recognize on other people, and I still really like it."
   },
   {
@@ -306,6 +325,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 8.5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "Cheap, sweet, and a banger. I wore it a lot this summer (2026) and still love it."
   },
   {
@@ -323,6 +343,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 8,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "Clean, masculine, and gives me that barbershop smell. I like it a lot, and my dad was begging me for the link to buy it."
   },
   {
@@ -340,6 +361,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 7.5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "My first ever fragrance, so it holds a special place in my heart. It’s alright now, but it used to be a classic for clubbing back in the day."
   },
   {
@@ -357,6 +379,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 7.8,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "My mom bought me this for Christmas (2021). A great summer fragrance with a clean, musky scent."
   },
   {
@@ -374,6 +397,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "Smells like a field of grass, wheat, and dandelions in the summer heat. Cool bottle and advertising, but I wouldn’t blind buy it."
   },
   {
@@ -391,6 +415,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 7.5,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "A classic everyday fragrance that still holds up. I went through a big bottle and wore it so much that I’m a bit sick of it now."
   },
   {
@@ -408,6 +433,7 @@ export const fragranceItems = [
       }
     ],
     "rating": 6,
+    "thoughtsWrittenOn": "2026-10-01",
     "thoughts": "I found this bottle somewhere, and I’m not saying where. I get a watermelon vibe, but it’s pretty whatever and the longevity sucks."
   }
 ];
