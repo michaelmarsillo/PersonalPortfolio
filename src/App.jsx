@@ -7,6 +7,7 @@ import Archive from "./archive/Archive"
 import ArchiveCategoryPage from "./archive/ArchiveCategoryPage"
 import FragrancePage from "./archive/FragrancePage"
 import PlacesPage from "./archive/PlacesPage"
+import MiscPage from "./archive/MiscPage"
 import Blog from "./blog/Blog"
 import BlogPost from "./blog/BlogPost"
 import NotFound from "./pages/NotFound"
@@ -44,6 +45,7 @@ function App() {
             <Route path="/archive" element={<Archive />} />
             <Route path="/archive/fragrance/:fragranceId?" element={<FragrancePage />} />
             <Route path="/archive/places/:placeId?" element={<PlacesPage />} />
+            <Route path="/archive/misc/:miscId?" element={<MiscPage />} />
             <Route path="/archive/:categorySlug" element={<ArchiveCategoryPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

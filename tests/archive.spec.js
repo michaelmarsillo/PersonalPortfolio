@@ -82,8 +82,8 @@ test('every archive category works through links, direct visits, reloads, and ba
     const path = `/archive/${slug}`;
     await page.locator(`a[href="${path}"]`).click();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title);
-    if (slug === 'places') {
-      await expect(page.getByRole('list', { name: 'Places', exact: true })).toBeVisible();
+    if (slug === 'places' || slug === 'misc') {
+      await expect(page.getByRole('list', { name: title, exact: true })).toBeVisible();
       await expect(page.locator('article')).toHaveCount(0);
     } else {
       await expect(page.locator('article').first()).toBeVisible();
@@ -92,7 +92,7 @@ test('every archive category works through links, direct visits, reloads, and ba
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://www.michaelmarsillo.ca${path}`);
     await page.reload();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title);
-    if (slug !== 'places') {
+    if (slug !== 'places' && slug !== 'misc') {
       const image = page.locator('article img').first();
       await image.scrollIntoViewIfNeeded();
       await expect.poll(() => image.evaluate((element) => element.complete && element.naturalWidth > 0)).toBe(true);

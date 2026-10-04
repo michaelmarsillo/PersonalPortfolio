@@ -11,6 +11,7 @@ import {
   createArchiveSeo,
   createFragranceSeo,
   createPlaceSeo,
+  createMiscSeo,
   staticSeo,
 } from "../src/seoMetadata.mjs";
 
@@ -109,6 +110,8 @@ const routes = [
     .flatMap((collection) => collection.items.map((item) => createFragranceSeo(item, collection))),
   ...archiveCategories.filter(({ slug }) => slug === "places")
     .flatMap((collection) => collection.items.map((item) => createPlaceSeo(item, collection))),
+  ...archiveCategories.filter(({ slug }) => slug === "misc")
+    .flatMap((collection) => collection.items.map((item) => createMiscSeo(item, collection))),
 ];
 
 for (const metadata of routes) {

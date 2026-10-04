@@ -1,6 +1,7 @@
 import { fragranceItems } from "./fragranceData.mjs";
 import { objectItems } from "./objectsData.mjs";
 import { placeItems } from "./placesData.mjs";
+import { miscItems } from "./miscData.mjs";
 
 export const ARCHIVE_PLACEHOLDER_IMAGE = "/images/archive/placeholder.svg";
 
@@ -187,18 +188,9 @@ The only critique I have is that the book drags on a little bit. I think the ide
   {
     slug: "misc",
     title: "Misc",
-    description: "Small skills, hobbies, memories, and details that do not fit neatly anywhere else.",
-    lastModified: "2026-09-21",
-    items: [
-      {
-        id: "first-small-detail",
-        title: "A small detail to keep",
-        creator: "Context to come",
-        year: "Date to come",
-        image: ARCHIVE_PLACEHOLDER_IMAGE,
-        imageAlt: "Placeholder for a personal memory",
-        thoughts: "A space for the little things: a hobby, a memory, something learned, or a detail worth keeping.",
-      },
-    ],
+    description: "hobbies, memories, and little things.",
+    showDescription: true,
+    lastModified: "2026-10-04",
+    items: miscItems,
   },
 ];

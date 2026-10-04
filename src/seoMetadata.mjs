@@ -142,6 +142,21 @@ export const createPlaceSeo = (item, collection) => {
   };
 };
 
+export const createMiscSeo = (item, collection) => {
+  const path = `/archive/misc/${item.id}`;
+  const description = `${item.title} from Michael Marsillo's personal archive. ${item.description}`;
+
+  return {
+    title: `${item.title} | Misc | Archive | ${SITE_NAME}`,
+    description,
+    path,
+    image: item.video?.poster ? absoluteUrl(item.video.poster) : DEFAULT_IMAGE,
+    imageAlt: item.title,
+    jsonLd: pageJsonLd("WebPage", path, item.title, description),
+    lastModified: item.lastModified || collection.lastModified,
+  };
+};
+
 export const createFragranceSeo = (item, collection) => {
   const path = `/archive/fragrance/${item.id}`;
   const title = `${item.title} | Fragrance | Archive | ${SITE_NAME}`;
