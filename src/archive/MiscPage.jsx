@@ -6,6 +6,7 @@ import ArchiveDirectory from "./ArchiveDirectory";
 import ArchiveLayout from "./ArchiveLayout";
 import ArchiveToggle from "./ArchiveToggle";
 import ArchiveVideo from "./ArchiveVideo";
+import HabboPage from "./HabboPage";
 
 const MISC_PATH = "/archive/misc";
 
@@ -26,6 +27,7 @@ export default function MiscPage() {
 
   const entry = collection.items.find(({ id }) => id === miscId);
   if (!entry) return <NotFound />;
+  if (entry.kind === "habbo") return <HabboPage entry={entry} collection={collection} />;
 
   return (
     <ArchiveLayout

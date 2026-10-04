@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun } from 'lucide-react';
 import SignatureName from './SignatureName';
 
-export default function Navbar({ theme, onToggleTheme }) {
+export default function Navbar({ theme, onToggleTheme, showThemeToggle = true }) {
   const isDark = theme === "dark";
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -25,7 +25,7 @@ export default function Navbar({ theme, onToggleTheme }) {
             <Link to="/about" className="theme-muted theme-accent-hover transition-colors whitespace-nowrap">about</Link>
             <Link to="/blog" className="theme-muted theme-accent-hover transition-colors whitespace-nowrap">blog</Link>
           </nav>
-          <button
+          {showThemeToggle && <button
             type="button"
             onClick={onToggleTheme}
             className="theme-panel inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 theme-accent-border-hover theme-accent-hover"
@@ -33,7 +33,7 @@ export default function Navbar({ theme, onToggleTheme }) {
             title={isDark ? "Switch to light mode" : "Switch to dark mode"}
           >
             {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </button>
+          </button>}
         </div>
       </div>
     </header>

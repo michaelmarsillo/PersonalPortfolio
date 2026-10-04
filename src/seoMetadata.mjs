@@ -145,13 +145,14 @@ export const createPlaceSeo = (item, collection) => {
 export const createMiscSeo = (item, collection) => {
   const path = `/archive/misc/${item.id}`;
   const description = `${item.title} from Michael Marsillo's personal archive. ${item.description}`;
+  const image = item.image || item.video?.poster;
 
   return {
     title: `${item.title} | Misc | Archive | ${SITE_NAME}`,
     description,
     path,
-    image: item.video?.poster ? absoluteUrl(item.video.poster) : DEFAULT_IMAGE,
-    imageAlt: item.title,
+    image: image ? absoluteUrl(image) : DEFAULT_IMAGE,
+    imageAlt: item.imageAlt || item.title,
     jsonLd: pageJsonLd("WebPage", path, item.title, description),
     lastModified: item.lastModified || collection.lastModified,
   };

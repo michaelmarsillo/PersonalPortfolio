@@ -1,5 +1,5 @@
 // Array order controls the Misc directory. Keep ids stable after publishing.
-// Habbo will have its own custom experience; video entries share a small player.
+// Habbo has its own memory page; video entries share a small player.
 // Leave video null until its real file has been imported and verified.
 // Example: video: { src: "/videos/archive/misc/harmonica/piano-man.mp4" }
 // Optional video fields: width, height, poster, captions (a WebVTT path), captionsLanguage,
@@ -11,7 +11,11 @@ export const miscItems = [
     id: "habbo",
     title: "Habbo",
     description: "a childhood game that holds a lot of memories.",
-    kind: "memory",
+    kind: "habbo",
+    image: "/images/archive/misc/habbo/habbo2.png",
+    imageAlt: "My blue Habbo room with Venetian buildings, Azure fans, and my avatar",
+    lastModified: "2026-10-04",
+    thoughtsWrittenOn: "2026-10-04",
     thoughts: "",
   },
   {

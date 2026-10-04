@@ -25,7 +25,10 @@ test('Misc uses a plain directory and its pages survive direct loads and return 
     await expect(page.getByText(entry.description, { exact: true })).toBeVisible();
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://www.michaelmarsillo.ca${path}`);
     await expect(page.locator('article details')).toHaveCount(entry.thoughts?.trim() ? 1 : 0);
-    if (entry.thoughtsWrittenOn) {
+    if (entry.kind === 'habbo') {
+      await expect(page.locator('[data-thoughts-date]')).toBeVisible();
+      await expect(page.locator('[data-thoughts-date] time')).toHaveAttribute('datetime', entry.thoughtsWrittenOn);
+    } else if (entry.thoughtsWrittenOn) {
       const thoughts = page.locator('article details');
       const date = thoughts.locator('[data-thoughts-date]');
       await expect(date).toBeHidden();
