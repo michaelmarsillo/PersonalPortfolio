@@ -83,7 +83,7 @@ The commute to work was not bad at all, about a ~20 minute bus ride down King St
 This experience made me realize something important about my priorities. I've been having second thoughts about working in Toronto for a future work term, especially since it would be over an hour commute each way. I have other things in my life that are super important to me (training, personal projects, content creation), and I wouldn't want my entire day to just be consumed by work and transit. I'm grateful that I got to stay in Waterloo for my first work term.
 ![King Street Bus 7 crop-half](/images/bus7.png)
 ![Tapping My WLU OneCard crop-half](/images/tappingonecard.png)
-> If you want to see a sneak peek of what my typical day looked like: work, commute, gym, and everything in between, I made a [day in the life](https://www.tiktok.com/@michaelmarsillo/video/7586443814638783765) TikTok that captures it pretty well.
+> If you want to see a sneak peek of what my typical day looked like: work, commute, gym, and everything in between, I made a [day in the life](https://www.tiktok.com/@marsillomade/video/7586443814638783765) TikTok that captures it pretty well.
 
 ## 2. The Work: CloudStream
 The actual work I was doing was quite interesting. I'm not really sure how much I'm able to say, but I was working on the **CloudStream team at [Ricoh Canada](https://www.ricoh.ca/)**, which is their cloud-based print management software.
@@ -220,7 +220,7 @@ We used **Next.js, TypeScript, and Tailwind CSS** for the frontend, with **Expre
 > We were super late to film our [demo video](https://www.youtube.com/watch?v=ibgUSqTDZQM) (classic), thats why you can see in the bottom of the video it was filmed just after 5 in the morning. (lol)
 The final hours were intense. We were debugging a database issue (thank you Tony), polishing the UI, and making sure Lucky's AI responses were coherent, all while running on minimal sleep.
 ## Making a TikTok
-Of course, I had to document this experience! I filmed throughout the hackathon and created a [TikTok video](https://www.tiktok.com/@michaelmarsillo/video/7519321432707337478) showing the journey from idea to deployed app. I love making videos and being able to have something to look back on in the future.
+Of course, I had to document this experience! I filmed throughout the hackathon and created a [TikTok video](https://www.tiktok.com/@marsillomade/video/7519321432707337478) showing the journey from idea to deployed app. I love making videos and being able to have something to look back on in the future.
 ## The Results
 We deployed LuckyLease to production and it's live at [luckylease](https://luckylease.vercel.app/)! The platform actually works, students can sign up, browse listings, chat with landlords, and get AI-powered recommendations.
 Check out our code on [GitHub](https://github.com/TaseskiCS/LuckyLease) and our full submission on [Devpost](https://devpost.com/software/luckylease).

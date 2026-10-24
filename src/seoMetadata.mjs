@@ -25,7 +25,7 @@ export const personJsonLd = {
     "https://github.com/michaelmarsillo",
     "https://x.com/michaelmarsillo",
     "https://www.instagram.com/michaelmarsillo/",
-    "https://tiktok.com/@michaelmarsillo",
+    "https://www.tiktok.com/@marsillomade",
     "https://youtube.com/@michaelmarsillofit",
   ],
 };
